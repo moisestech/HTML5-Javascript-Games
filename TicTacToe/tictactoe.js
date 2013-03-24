@@ -15,7 +15,7 @@ var boardDiv = document.querySelector("#board");
 //Create nine empty spaces in the board array
 for (i=0; i < 9; i++) {
 	board[i] = i;
-	console.log(board);
+	//console.log(board);
 }
 
 //Create nine elements with an EventListener
@@ -65,9 +65,16 @@ function checkTicTacToe () {
 		//console.log( "k:" + k + " l:" + l + " m:" + m);
 
 		if (board[k] === playerX && board[l] === playerX && board[m] === playerX) {
-			console.log("win!");
+			var win = document.createElement("div");
+			win.setAttribute("id", "win");
+
+			document.body.appendChild(win);
+			win.innerHTML = playerX + " WIN!";
+
 		} else if (board[k] === playerO && board[l] === playerO && board[m] === playerO) {
-			console.log("win!");
+			var win = document.createElement("div");
+			document.body.appendChild(win);
+			win.innerHTML = playerO + " WIN!";
 		}
 	}
 }

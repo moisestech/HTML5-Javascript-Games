@@ -21,3 +21,11 @@
 	border-bottom: 1px solid gainsboro;
 	
 }
+
+#win {
+	position: absolute;
+	margin-top: -50px;
+	margin-left: -20px;
+	left: 50%;
+	top: 50%;
+}
