@@ -8,6 +8,20 @@ winningCombinations = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,
 playerX = "X";
 playerO = "O";
 
+playerXscore = 0;
+playerOscore = 0;
+
+var playerXDiv = document.createElement("div");
+playerXDiv.setAttribute("id", playerX);
+playerXDiv.innerHTML = "player X score: " + playerXscore;
+document.body.appendChild(playerXDiv);
+
+var playerODiv = document.createElement("div");
+playerODiv.setAttribute("id", playerO);
+playerODiv.innerHTML = "player O score: " + playerOscore;
+document.body.appendChild(playerODiv);
+
+
 
 //Select board div
 var boardDiv = document.querySelector("#board");
@@ -73,6 +87,8 @@ function checkTicTacToe () {
 
 		} else if (board[k] === playerO && board[l] === playerO && board[m] === playerO) {
 			var win = document.createElement("div");
+			win.setAttribute("id", "win");
+
 			document.body.appendChild(win);
 			win.innerHTML = playerO + " WIN!";
 		}
