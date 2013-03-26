@@ -30,3 +30,7 @@
 	top: 50%;
 }
 
+.currentTurn {
+	border: 1px solid black;
+}
+
