@@ -22,10 +22,11 @@
 	
 }
 
-#win {
+#output {
 	position: absolute;
 	margin-top: -50px;
 	margin-left: -20px;
 	left: 50%;
 	top: 50%;
 }
+
