@@ -85,15 +85,29 @@ function checkTicTacToe () {
 			document.body.appendChild(win);
 			win.innerHTML = playerX + " WIN!";
 
+			playerXscore++;
+
 		} else if (board[k] === playerO && board[l] === playerO && board[m] === playerO) {
 			var win = document.createElement("div");
 			win.setAttribute("id", "win");
 
 			document.body.appendChild(win);
 			win.innerHTML = playerO + " WIN!";
+
+			playerOscore++;
 		}
 	}
 }
+
+function endGame() {
+	for (i=0; i < ) {
+
+	}
+}
+
+//create end function
+//create draw function
+
 
 
 
