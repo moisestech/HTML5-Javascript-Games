@@ -56,6 +56,7 @@ function clickHandler() {
 		var player = playerO;
 	}
 	turn ++;
+	//console.log(turn);
 
 	var arrayPosition = this.id;
 	//console.log("arrayPosition from .id is: " + arrayPosition);
@@ -66,7 +67,14 @@ function clickHandler() {
 	//remove event listener for that square
 	this.removeEventListener("click", clickHandler, false);
 
-	checkTicTacToe();
+	//Check for Tie after 
+	if (checkTicTacToe() !== true && turn === 9) {
+		var tie = document.createElement("div");
+		tie.setAttribute("id", "output");
+
+		document.body.appendChild(tie);
+		tie.innerHTML = " TIE!";
+	}
 }
 
 function checkTicTacToe () {
@@ -80,18 +88,24 @@ function checkTicTacToe () {
 
 		if (board[k] === playerX && board[l] === playerX && board[m] === playerX) {
 			var win = document.createElement("div");
-			win.setAttribute("id", "win");
+			win.setAttribute("id", "output");
+
+			console.log(playerXscore);
+			console.log(i);
 
 			document.body.appendChild(win);
 			win.innerHTML = playerX + " WIN!";
 
-			playerXscore++;
+			playerXscore ++;
 			playerXDiv.innerHTML = "player X score: " + playerXscore;
+			//console.log(playerXscore);
 			endGame();
+
+			return true;
 
 		} else if (board[k] === playerO && board[l] === playerO && board[m] === playerO) {
 			var win = document.createElement("div");
-			win.setAttribute("id", "win");
+			win.setAttribute("id", "output");
 
 			document.body.appendChild(win);
 			win.innerHTML = playerO + " WIN!";
@@ -99,7 +113,11 @@ function checkTicTacToe () {
 			playerOscore++;
 			playerODiv.innerHTML = "player O score: " + playerOscore;
 			endGame();
-		}
+
+
+			return true;
+
+		} 
 	}
 }
 
@@ -111,14 +129,6 @@ function endGame() {
 		boardNodes[i].removeEventListener("click", clickHandler, false);
 	}
 }
-
-
-
-//create end function
-//create draw function
-
-
-
 
 
 
