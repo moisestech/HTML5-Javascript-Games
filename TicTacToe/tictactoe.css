@@ -30,7 +30,21 @@
 	top: 50%;
 }
 
+#X {
+	padding: 5px;
+	width: 120px;
+	height: 15px;
+}
+
+#O {
+	padding: 5px;
+	width: 120px;
+	height: 15px;
+}
+
 .currentTurn {
-	border: 1px solid black;
+	color: white;
+	background-color: black;
+	/*border: 1px solid black;*/
 }
 
