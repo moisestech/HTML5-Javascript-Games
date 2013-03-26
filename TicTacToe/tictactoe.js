@@ -86,6 +86,8 @@ function checkTicTacToe () {
 			win.innerHTML = playerX + " WIN!";
 
 			playerXscore++;
+			playerXDiv.innerHTML = "player X score: " + playerXscore;
+			endGame();
 
 		} else if (board[k] === playerO && board[l] === playerO && board[m] === playerO) {
 			var win = document.createElement("div");
@@ -95,15 +97,22 @@ function checkTicTacToe () {
 			win.innerHTML = playerO + " WIN!";
 
 			playerOscore++;
+			playerODiv.innerHTML = "player O score: " + playerOscore;
+			endGame();
 		}
 	}
 }
 
 function endGame() {
-	for (i=0; i < ) {
-
+	// get board childNodes
+	var boardNodes = document.getElementById("board").childNodes;
+	
+	for (i=0; i <boardNodes.length; i++) {
+		boardNodes[i].removeEventListener("click", clickHandler, false);
 	}
 }
+
+
 
 //create end function
 //create draw function
