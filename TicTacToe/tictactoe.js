@@ -52,8 +52,17 @@ function clickHandler() {
 	//Check wether its playerX's turn or playerO's turn
 	if (turn % 2 === 0) {
 		var player = playerX;
+
+		//Set currentTurn CSS to playerX
+		playerXDiv.setAttribute("class", "currentTurn");
+		playerODiv.setAttribute("class", "");
+
 	} else {
 		var player = playerO;
+
+		//Set currentTurn CSS to playerO
+		playerODiv.setAttribute("class", "currentTurn");
+		playerXDiv.setAttribute("class", "");
 	}
 	turn ++;
 	//console.log(turn);
