@@ -51,7 +51,7 @@ body {
 	margin-top: 11%;
 	margin-left: 82%;
 	position: absolute;
-	width: 17%;
+	width: 19%;
 	top: 50%;
 }
 
@@ -60,7 +60,7 @@ body {
 			margin-top: 11%;
 			margin-left: 82%;
 			position: absolute;
-			width: 17%;
+			width: 19%;
 			top: 50%;
 		}
 
@@ -69,7 +69,7 @@ body {
 	margin-top: 20.5%;
 	margin-left: 66%;
 	position: absolute;
-	width: 17%;
+	width: 19%;
 	top: 50%;
 }
 
@@ -78,7 +78,16 @@ body {
 			margin-top: 20.5%;
 			margin-left: 66%;
 			position: absolute;
-			width: 17%;
+			width: 19%;
 			top: 50%;
 		}
 
+
+#arcade03 {
+	position: fixed;
+	margin-top: -26.5%;
+	margin-left: -1%;
+	position: absolute;
+	width: 19%;
+	top: 50%;
+}
