@@ -80,7 +80,7 @@ var itemsIKnow = ["flute", "stone", "sword"];
 var item = "";
 
 //The img element
-var image = document.querySelector("img");
+var image = document.getElementById("scene");
 
 //The input and output fields
 var output = document.querySelector("#output");
