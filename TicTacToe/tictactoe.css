@@ -48,3 +48,10 @@
 	/*border: 1px solid black;*/
 }
 
+#reset {
+	padding: 4px;
+	width: 120px;
+	height: 15px;
+	border: 1px solid black
+}
+

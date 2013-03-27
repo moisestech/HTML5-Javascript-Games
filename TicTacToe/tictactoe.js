@@ -25,6 +25,15 @@ document.body.appendChild(playerODiv);
 playerXDiv.setAttribute("class", "currentTurn");
 playerODiv.setAttribute("class", "");
 
+//Create reset button
+var reset = document.createElement("div");
+document.body.appendChild(reset);
+reset.setAttribute("id", "reset");
+reset.innerHTML = "reset";
+reset.addEventListener("click", resetGame, false);
+
+
+
 
 
 //Select board div
@@ -136,8 +145,9 @@ function checkTicTacToe () {
 	}
 }
 
-function endGame() {
+function endGame () {
 	// get board childNodes
+	console.log("stuff");
 	var boardNodes = document.getElementById("board").childNodes;
 	
 	for (i=0; i <boardNodes.length; i++) {
@@ -145,5 +155,21 @@ function endGame() {
 	}
 }
 
+function resetGame () {
+	console.log("reset");
 
+	playerXscore = 0;
+	playerXDiv.innerHTML = "player X score: " + playerXscore;
+
+	playerOscore = 0;
+	playerODiv.innerHTML = "player O score: " + playerOscore;
+
+	//get board childNodes
+	/*var boardNodes = document.getElementById("board").childNodes;
+
+	for (i=0; i <boardNodes.length; i++) {
+		boardNodes[i].innerHTML = "_";
+	}
+}*/
+}
 
