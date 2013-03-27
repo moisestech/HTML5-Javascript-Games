@@ -21,6 +21,10 @@ playerODiv.setAttribute("id", playerO);
 playerODiv.innerHTML = "player O score: " + playerOscore;
 document.body.appendChild(playerODiv);
 
+//Set currentTurn CSS to playerX
+playerXDiv.setAttribute("class", "currentTurn");
+playerODiv.setAttribute("class", "");
+
 
 
 //Select board div
@@ -53,16 +57,18 @@ function clickHandler() {
 	if (turn % 2 === 0) {
 		var player = playerX;
 
-		//Set currentTurn CSS to playerX
-		playerXDiv.setAttribute("class", "currentTurn");
-		playerODiv.setAttribute("class", "");
+		//Set currentTurn CSS to playerO
+		playerODiv.setAttribute("class", "currentTurn");
+		playerXDiv.setAttribute("class", "");
 
 	} else {
 		var player = playerO;
 
-		//Set currentTurn CSS to playerO
-		playerODiv.setAttribute("class", "currentTurn");
-		playerXDiv.setAttribute("class", "");
+		//Set currentTurn CSS to playerX
+		playerXDiv.setAttribute("class", "currentTurn");
+		playerODiv.setAttribute("class", "");
+
+		
 	}
 	turn ++;
 	//console.log(turn);
