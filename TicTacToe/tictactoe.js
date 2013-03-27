@@ -98,6 +98,7 @@ function clickHandler() {
 
 		document.body.appendChild(tie);
 		tie.innerHTML = " TIE!";
+		resetGame();
 	}
 }
 
@@ -147,7 +148,6 @@ function checkTicTacToe () {
 
 function endGame () {
 	// get board childNodes
-	console.log("stuff");
 	var boardNodes = document.getElementById("board").childNodes;
 	
 	for (i=0; i <boardNodes.length; i++) {
@@ -165,11 +165,18 @@ function resetGame () {
 	playerODiv.innerHTML = "player O score: " + playerOscore;
 
 	//get board childNodes
-	/*var boardNodes = document.getElementById("board").childNodes;
+	var boardNodes = document.getElementById("board").childNodes;
+	var output = document.getElementById("output");
+	//output.innerHTML = "reset";
+
+	if (output) {
+		output.parentNode.removeChild(output);
+	}
 
 	for (i=0; i <boardNodes.length; i++) {
 		boardNodes[i].innerHTML = "_";
+		square.addEventListener("click", clickHandler, false);
 	}
-}*/
 }
+
 
