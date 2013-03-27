@@ -45,3 +45,40 @@ body {
 	width: 102%;
 	top: 50%;
 }
+
+#arcade01 {
+	position: fixed;
+	margin-top: 11%;
+	margin-left: 82%;
+	position: absolute;
+	width: 17%;
+	top: 50%;
+}
+
+		#arcade01Working {
+			position: fixed;
+			margin-top: 11%;
+			margin-left: 82%;
+			position: absolute;
+			width: 17%;
+			top: 50%;
+		}
+
+#arcade02 {
+	position: fixed;
+	margin-top: 20.5%;
+	margin-left: 66%;
+	position: absolute;
+	width: 17%;
+	top: 50%;
+}
+
+		#arcade02Working {
+			position: fixed;
+			margin-top: 20.5%;
+			margin-left: 66%;
+			position: absolute;
+			width: 17%;
+			top: 50%;
+		}
+
