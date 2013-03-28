@@ -1,0 +1,65 @@
+#arcade404Title {
+	margin-left: -10%;
+	position: absolute;
+	width: 20%;
+	top: 0;
+	left: 50%;
+}
+
+#board {
+	position: absolute;
+	margin-top: -30px;
+	margin-left: -30px;
+	left: 50%;
+	top: 50%;
+	width: 63px;
+	height: 63px;
+	border: 2px solid black;
+}
+
+.square {
+	position: relative;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	text-align: center;
+	border-top: none;
+	border-left: none;
+	border-right: 1px solid gainsboro;
+	border-bottom: 1px solid gainsboro;
+	
+}
+
+#output {
+	position: absolute;
+	margin-top: -50px;
+	margin-left: -20px;
+	left: 50%;
+	top: 50%;
+}
+
+#X {
+	padding: 5px;
+	width: 120px;
+	height: 15px;
+}
+
+#O {
+	padding: 5px;
+	width: 120px;
+	height: 15px;
+}
+
+.currentTurn {
+	color: white;
+	background-color: black;
+	/*border: 1px solid black;*/
+}
+
+#reset {
+	padding: 4px;
+	width: 120px;
+	height: 15px;
+	border: 1px solid black
+}
+

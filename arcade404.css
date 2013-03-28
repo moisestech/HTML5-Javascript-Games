@@ -1,0 +1,93 @@
+body {
+
+}
+
+#arcade404Title {
+	margin-left: -10%;
+	position: absolute;
+	width: 20%;
+	top: 0;
+	left: 50%;
+}
+
+#arcadeFloorTop {
+	margin-top: -98.7%;
+	margin-left: -2%;
+	position: absolute;
+	width: 102%;
+	top: 50%;
+}
+
+#arcadeFloor {
+	margin-top: -35%;
+	margin-left: -2%;
+	position: absolute;
+	width: 102%;
+	top: 50%;
+}
+
+#arcadeFloorBottom {
+	margin-top: 32.1%;
+	margin-left: -2%;
+	position: absolute;
+	width: 102%;
+	top: 50%;
+}
+
+
+/* arcades */
+
+#arcades {
+	position: fixed;
+	margin-top: -35%;
+	margin-left: -2%;
+	position: absolute;
+	width: 102%;
+	top: 50%;
+}
+
+#arcade01 {
+	position: fixed;
+	margin-top: 11%;
+	margin-left: 82%;
+	position: absolute;
+	width: 19%;
+	top: 50%;
+}
+
+		#arcade01Working {
+			position: fixed;
+			margin-top: 11%;
+			margin-left: 82%;
+			position: absolute;
+			width: 19%;
+			top: 50%;
+		}
+
+#arcade02 {
+	position: fixed;
+	margin-top: 20.5%;
+	margin-left: 66%;
+	position: absolute;
+	width: 19%;
+	top: 50%;
+}
+
+		#arcade02Working {
+			position: fixed;
+			margin-top: 20.5%;
+			margin-left: 66%;
+			position: absolute;
+			width: 19%;
+			top: 50%;
+		}
+
+
+#arcade03 {
+	position: fixed;
+	margin-top: -26.5%;
+	margin-left: -1%;
+	position: absolute;
+	width: 19%;
+	top: 50%;
+}
