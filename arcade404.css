@@ -12,6 +12,7 @@ body {
 
 #arcadeFloorTop {
 	/*margin-top: -98.7%;*/
+	margin-top: 500px;
 	margin-left: -2%;
 	position: fixed;
 	width: 102%;
