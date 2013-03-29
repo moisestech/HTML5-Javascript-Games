@@ -4,7 +4,7 @@ body {
 
 #arcade404Title {
 	margin-left: -10%;
-	position: absolute;
+	position: fixed;
 	width: 20%;
 	top: 0;
 	left: 50%;
@@ -13,7 +13,7 @@ body {
 #arcadeFloorTop {
 	margin-top: -98.7%;
 	margin-left: -2%;
-	position: absolute;
+	position: fixed;
 	width: 102%;
 	top: 50%;
 }
@@ -21,7 +21,7 @@ body {
 #arcadeFloor {
 	margin-top: -35%;
 	margin-left: -2%;
-	position: absolute;
+	position: fixed;
 	width: 102%;
 	top: 50%;
 }
@@ -29,7 +29,7 @@ body {
 #arcadeFloorBottom {
 	margin-top: 32.1%;
 	margin-left: -2%;
-	position: absolute;
+	position: fixed;
 	width: 102%;
 	top: 50%;
 }
@@ -40,7 +40,7 @@ body {
 #arcades {
 	margin-top: -35%;
 	margin-left: -2%;
-	position: absolute;
+	position: fixed;
 	width: 102%;
 	top: 50%;
 }
@@ -48,7 +48,7 @@ body {
 #arcade01 {
 	margin-top: 11%;
 	margin-left: 82%;
-	position: absolute;
+	position: fixed;
 	width: 19%;
 	top: 50%;
 }
@@ -56,7 +56,7 @@ body {
 		#arcade01Working {
 			margin-top: 11%;
 			margin-left: 82%;
-			position: absolute;
+			position: fixed;
 			width: 19%;
 			top: 50%;
 		}
@@ -64,7 +64,7 @@ body {
 #arcade02 {
 	margin-top: 20.5%;
 	margin-left: 66%;
-	position: absolute;
+	position: fixed;
 	width: 19%;
 	top: 50%;
 }
@@ -72,7 +72,7 @@ body {
 		#arcade02Working {
 			margin-top: 20.5%;
 			margin-left: 66%;
-			position: absolute;
+			position: fixed;
 			width: 19%;
 			top: 50%;
 		}
@@ -81,7 +81,7 @@ body {
 #arcade03 {
 	margin-top: -26.5%;
 	margin-left: -1%;
-	position: absolute;
+	position: fixed;
 	width: 19%;
 	top: 50%;
 }
