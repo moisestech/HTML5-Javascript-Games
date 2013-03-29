@@ -46,7 +46,6 @@ body {
 }
 
 #arcade01 {
-	position: fixed;
 	margin-top: 11%;
 	margin-left: 82%;
 	position: absolute;
@@ -55,7 +54,6 @@ body {
 }
 
 		#arcade01Working {
-			position: fixed;
 			margin-top: 11%;
 			margin-left: 82%;
 			position: absolute;
@@ -64,7 +62,6 @@ body {
 		}
 
 #arcade02 {
-	position: fixed;
 	margin-top: 20.5%;
 	margin-left: 66%;
 	position: absolute;
@@ -73,7 +70,6 @@ body {
 }
 
 		#arcade02Working {
-			position: fixed;
 			margin-top: 20.5%;
 			margin-left: 66%;
 			position: absolute;
@@ -83,7 +79,6 @@ body {
 
 
 #arcade03 {
-	position: fixed;
 	margin-top: -26.5%;
 	margin-left: -1%;
 	position: absolute;
