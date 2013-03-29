@@ -11,6 +11,7 @@ body {
 }
 
 #arcadeFloorTop {
+	margin-top: -35%;
 	margin-left: -2%;
 	position: absolute;
 	width: 102%;
