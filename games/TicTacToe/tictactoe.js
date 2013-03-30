@@ -111,14 +111,18 @@ function checkTicTacToe () {
 		var m = winningCombinations[i][2];
 		//console.log( "k:" + k + " l:" + l + " m:" + m);
 
+		//get scene div to be cloned later
+		var scene = document.getElementById("scene");
+
 		if (board[k] === playerX && board[l] === playerX && board[m] === playerX) {
+
 			var win = document.createElement("div");
 			win.setAttribute("id", "output");
 
 			console.log(playerXscore);
 			console.log(i);
 
-			document.body.appendChild(win);
+			scene.appendChild(win);
 			win.innerHTML = playerX + " WIN!";
 
 			playerXscore ++;
@@ -130,18 +134,19 @@ function checkTicTacToe () {
 			return true;
 
 		} else if (board[k] === playerO && board[l] === playerO && board[m] === playerO) {
+			
 			var win = document.createElement("div");
 			win.setAttribute("id", "output");
 
-			document.body.appendChild(win);
+			scene.appendChild(win);
 			win.innerHTML = playerO + " WIN!";
 
 			playerOscore++;
 			playerODiv.innerHTML = "player O score: " + playerOscore;
 			
 			//clone game
-			
-			
+
+
 			endGame();
 			//resetGame();
 
@@ -161,9 +166,9 @@ function endGame () {
 	var output = document.getElementById("output");
 
 	//take out output from win
-	if (output) {
+	/*if (output) {
 		output.parentNode.removeChild(output);
-	}
+	}*/
 
 	//remove text, and old event listeners, add new event listeners
 	for (i=0; i <boardNodes.length; i++) {
