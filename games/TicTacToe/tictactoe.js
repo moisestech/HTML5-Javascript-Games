@@ -98,7 +98,7 @@ function clickHandler() {
 
 		document.body.appendChild(tie);
 		tie.innerHTML = " TIE!";
-		resetGame();
+		endGame();
 	}
 }
 
