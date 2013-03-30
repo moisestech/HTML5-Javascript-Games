@@ -149,15 +149,29 @@ function checkTicTacToe () {
 }
 
 function endGame () {
+	//reset turn
+	var turn = 0;
+	console.log("the turn is " + turn);
+
 	// get board childNodes
 	var boardNodes = document.getElementById("board").childNodes;
-	
-	for (i=0; i <boardNodes.length; i++) {
-		boardNodes[i].removeEventListener("click", clickHandler, false);
+	var output = document.getElementById("output");
+
+	//take out output from win
+	if (output) {
+		output.parentNode.removeChild(output);
 	}
 
+	//remove text, and old event listeners, add new event listeners
 	for (i=0; i <boardNodes.length; i++) {
+		boardNodes[i].innerHTML = "_";
 		boardNodes[i].removeEventListener("click", clickHandler, false);
+		boardNodes[i].addEventListener("click", clickHandler, false);
+	}
+
+	for (i=0; i <board.length; i++) {
+		board[i]="";
+		console.log(board[i]);
 	}
 }
 
