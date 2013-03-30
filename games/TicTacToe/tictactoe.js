@@ -139,6 +139,9 @@ function checkTicTacToe () {
 			playerOscore++;
 			playerODiv.innerHTML = "player O score: " + playerOscore;
 			
+			//clone game
+			
+			
 			endGame();
 			//resetGame();
 
