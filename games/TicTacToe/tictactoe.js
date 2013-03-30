@@ -80,7 +80,7 @@ function clickHandler() {
 		
 	}
 	turn ++;
-	//console.log(turn);
+	console.log(turn);
 
 	var arrayPosition = this.id;
 	//console.log("arrayPosition from .id is: " + arrayPosition);
@@ -150,7 +150,7 @@ function checkTicTacToe () {
 
 function endGame () {
 	//reset turn
-	var turn = 0;
+	turn = 0;
 	console.log("the turn is " + turn);
 
 	// get board childNodes
