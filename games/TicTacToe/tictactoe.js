@@ -125,6 +125,7 @@ function checkTicTacToe () {
 			playerXDiv.innerHTML = "player X score: " + playerXscore;
 			//console.log(playerXscore);
 			endGame();
+			//resetGame();
 
 			return true;
 
@@ -137,8 +138,9 @@ function checkTicTacToe () {
 
 			playerOscore++;
 			playerODiv.innerHTML = "player O score: " + playerOscore;
+			
 			endGame();
-
+			//resetGame();
 
 			return true;
 
@@ -150,6 +152,10 @@ function endGame () {
 	// get board childNodes
 	var boardNodes = document.getElementById("board").childNodes;
 	
+	for (i=0; i <boardNodes.length; i++) {
+		boardNodes[i].removeEventListener("click", clickHandler, false);
+	}
+
 	for (i=0; i <boardNodes.length; i++) {
 		boardNodes[i].removeEventListener("click", clickHandler, false);
 	}
@@ -175,7 +181,8 @@ function resetGame () {
 
 	for (i=0; i <boardNodes.length; i++) {
 		boardNodes[i].innerHTML = "_";
-		square.addEventListener("click", clickHandler, false);
+		boardNodes[i].removeEventListener("click", clickHandler, false);
+		boardNodes[i].addEventListener("click", clickHandler, false);
 	}
 }
 
