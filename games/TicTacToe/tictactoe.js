@@ -170,13 +170,14 @@ function endGame () {
 		output.parentNode.removeChild(output);
 	}*/
 
-	//remove text, and old event listeners, add new event listeners
+	//remove text and old event listeners, add new event listeners
 	for (i=0; i <boardNodes.length; i++) {
 		boardNodes[i].innerHTML = "_";
 		boardNodes[i].removeEventListener("click", clickHandler, false);
 		boardNodes[i].addEventListener("click", clickHandler, false);
 	}
 
+	//clear the board array 
 	for (i=0; i <board.length; i++) {
 		board[i]="";
 		console.log(board[i]);
@@ -207,5 +208,12 @@ function resetGame () {
 		boardNodes[i].addEventListener("click", clickHandler, false);
 	}
 }
+
+var gameRound1 = document.getElementById("scene");
+
+var cloneGameRound1 = gameRound1.cloneNode(true);
+cloneGameRound1.setAttribute("id", "");
+cloneGameRound1.setAttribute("class", "gameHistory");
+gameRound1.parentNode.appendChild(cloneGameRound1);
 
 
