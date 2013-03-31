@@ -166,7 +166,7 @@ function endGame () {
 
 	var cloneGameRound1 = gameRound1.cloneNode(true);
 	cloneGameRound1.setAttribute("id", "");
-	cloneGameRound1.setAttribute("class", "gameHistory");
+	cloneGameRound1.setAttribute("class", "gameRound");
 	gameRound1.parentNode.appendChild(cloneGameRound1);
 
 	// get board childNodes

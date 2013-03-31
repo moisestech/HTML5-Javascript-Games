@@ -1,3 +1,7 @@
+body {
+	height: 100%;
+}
+
 #arcade404Title {
 	margin-left: -10%;
 	position: absolute;
@@ -28,7 +32,16 @@
 	border: 2px solid black;
 }
 
-.gameHistory {
+#gameHistory {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 150px;
+	height: 100%;
+	background-color: black;
+}
+
+.gameRound {
 	float: right;
 	width: 120px;
 	height: 120px;
