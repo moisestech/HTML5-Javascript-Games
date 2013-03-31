@@ -162,12 +162,15 @@ function endGame () {
 	console.log("the turn is " + turn);
 
 	//clone gameRound and place in gameHistory
-	var gameRound1 = document.getElementById("scene");
+	var gameRound = document.getElementById("scene");
+	var gameHistory = document.getElementById("gameHistory");
 
-	var cloneGameRound1 = gameRound1.cloneNode(true);
-	cloneGameRound1.setAttribute("id", "");
-	cloneGameRound1.setAttribute("class", "gameRound");
-	gameRound1.parentNode.appendChild(cloneGameRound1);
+	var cloneGameRound = gameRound.cloneNode(true);
+	cloneGameRound.setAttribute("id", "");
+	cloneGameRound.setAttribute("class", "gameRound");
+	gameHistory.appendChild(cloneGameRound);
+
+		//
 
 	// get board childNodes
 	var boardNodes = document.getElementById("board").childNodes;

@@ -42,7 +42,9 @@ body {
 }
 
 .gameRound {
-	float: right;
+	position: relative;
+	left: 50%;
+	margin-left: -63px;
 	width: 120px;
 	height: 120px;
 	border: 2px solid black;
@@ -58,6 +60,7 @@ body {
 	border-left: none;
 	border-right: 1px solid gainsboro;
 	border-bottom: 1px solid gainsboro;
+	background-color: white;
 	
 }
 
