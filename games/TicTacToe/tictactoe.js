@@ -116,6 +116,15 @@ function checkTicTacToe () {
 
 		if (board[k] === playerX && board[l] === playerX && board[m] === playerX) {
 
+			console.log( "k:" + k + " l:" + l + " m:" + m);
+
+				var matchK = document.getElementById(k);
+					matchK.style["background-color"] = "Chartreuse";
+				var matchL = document.getElementById(l);
+					matchL.style["background-color"] = "Chartreuse";
+				var matchM = document.getElementById(m);
+					matchM.style["background-color"] = "Chartreuse";
+
 			var win = document.createElement("div");
 			win.setAttribute("id", "output");
 
@@ -169,8 +178,6 @@ function endGame () {
 	cloneGameRound.setAttribute("id", "");
 	cloneGameRound.setAttribute("class", "gameRound");
 	gameHistory.appendChild(cloneGameRound);
-
-		//
 
 	// get board childNodes
 	var boardNodes = document.getElementById("board").childNodes;
