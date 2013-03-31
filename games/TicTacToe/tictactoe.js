@@ -161,14 +161,22 @@ function endGame () {
 	turn = 0;
 	console.log("the turn is " + turn);
 
+	//clone gameRound and place in gameHistory
+	var gameRound1 = document.getElementById("scene");
+
+	var cloneGameRound1 = gameRound1.cloneNode(true);
+	cloneGameRound1.setAttribute("id", "");
+	cloneGameRound1.setAttribute("class", "gameHistory");
+	gameRound1.parentNode.appendChild(cloneGameRound1);
+
 	// get board childNodes
 	var boardNodes = document.getElementById("board").childNodes;
 	var output = document.getElementById("output");
 
 	//take out output from win
-	/*if (output) {
+	if (output) {
 		output.parentNode.removeChild(output);
-	}*/
+	}
 
 	//remove text and old event listeners, add new event listeners
 	for (i=0; i <boardNodes.length; i++) {
@@ -209,11 +217,6 @@ function resetGame () {
 	}
 }
 
-var gameRound1 = document.getElementById("scene");
 
-var cloneGameRound1 = gameRound1.cloneNode(true);
-cloneGameRound1.setAttribute("id", "");
-cloneGameRound1.setAttribute("class", "gameHistory");
-gameRound1.parentNode.appendChild(cloneGameRound1);
 
 
