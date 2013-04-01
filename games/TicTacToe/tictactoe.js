@@ -124,6 +124,7 @@ function checkTicTacToe () {
 
 			console.log( "k:" + k + " l:" + l + " m:" + m);
 
+				//change the back-color of the winningCombinations to green
 				var matchK = document.getElementById(k + "gameRound" + round);
 					matchK.style["background-color"] = "Chartreuse";
 				var matchL = document.getElementById(l + "gameRound" + round);
@@ -149,7 +150,17 @@ function checkTicTacToe () {
 			return true;
 
 		} else if (board[k] === playerO && board[l] === playerO && board[m] === playerO) {
-			
+		
+			console.log( "k:" + k + " l:" + l + " m:" + m);
+
+				//change the back-color of the winningCombinations to green
+				var matchK = document.getElementById(k + "gameRound" + round);
+					matchK.style["background-color"] = "Chartreuse";
+				var matchL = document.getElementById(l + "gameRound" + round);
+					matchL.style["background-color"] = "Chartreuse";
+				var matchM = document.getElementById(m + "gameRound" + round);
+					matchM.style["background-color"] = "Chartreuse";	
+
 			var win = document.createElement("div");
 			win.setAttribute("id", "output");
 
@@ -199,6 +210,7 @@ function endGame () {
 		boardNodes[i].innerHTML = "_";
 		boardNodes[i].removeEventListener("click", clickHandler, false);
 		boardNodes[i].addEventListener("click", clickHandler, false);
+		boardNodes[i].style["background-color"] = "white";
 	}
 
 	//clear the board array 
@@ -230,6 +242,7 @@ function resetGame () {
 		boardNodes[i].innerHTML = "_";
 		boardNodes[i].removeEventListener("click", clickHandler, false);
 		boardNodes[i].addEventListener("click", clickHandler, false);
+		boardNodes[i].style["background-color"] = "white";
 	}
 }
 
