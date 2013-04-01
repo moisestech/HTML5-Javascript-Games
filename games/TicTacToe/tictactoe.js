@@ -1,5 +1,7 @@
 //Create tic-tac-toe board array
 var board = [];
+var turn = 0;
+var round = 1;
 
 //Winning Combinations array
 winningCombinations = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]];
@@ -32,10 +34,6 @@ reset.setAttribute("id", "reset");
 reset.innerHTML = "reset";
 reset.addEventListener("click", resetGame, false);
 
-
-
-
-
 //Select board div
 var boardDiv = document.querySelector("#board");
 
@@ -49,13 +47,15 @@ for (i=0; i < 9; i++) {
 for (i=0; i < board.length; i++) {
 	var square = document.createElement("div");
 	boardDiv.appendChild(square);
-	square.setAttribute("id", i);
+	square.setAttribute("id", i + "gameRound" + round);
 	square.setAttribute("class", "square");
 	square.innerHTML = "_";
 	square.addEventListener("click", clickHandler, false);
 }
 
-var turn = 0;
+var something = document.getElementById(1 + "gameRound" + round);
+console.log(something);
+
 
 /* -- functions -- */
 
@@ -81,6 +81,12 @@ function clickHandler() {
 	}
 	turn ++;
 	console.log(turn);
+
+	var unparsedPosition = this.id;
+	var unparsedStringPosition = toString(unparsedPosition);
+
+	unparsedStringPosition.push("1");
+
 
 	var arrayPosition = this.id;
 	//console.log("arrayPosition from .id is: " + arrayPosition);
@@ -118,11 +124,11 @@ function checkTicTacToe () {
 
 			console.log( "k:" + k + " l:" + l + " m:" + m);
 
-				var matchK = document.getElementById(k);
+				var matchK = document.getElementById(k + "gameRound" + round);
 					matchK.style["background-color"] = "Chartreuse";
-				var matchL = document.getElementById(l);
+				var matchL = document.getElementById(l + "gameRound" + round);
 					matchL.style["background-color"] = "Chartreuse";
-				var matchM = document.getElementById(m);
+				var matchM = document.getElementById(m + "gameRound" + round);
 					matchM.style["background-color"] = "Chartreuse";
 
 			var win = document.createElement("div");
