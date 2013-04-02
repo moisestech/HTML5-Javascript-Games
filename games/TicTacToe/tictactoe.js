@@ -82,10 +82,10 @@ function clickHandler() {
 	turn ++;
 	console.log(turn);
 
-	var unparsedPosition = this.id;
+	/*var unparsedPosition = this.id;
 	var unparsedStringPosition = toString(unparsedPosition);
 
-	unparsedStringPosition.push("1");
+	unparsedStringPosition.push("1");*/
 
 
 	var arrayPosition = this.id;
