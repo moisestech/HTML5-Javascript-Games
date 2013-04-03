@@ -30,22 +30,45 @@ function keydownHandler() {
 	} else if (event.keyCode === 87) {
 		console.log("fizzBuzz!");
 	}
+
+	return true;
 }
 
 //setInterval( "alert('Hello')", 5000 );
 
-/*for (i=0; i <=numberPicked; i++) {
+for (i=0; i <=10; i++) {
 
 	var currentNumber = document.createElement("li");
 	currentNumber.innerHTML = i;
-	document.body.appendChild(currentNumber);*/
+	document.body.appendChild(currentNumber);
 
+	createTimer("timer", 5);
+	
+	if (totalSeconds > 0 && keydownHandler()) {
+		console.log("event!");
+	} else if (totalSeconds < 0 && keydownHandler()) {
+		console.log("no more events allowed sorry!");
+	} else {
+		console.log("game over");
+	}
+
+	/*if (i % 3 === 0 && i % 5 === 0) {
+		console.log("FizzBuzz!");
+	} else if (i % 3 === 0) {
+		console.log("Fizz");
+	} else if (i % 5 === 0) {
+		console.log("Buzz");
+	} else {
+		console.log(i);
+	}*/
+}
 
 
 //timer
 
 var timer;
 var totalSeconds;
+//window.onload = createTimer("timer", 5);
 
 function createTimer(timerID, time) {
 	timer = document.getElementById(timerID);
@@ -56,6 +79,11 @@ function createTimer(timerID, time) {
 }
 
 function tick() {
+	if (totalSeconds <= 0) {
+	alert("Time's up!")
+	return;
+	}
+
 	totalSeconds -= 1;
 	updateTimer();
 	window.setTimeout("tick()", 1000);
@@ -64,14 +92,3 @@ function tick() {
 function updateTimer() {
 	timer.innerHTML = totalSeconds;
 }
-
-	/*if (i % 3 === 0 && i % 5 === 0) {
-		console.log("FizzBuzz!");
-	} else if (i % 3 === 0) {
-		console.log("Fizz");
-	} else if (i % 5 === 0) {
-		console.log("Buzz");
-	} else {
-		console.log(i);
-	}
-}*/
