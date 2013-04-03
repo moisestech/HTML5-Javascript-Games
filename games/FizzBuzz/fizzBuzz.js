@@ -3,7 +3,12 @@ var numberPicked = prompt("pick a number to FizzBuzz!");
 
 
 for (i=0; i <=numberPicked; i++) {
-	if (i % 3 === 0 && i % 5 === 0) {
+
+	var currentNumber = document.createElement("li");
+	currentNumber.innerHTML = i;
+	document.body.appendChild(currentNumber);
+
+	/*if (i % 3 === 0 && i % 5 === 0) {
 		console.log("FizzBuzz!");
 	} else if (i % 3 === 0) {
 		console.log("Fizz");
@@ -11,5 +16,5 @@ for (i=0; i <=numberPicked; i++) {
 		console.log("Buzz");
 	} else {
 		console.log(i);
-	}
+	}*/
 }
