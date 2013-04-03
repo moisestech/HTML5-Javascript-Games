@@ -1,41 +1,44 @@
 //global variables
-var numberPicked = prompt("pick a number to FizzBuzz!");
+//var numberPicked = prompt("pick a number to FizzBuzz!");
 
 
 //create gameButtons
 var fizz = document.createElement("div");
+document.body.appendChild(fizz);
 fizz.innerHTML = "fizz";
 fizz.addEventListener("click", fizzEvent, false);
 
 var buzz = document.createElement("div");
+document.body.appendChild(buzz);
 buzz.innerHTML = "buzz";
 buzz.addEventListener("click", buzzEvent, false);
 
 var fizzBuzz = document.createElement("div");
+document.body.appendChild(fizzBuzz);
 fizzBuzz.innerHTML = "fizzBuzz";
 fizzBuzz.addEventListener("click", fizzBuzzEvent, false);
 
 
 /* functions */
-var fizz = function () {
+var fizzEvent = function () {
 	console.log("fizz!");
 }
 
-var buzz = function () {
+var buzzEvent = function () {
 	console.log("buzz!");
 }
 
-var fizzBuzz = function () {
+var fizzBuzzEvent = function () {
 	console.log("fizzBuzz!");
 }
 
 //setInterval( "alert('Hello')", 5000 );
 
-for (i=0; i <=numberPicked; i++) {
+/*for (i=0; i <=numberPicked; i++) {
 
 	var currentNumber = document.createElement("li");
 	currentNumber.innerHTML = i;
-	document.body.appendChild(currentNumber);
+	document.body.appendChild(currentNumber);*/
 
 
 
@@ -69,5 +72,5 @@ function updateTimer() {
 		console.log("Buzz");
 	} else {
 		console.log(i);
-	}*/
-}
+	}
+}*/
