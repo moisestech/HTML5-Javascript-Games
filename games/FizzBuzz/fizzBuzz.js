@@ -43,11 +43,12 @@ function keydownHandler() {
 
 
 //timer
-/*var timer;
+
+var timer;
 var totalSeconds;
 
-function createTimer(TimerID, Time) {
-	timer = document.getElementById(TimerID);
+function createTimer(timerID, time) {
+	timer = document.getElementById(timerID);
 	totalSeconds = time;
 
 	updateTimer();
@@ -62,7 +63,7 @@ function tick() {
 
 function updateTimer() {
 	timer.innerHTML = totalSeconds;
-}*/
+}
 
 	/*if (i % 3 === 0 && i % 5 === 0) {
 		console.log("FizzBuzz!");
