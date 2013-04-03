@@ -91,7 +91,7 @@ var button = document.querySelector("button");
 button.style.cursor = "pointer";
 button.addEventListener("click", clickHandler, false);
 button.addEventListener("mouseOut", mouseoutHandler, false);
-button.addEventListener("mouseOUt", mouseoutHandler, false);
+button.addEventListener("mouseOut", mouseoutHandler, false);
 
 //Listen for the enter key presses
 window.addEventListener("keydown", keydownHandler, false);

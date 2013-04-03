@@ -6,30 +6,30 @@
 var fizz = document.createElement("div");
 document.body.appendChild(fizz);
 fizz.innerHTML = "fizz";
-fizz.addEventListener("click", fizzEvent, false);
 
 var buzz = document.createElement("div");
 document.body.appendChild(buzz);
 buzz.innerHTML = "buzz";
-buzz.addEventListener("click", buzzEvent, false);
 
 var fizzBuzz = document.createElement("div");
 document.body.appendChild(fizzBuzz);
 fizzBuzz.innerHTML = "fizzBuzz";
-fizzBuzz.addEventListener("click", fizzBuzzEvent, false);
 
+//gameButtons keydown event handler
+window.addEventListener("keydown", keydownHandler, false);
+
+
+// A=65 D=68 W=87
 
 /* functions */
-var fizzEvent = function () {
-	console.log("fizz!");
-}
-
-var buzzEvent = function () {
-	console.log("buzz!");
-}
-
-var fizzBuzzEvent = function () {
-	console.log("fizzBuzz!");
+function keydownHandler() {
+	if (event.keyCode === 65) {
+		console.log("fizz!");
+	} else if (event.keyCode === 68) {
+		console.log("buzz!");
+	} else if (event.keyCode === 87) {
+		console.log("fizzBuzz!");
+	}
 }
 
 //setInterval( "alert('Hello')", 5000 );
