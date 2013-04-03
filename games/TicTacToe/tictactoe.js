@@ -47,7 +47,7 @@ for (i=0; i < 9; i++) {
 for (i=0; i < board.length; i++) {
 	var square = document.createElement("div");
 	boardDiv.appendChild(square);
-	square.setAttribute("id", i + "gameRound" + round);
+	square.setAttribute("id", i);
 	square.setAttribute("class", "square");
 	square.innerHTML = "_";
 	square.addEventListener("click", clickHandler, false);
@@ -80,7 +80,8 @@ function clickHandler() {
 		
 	}
 	turn ++;
-	console.log(turn);
+
+	//console.log(turn);
 
 	/*var unparsedPosition = this.id;
 	var unparsedStringPosition = toString(unparsedPosition);
@@ -97,8 +98,11 @@ function clickHandler() {
 	//remove event listener for that square
 	this.removeEventListener("click", clickHandler, false);
 
+
 	//Check for Tie after 
 	if (checkTicTacToe() !== true && turn === 9) {
+		console.log("tictactoe function");
+
 		var tie = document.createElement("div");
 		tie.setAttribute("id", "output");
 
@@ -125,11 +129,11 @@ function checkTicTacToe () {
 			console.log( "k:" + k + " l:" + l + " m:" + m);
 
 				//change the back-color of the winningCombinations to green
-				var matchK = document.getElementById(k + "gameRound" + round);
+				var matchK = document.getElementById(k /*+ "gameRound" + round*/);
 					matchK.style["background-color"] = "Chartreuse";
-				var matchL = document.getElementById(l + "gameRound" + round);
+				var matchL = document.getElementById(l /*+ "gameRound" + round*/);
 					matchL.style["background-color"] = "Chartreuse";
-				var matchM = document.getElementById(m + "gameRound" + round);
+				var matchM = document.getElementById(m /*+ "gameRound" + round*/);
 					matchM.style["background-color"] = "Chartreuse";
 
 			var win = document.createElement("div");
