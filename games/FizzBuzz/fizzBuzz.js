@@ -46,24 +46,34 @@ window.addEventListener("keydown", keydownHandler, false);
 /* functions */
 function keydownHandler() {
 	if (event.keyCode === 65) {
-		//resetTime
-		reset();
+		resetTime();
+		displayEvent("fizz");
 		console.log("fizz!");
 	} else if (event.keyCode === 68) {
-		//resetTime
-		reset();
+		resetTime();
+		displayEvent("buzz");
 		console.log("buzz!");
 	} else if (event.keyCode === 87) {
-		//resetTime
-		reset();
+		resetTime();
+		displayEvent("fizzBuzz");
 		console.log("fizzBuzz!");
 	}
 }
 
-function reset () {
+function resetTime () {
 	totalSeconds = 5;
 	timer.innerHTML = totalSeconds;
 	fizzBuzzRound++;
+}
+
+function displayEvent (event) {
+	var eventMade = document.createElement("div");
+	eventMade.innerHTML = event;
+	document.body.appendChild(eventMade);
+
+	window.setTimeout(function() {
+		eventMade.parentNode.removeChild(eventMade);
+	}, 1000);
 }
 
 //timer
