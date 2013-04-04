@@ -1,5 +1,5 @@
 //global variables
-//var numberPicked = prompt("pick a number to FizzBuzz!");
+var numberPicked = prompt("pick a number to FizzBuzz!");
 var fizzBuzzRound = 0;
 
 //create gameButtons
@@ -24,15 +24,32 @@ window.addEventListener("keydown", keydownHandler, false);
 
 //setInterval( "alert('Hello')", 5000 );
 
-/*for (i=0; i <=numberPicked; i++) {
+for (i=0; i <numberPicked; i++) {
 
-	var currentNumber = document.createElement("li");
+	/*var currentNumber = document.createElement("li");
 	currentNumber.innerHTML = i;
-	document.body.appendChild(currentNumber);
+	document.body.appendChild(currentNumber);*/
 
-	createTimer("timer", 5);
+	function keydownHandler() {
+		if (event.keyCode === 65) {
+			console.log(i);
+			resetTime();
+			displayEvent("fizz");
+			console.log("fizz!");
+		} else if (event.keyCode === 68) {
+			console.log(i);
+			resetTime();
+			displayEvent("buzz");
+			console.log("buzz!");
+		} else if (event.keyCode === 87) {
+			console.log(i);
+			resetTime();
+			displayEvent("fizzBuzz");
+			console.log("fizzBuzz!");
+		}
+	}
 	
-	if (i % 3 === 0 && i % 5 === 0) {
+	/*if (i % 3 === 0 && i % 5 === 0) {
 		console.log("FizzBuzz!");
 	} else if (i % 3 === 0) {
 		console.log("Fizz");
@@ -40,25 +57,10 @@ window.addEventListener("keydown", keydownHandler, false);
 		console.log("Buzz");
 	} else {
 		console.log(i);
-	}
-}*/
+	}*/
+}
 
 /* functions */
-function keydownHandler() {
-	if (event.keyCode === 65) {
-		resetTime();
-		displayEvent("fizz");
-		console.log("fizz!");
-	} else if (event.keyCode === 68) {
-		resetTime();
-		displayEvent("buzz");
-		console.log("buzz!");
-	} else if (event.keyCode === 87) {
-		resetTime();
-		displayEvent("fizzBuzz");
-		console.log("fizzBuzz!");
-	}
-}
 
 function resetTime () {
 	totalSeconds = 5;
