@@ -1,6 +1,6 @@
 //global variables
 //var numberPicked = prompt("pick a number to FizzBuzz!");
-
+var fizzBuzzRound = 0;
 
 //create gameButtons
 var fizz = document.createElement("div");
@@ -47,20 +47,23 @@ window.addEventListener("keydown", keydownHandler, false);
 function keydownHandler() {
 	if (event.keyCode === 65) {
 		//resetTime
-		totalSeconds = 5;
-		timer.innerHTML = totalSeconds;
+		reset();
 		console.log("fizz!");
 	} else if (event.keyCode === 68) {
 		//resetTime
-		totalSeconds = 5;
-		timer.innerHTML = totalSeconds;
+		reset();
 		console.log("buzz!");
 	} else if (event.keyCode === 87) {
 		//resetTime
-		totalSeconds = 5;
-		timer.innerHTML = totalSeconds;
+		reset();
 		console.log("fizzBuzz!");
 	}
+}
+
+function reset () {
+	totalSeconds = 5;
+	timer.innerHTML = totalSeconds;
+	fizzBuzzRound++;
 }
 
 //timer
