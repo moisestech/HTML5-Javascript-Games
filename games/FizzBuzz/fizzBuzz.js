@@ -21,22 +21,10 @@ window.addEventListener("keydown", keydownHandler, false);
 
 // A=65 D=68 W=87
 
-/* functions */
-function keydownHandler() {
-	if (event.keyCode === 65) {
-		console.log("fizz!");
-	} else if (event.keyCode === 68) {
-		console.log("buzz!");
-	} else if (event.keyCode === 87) {
-		console.log("fizzBuzz!");
-	}
-
-	return true;
-}
 
 //setInterval( "alert('Hello')", 5000 );
 
-for (i=0; i <=10; i++) {
+/*for (i=0; i <=numberPicked; i++) {
 
 	var currentNumber = document.createElement("li");
 	currentNumber.innerHTML = i;
@@ -44,15 +32,7 @@ for (i=0; i <=10; i++) {
 
 	createTimer("timer", 5);
 	
-	if (totalSeconds > 0 && keydownHandler()) {
-		console.log("event!");
-	} else if (totalSeconds < 0 && keydownHandler()) {
-		console.log("no more events allowed sorry!");
-	} else {
-		console.log("game over");
-	}
-
-	/*if (i % 3 === 0 && i % 5 === 0) {
+	if (i % 3 === 0 && i % 5 === 0) {
 		console.log("FizzBuzz!");
 	} else if (i % 3 === 0) {
 		console.log("Fizz");
@@ -60,15 +40,33 @@ for (i=0; i <=10; i++) {
 		console.log("Buzz");
 	} else {
 		console.log(i);
-	}*/
+	}
+}*/
+
+/* functions */
+function keydownHandler() {
+	if (event.keyCode === 65) {
+		//resetTime
+		totalSeconds = 5;
+		timer.innerHTML = totalSeconds;
+		console.log("fizz!");
+	} else if (event.keyCode === 68) {
+		//resetTime
+		totalSeconds = 5;
+		timer.innerHTML = totalSeconds;
+		console.log("buzz!");
+	} else if (event.keyCode === 87) {
+		//resetTime
+		totalSeconds = 5;
+		timer.innerHTML = totalSeconds;
+		console.log("fizzBuzz!");
+	}
 }
 
-
 //timer
-
 var timer;
 var totalSeconds;
-//window.onload = createTimer("timer", 5);
+window.onload = createTimer("timer", 5);
 
 function createTimer(timerID, time) {
 	timer = document.getElementById(timerID);
@@ -79,9 +77,16 @@ function createTimer(timerID, time) {
 }
 
 function tick() {
-	if (totalSeconds <= 0) {
+	/*if (totalSeconds <= 0) {
 	alert("Time's up!")
 	return;
+	}*/
+
+	if  (totalSeconds > 0) {
+		console.log("event");
+	} else if (totalSeconds <= 0) {
+		console.log("gameover");
+		return;
 	}
 
 	totalSeconds -= 1;
