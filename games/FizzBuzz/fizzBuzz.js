@@ -19,18 +19,56 @@ fizzBuzz.innerHTML = "fizzBuzz";
 window.addEventListener("keydown", keydownHandler, false);
 
 
+/*for(i=0; i<=10;i++){
+    setTimeout("setvalue()",2000); //This alert should display for every 2 secs only
+    console.log(i);
+    }
+
+    function setvalue()
+    {
+     var s=i;
+    }*/
+
+
 // A=65 D=68 W=87
 
 
+var loopTimer = 2000;
+var loopIncrement = 1500;
+
+for (i=0; i < 10; i++) {
+
+	setTimeout( function() {
+		loopAction(i);
+	}, loopTimer);
+
+	loopTimer += loopIncrement;
+}
+
+function loopAction (loopNum) {
+	console.log(loopNum);
+}
+
 //setInterval( "alert('Hello')", 5000 );
 
-for (i=0; i <numberPicked; i++) {
+/*for (i=0; i < numberPicked; i++) {
 
 	/*var currentNumber = document.createElement("li");
 	currentNumber.innerHTML = i;
 	document.body.appendChild(currentNumber);*/
+	
+	/*if (i % 3 === 0 && i % 5 === 0) {
+		console.log("FizzBuzz!");
+	} else if (i % 3 === 0) {
+		console.log("Fizz");
+	} else if (i % 5 === 0) {
+		console.log("Buzz");
+	} else {
+		console.log(i);
+	}*/
+//}
 
-	function keydownHandler() {
+function keydownHandler() {
 		if (event.keyCode === 65) {
 			console.log(i);
 			resetTime();
@@ -48,17 +86,6 @@ for (i=0; i <numberPicked; i++) {
 			console.log("fizzBuzz!");
 		}
 	}
-	
-	/*if (i % 3 === 0 && i % 5 === 0) {
-		console.log("FizzBuzz!");
-	} else if (i % 3 === 0) {
-		console.log("Fizz");
-	} else if (i % 5 === 0) {
-		console.log("Buzz");
-	} else {
-		console.log(i);
-	}*/
-}
 
 /* functions */
 
@@ -98,9 +125,9 @@ function tick() {
 	}*/
 
 	if  (totalSeconds > 0) {
-		console.log("event");
+		//console.log("event");
 	} else if (totalSeconds <= 0) {
-		console.log("gameover");
+		//console.log("gameover");
 		return;
 	}
 
