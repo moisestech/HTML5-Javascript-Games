@@ -1,5 +1,5 @@
 //global variables
-var numberPicked = prompt("pick a number to FizzBuzz!");
+//var numberPicked = prompt("pick a number to FizzBuzz!");
 var fizzBuzzRound = 0;
 
 //create gameButtons
@@ -19,6 +19,29 @@ fizzBuzz.innerHTML = "fizzBuzz";
 window.addEventListener("keydown", keydownHandler, false);
 
 
+//create array to store functions
+var arrayOfFunctions = [];
+
+//create function that uses the forLoop i as an argument
+// and returns a function with the forLoop i in it
+function createFunc(forLoopI) {
+	return function() {
+		console.log("My value: " + forLoopI);
+	}
+}
+
+//forLoop that stores the anonymous function into
+//the arrayOfFunctions
+for (var i=0; i < 3; i++) {
+	arrayOfFunctions[i] = createFunc(i);
+}
+
+// forLoop that fires each anonymous function stored
+// inside arrayOfFunctions
+for (var j=0; j < 3; j++) {
+	arrayOfFunctions[j]();
+}
+
 /*for(i=0; i<=10;i++){
     setTimeout("setvalue()",2000); //This alert should display for every 2 secs only
     console.log(i);
@@ -33,13 +56,13 @@ window.addEventListener("keydown", keydownHandler, false);
 // A=65 D=68 W=87
 
 
-var loopTimer = 2000;
+/*var loopTimer = 2000;
 var loopIncrement = 1500;
 
 for (i=0; i < 10; i++) {
-
+	var iArray[i] = i;
 	setTimeout( function() {
-		loopAction(i);
+		loopAction();
 	}, loopTimer);
 
 	loopTimer += loopIncrement;
@@ -47,7 +70,7 @@ for (i=0; i < 10; i++) {
 
 function loopAction (loopNum) {
 	console.log(loopNum);
-}
+}*/
 
 //setInterval( "alert('Hello')", 5000 );
 

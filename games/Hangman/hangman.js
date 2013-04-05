@@ -1,5 +1,5 @@
 //global variables
-var vocabList = ["dragon", "super"];
+var vocabList = ["dragon"];
 
 //log all words from the vocabList array
 for (i=0; i < vocabList.length; i++) {
