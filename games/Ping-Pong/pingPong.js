@@ -1,3 +1,4 @@
 $(function() {
-	console.log("jquery loaded!")
+	$("#paddleB").css("top", "20px");
+	$("#paddleA").css("top", "60px");
 });
