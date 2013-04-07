@@ -30,11 +30,11 @@ $(function(){
 	// "pressedKeys"
 	$(document).keydown(function(e){
 		pingPong.pressedKeys[e.which] = true;
-		console.log(pingPong.pressedKeys);
+		//console.log(pingPong.pressedKeys);
     });
     $(document).keyup(function(e){
     	pingPong.pressedKeys[e.which] = false;
-    	console.log(pingPong.pressedKeys);
+    	//console.log(pingPong.pressedKeys);
 	});
 });
 
@@ -52,23 +52,32 @@ function moveBall() {
 
 	// check playground boundary
 	// check bottom edge
-	if (ball.y + ball.speed*ball.directionY > playgroundHeight) {
+	if (ball.y +ball.speed*ball.directionY > playgroundHeight) {
 		ball.directionY = -1;
 	}
 	// check top edge
-	if (ball.y + ball.speed*ball.directionY < 0) {
+	if (ball.y +ball.speed*ball.directionY < 0) {
 		ball.directionY = 1;
 	}
+
 	// check right edge
-	if (ball.x + ball.speed*ball.directionX > playgroundWidth) {
+	if (ball.x + ball.speed * ball.directionX > playgroundWidth) {
+		
+		// player B lost
+		// reset the ball
+		ball.x = 250;
+		ball.y = 100;
+		$("#ball").css({
+			"left": ball.x,
+			"top": ball.y
+		});
 		ball.directionX = -1;
 	}
 	// check left edge
-	if (ball.x + ball.speed*ball.directionX < 0) {
+	if (ball.x + ball.speed * ball.directionX < 0) {
 		
 		// player A lost
 		// reser the ball;
-
 		ball.x = 150;
 		ball.y = 100;
 		$("#ball").css({
@@ -92,11 +101,11 @@ function moveBall() {
 	}
 
 	// check right paddle
-	var paddleBX = parseInt($("#paddleB").css("left")) + parseInt($("#paddleB").css("width"));
-	var paddleBYBottom = parseInt($("#paddleB").css("top")) + parseInt($("#paddleA").css("height"));
+	var paddleBX = parseInt($("#paddleB").css("left"));
+	var paddleBYBottom = parseInt($("#paddleB").css("top")) + parseInt($("#paddleB").css("height"));
 	var paddleBYTop = parseInt($("#paddleB").css("top"));
 
-	if (ball.x + ball.speed * ball.directionX < paddleBX) {
+	if (ball.x + ball.speed * ball.directionX >= paddleBX) {
 		if (ball.y + ball.speed * ball.directionY <= paddleBYBottom &&
 			ball.y + ball.speed * ball.directionY >= paddleBYTop) {
 			ball.directionX = -1;
@@ -109,7 +118,7 @@ function moveBall() {
 	// actually move the ball with speed and direction
 	$("#ball").css({
 		"left" : ball.x,
-		"right" : ball.y
+		"top" : ball.y
 	});
 }
 
