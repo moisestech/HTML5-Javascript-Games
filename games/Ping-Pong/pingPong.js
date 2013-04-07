@@ -12,6 +12,15 @@ var pingPong = {}
 // an array to remember which key is pressed and which is not.
 pingPong.pressedKeys = [];
 
+// a ball oject inside pingPong that stores moving key value pairs
+pingPong.ball = {
+	speed: 5,
+	x: 150,
+	y: 100,
+	directionX: 1,
+	directionY: 1
+}
+
 // on DOM ready
 $(function(){
 	// set interval to call gameloop every 30 milliseconds
@@ -20,15 +29,55 @@ $(function(){
 	// mark down what key is down and up into an array called
 	// "pressedKeys"
 	$(document).keydown(function(e){
-		pingpong.pressedKeys[e.which] = true;
+		pingPong.pressedKeys[e.which] = true;
+		console.log(pingPong.pressedKeys);
     });
     $(document).keyup(function(e){
-    	pingpong.pressedKeys[e.which] = false;
+    	pingPong.pressedKeys[e.which] = false;
+    	console.log(pingPong.pressedKeys);
 	});
 });
 
 function gameLoop() {
+		moveBall();
 		movePaddles();
+}
+
+function moveBall() {
+	//move the ball in every 30 milliseconds
+	// reference useful  variables
+	var playgroundHeight = parseInt($("#playground").height());
+	var playgroundWidth = parseInt($("#playground").width());
+	var ball = pingPong.ball;
+
+	// check playground boundary
+	// check bottom edge
+	if (ball.y + ball.speed*ball.directionY > playgroundHeight) {
+		ball.directionY = -1;
+	}
+	// check top edge
+	if (ball.y + ball.speed*ball.directionY < 0) {
+		ball.directionY = 1;
+	}
+	// check right edge
+	if (ball.x + ball.speed*ball.directionX > playgroundWidth) {
+		ball.directionX = -1;
+	}
+	// check left edge
+	if (ball.x + ball.speed*ball.directionX < 0) {
+		ball.directionX = 1;
+	}
+
+	ball.x += ball.speed * ball.directionX;
+	ball.y += ball.speed * ball.directionY;
+
+	// check the moving paddle here, later.
+
+	// actually move the ball with speed and direction
+	$("#ball").css({
+		"left" : ball.x,
+		"right" : ball.y
+	});
 }
 
 function movePaddles() {
