@@ -53,8 +53,8 @@ for (i=0; i < board.length; i++) {
 	square.addEventListener("click", clickHandler, false);
 }
 
-var something = document.getElementById(1 + "gameRound" + round);
-console.log(something);
+//var something = document.getElementById(1 + "gameRound" + round);
+//console.log(something);
 
 
 /* -- functions -- */
@@ -198,6 +198,16 @@ function endGame () {
 	var cloneGameRound = gameRound.cloneNode(true);
 	cloneGameRound.setAttribute("id", "");
 	cloneGameRound.setAttribute("class", "gameRound");
+
+	//var cloneGameRoundLength = cloneGameRound.children.length;
+
+	//console.log(cloneGameRoundLength);
+
+	//for (i=0; i < ) {
+
+	//}
+
+	//cloneGameRound.getChildNodes.style("class", "historySquare");
 	gameHistory.appendChild(cloneGameRound);
 
 	// get board childNodes
