@@ -7,7 +7,10 @@ var KEY = {
 }
 
 // a global object to store all global variable we use for the game
-var pingPong = {}
+var pingPong = {
+	scoreA: 0, // score for player A
+	scoreB: 0  // score for player B
+}
 
 // an array to remember which key is pressed and which is not.
 pingPong.pressedKeys = [];
@@ -15,8 +18,6 @@ pingPong.pressedKeys = [];
 // a ball oject inside pingPong that stores moving key value pairs
 pingPong.ball = {
 	speed: 5,
-	x: 150,
-	y: 100,
 	directionX: 1,
 	directionY: 1
 }
@@ -46,79 +47,88 @@ function gameLoop() {
 function moveBall() {
 	//move the ball in every 30 milliseconds
 	// reference useful  variables
+	var ballTop = parseInt($("#ball").css("top"));
+	var ballLeft = parseInt($("#ball").css("left"));
 	var playgroundHeight = parseInt($("#playground").height());
 	var playgroundWidth = parseInt($("#playground").width());
 	var ball = pingPong.ball;
 
 	// check playground boundary
 	// check bottom edge
-	if (ball.y +ball.speed*ball.directionY > playgroundHeight) {
+	if (ballTop +ball.speed*ball.directionY > playgroundHeight) {
 		ball.directionY = -1;
 	}
 	// check top edge
-	if (ball.y +ball.speed*ball.directionY < 0) {
+	if (ballTop +ball.speed*ball.directionY < 0) {
 		ball.directionY = 1;
 	}
 
 	// check right edge
-	if (ball.x + ball.speed * ball.directionX > playgroundWidth) {
+	if (ballLeft + ball.speed * ball.directionX > playgroundWidth) {
 		
 		// player B lost
+		pingPong.scoreA++;
+		$("#scoreA").html(pingPong.scoreA);
+
 		// reset the ball
-		ball.x = 250;
-		ball.y = 100;
 		$("#ball").css({
-			"left": ball.x,
-			"top": ball.y
+			"left": "250px",
+			"top": "100px"
 		});
+
+		//update the ball location variables
+		ballTop = parseInt($("#ball").css("top"));
+		ballLeft = parseInt($("#ball").css("left"));
 		ball.directionX = -1;
 	}
 	// check left edge
-	if (ball.x + ball.speed * ball.directionX < 0) {
+	if (ballLeft + ball.speed * ball.directionX < 0) {
 		
 		// player A lost
-		// reser the ball;
-		ball.x = 150;
-		ball.y = 100;
+		pingPong.scoreB++;
+		$("#scoreB").html(pingPong.scoreB);
+
+		// reset the ball;
 		$("#ball").css({
-			"left": ball.x,
-			"top": ball.y
+			"left": "150px",
+			"top": "100px"
 		});
+
+		// update the ball location variables;
+		ballTop = parseInt($("#ball").css("top"));
+		ballLeft = parseInt($("#ball").css("left"));
 		ball.directionX = 1;
 	}
 
 	// check the moving paddle here, later.
 	//check left paddle
-	var paddleAX = parseInt($("#paddleA").css("left")) + parseInt($("#paddleA").css("width"));
-	var paddleAYBottom = parseInt($("#paddleA").css("top")) + parseInt($("#paddleA").css("height"));
+	var paddleAX = parseInt($("#paddleA").css("left"))+parseInt($("#paddleA").css("width"));
+	var paddleAYBottom = parseInt($("#paddleA").css("top"))+parseInt($("#paddleA").css("height"));
 	var paddleAYTop = parseInt($("#paddleA").css("top"));
 
-	if (ball.x + ball.speed * ball.directionX < paddleAX) {
-		if (ball.y + ball.speed * ball.directionY <= paddleAYBottom &&
-			ball.y + ball.speed * ball.directionY >= paddleAYTop) {
+	if (ballLeft + ball.speed*ball.directionX < paddleAX) {
+		if (ballTop + ball.speed * ball.directionY <= paddleAYBottom &&
+			ballTop + ball.speed * ball.directionY >= paddleAYTop) {
 			ball.directionX = 1;
 		}
 	}
 
 	// check right paddle
 	var paddleBX = parseInt($("#paddleB").css("left"));
-	var paddleBYBottom = parseInt($("#paddleB").css("top")) + parseInt($("#paddleB").css("height"));
+	var paddleBYBottom = parseInt($("#paddleB").css("top"))+parseInt($("#paddleB").css("height"));
 	var paddleBYTop = parseInt($("#paddleB").css("top"));
 
-	if (ball.x + ball.speed * ball.directionX >= paddleBX) {
-		if (ball.y + ball.speed * ball.directionY <= paddleBYBottom &&
-			ball.y + ball.speed * ball.directionY >= paddleBYTop) {
+	if (ballLeft + ball.speed*ball.directionX >= paddleBX) {
+		if (ballTop + ball.speed * ball.directionY <= paddleBYBottom &&
+			ballTop + ball.speed * ball.directionY >= paddleBYTop) {
 			ball.directionX = -1;
 		}
 	}
 
-	ball.x += ball.speed * ball.directionX;
-	ball.y += ball.speed * ball.directionY;
-
 	// actually move the ball with speed and direction
 	$("#ball").css({
-		"left" : ball.x,
-		"top" : ball.y
+		"left" : ballLeft + ball.speed * ball.directionX,
+		"top" : ballTop + ball.speed * ball.directionY
 	});
 }
 
