@@ -14,11 +14,11 @@ body {
 
 /* set the card to corresponding playing card graphics */
 .cardAK {
-	background: url(../imgs/AK.png);
+	background: url(imgs/AK.png);
 }
 
 .cardAQ {
-	background: url(../imgs/AQ.png);
+	background: url(imgs/AQ.png);
 }
 
 /* rotate the applied DOM element 90 degree */
