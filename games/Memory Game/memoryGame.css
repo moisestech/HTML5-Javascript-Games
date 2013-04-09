@@ -2,15 +2,76 @@ body {
 	background: #aaa;
 }
 
-/* defines styles for each card */
+#game {
+	background: #9c9;
+	padding: 5px;
+}
+
+/* defines the perspective view and dimension of each card. */
 .card {
 	width: 80px;
 	height: 120px;
-	margin: 20px;
-	background: #efefef;
-	position: absolute;
+	margin: 8px;
 	-webkit-transition: all 1s linear;
 }
+
+.face {
+	border-radius: 10px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+
+	-moz-transition: all .3s;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+
+	-moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.front {
+	background: #966;
+
+	/* ensure the front face on top of back face */
+	z-index: 10;
+}
+
+.back {
+	background: #eaa;
+
+	-moz-transform: rotate3d(0,1,0,-180deg);
+	-webkit-transform: rotate3d(0,1,00,-180deg);
+	transform: rotate3d(0,1,0,-180deg);
+
+	/* ensure the back face is below the front face */
+	z-index: 8;
+}
+
+.card-flipped .front {
+	-moz-transform: rotate3d(0,1,0,180deg);
+	-webkit-transform:rotate3d(0,1,0,180deg);
+	transform: rotate3d(0,1,0,180deg);
+
+	/* ensure that front face is below the back face */
+	z-index: 8;
+}
+
+.card-flipped .back {
+	-moz-transform: rotate3d(0,1,0,0deg);
+	-webkit-transform: rotate3d(0,1,0,0deg);
+	transform: rotate3d(0,1,0,0deg);
+
+	/* ensure that back face is on top of the frint face */
+}
+
+/* define the face graphics of the card */
+/* cardAA stands for Spade A */
+/* card A10 stands for Spade 10 */
+/* card AK stands for Spade K */
+/* cardB_ stands for Heart */
+/* cardC_ stands for Club */
+/* cardD_ stands for Diamond */
 
 /* set the card to corresponding playing card graphics */
 .cardAK {
