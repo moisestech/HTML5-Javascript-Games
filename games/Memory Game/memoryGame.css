@@ -2,6 +2,8 @@ body {
 	text-align: center;
 	background: #a46740 url(imgs/bg.jpg);
 	color: #ccc;
+
+	font-family: 'Droid Serif', arial, serif;
 }
 
 a, a:visited {
