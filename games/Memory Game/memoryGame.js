@@ -26,9 +26,10 @@
 })*/
 
 $(function(){
-	$("cards").children().each(function(index) {
+	$("#cards").children().each(function(index) {
 		//listen the click event on each card DIV element.
 		$(this).click(function(){
+			console.log(this + "click");
 			//add the class "card-flipped".
 			// the browser will animate the styles between current
 			//state and card-flipped state.
