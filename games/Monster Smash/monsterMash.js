@@ -22,8 +22,9 @@
 
 var monster = {
 	// The monster's image
-	image: "imgs/frames.png",
+	image: "imgs/monsterTileSheet.png",
 	size: 128,
+	columns: 3,
 
 	// The numbers of the animation frames and the starting frame
 	numberOfFrames: 5,
@@ -39,8 +40,9 @@ var monster = {
 	updateAnimation: function() {
 		// Use the currentFrame to find the correct section
 		// of the tilesheet to display
-		this.sourceX = this.currentFrame * this.size;
-		this.sourceY = 0;
+		this.sourceX = Math.floor(this.currentFrame % this.columns) * this.size;
+		this.sourceY = Math.floor(this.currentFrame / this.columns) * this.size;
+
 
 		// Increase currentFrame by 1 if it's no greater
 		// than the total number of frames
