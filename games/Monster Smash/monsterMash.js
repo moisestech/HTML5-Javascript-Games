@@ -21,6 +21,9 @@
 
 
 var monster = {
+	// The monster's image
+	image: "imgs/monsterStates.png",
+
 	//Define the monster's states
 	NORMAL: 0,
 	SCARED: 1,
@@ -29,19 +32,53 @@ var monster = {
 	state: 0
 };
 
-console.log("monster's initial state: " + monster.state);
+// Set up the canvas and drawing surface
+var canvas = document.querySelector("canvas");
+var drawingSurface = canvas.getContext("2d");
 
-// Change the monster's state by pressing a key
+// Load the monster's image
+var monsterImage = new Image();
+monsterImage.addEventListener("load", render, false);
+monsterImage.src = monster.image;
+
+// Change the monsters state by pressing and releasing a key
 window.addEventListener("keydown", keydownHandler, false);
+window.addEventListener("keyup", keyupHandler, false);
 
-function keydownHandler (event){
-	// Change the monster's state
+function keydownHandler(event) {
+	// When a key is released, change the
+	// monster's state to SCARED and render it
 	monster.state = monster.SCARED;
-
-	//Display the new state
-	console.log("The monster's new state: " + monster.state);
+	render();
 }
 
+function keyupHandler(event) {
+	// When a key is released, change the
+	// monster's state to NORMAL and render it
+	monster.state = monster.NORMAL;
+	render();
+}
 
+function render() {
+	// Render the correct state
+	switch(monster.state) {
+		case monster.NORMAL:
+			drawingSurface.drawImage (
+				monsterImage,
+				0, 0, 64, 64,
+				0, 0, 64, 64
+			);
+			break;
+
+		case monster.SCARED:
+			drawingSurface.drawImage (
+				monsterImage,
+				64, 0, 64, 64,
+				0, 0, 64, 64
+			);
+			break;
+				
+	}
+}
 
 
