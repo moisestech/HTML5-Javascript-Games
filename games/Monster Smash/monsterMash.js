@@ -43,42 +43,30 @@ monsterImage.src = monster.image;
 
 // Change the monsters state by pressing and releasing a key
 window.addEventListener("keydown", keydownHandler, false);
-window.addEventListener("keyup", keyupHandler, false);
 
 function keydownHandler(event) {
 	// When a key is released, change the
 	// monster's state to SCARED and render it
+	becomeScared();
+}
+
+function becomeScared() {
 	monster.state = monster.SCARED;
+	setTimeout(becomeNormal, 1000);
 	render();
 }
 
-function keyupHandler(event) {
-	// When a key is released, change the
-	// monster's state to NORMAL and render it
+function becomeNormal() {
 	monster.state = monster.NORMAL;
 	render();
 }
 
 function render() {
-	// Render the correct state
-	switch(monster.state) {
-		case monster.NORMAL:
-			drawingSurface.drawImage (
-				monsterImage,
-				0, 0, 64, 64,
-				0, 0, 64, 64
-			);
-			break;
-
-		case monster.SCARED:
-			drawingSurface.drawImage (
-				monsterImage,
-				64, 0, 64, 64,
-				0, 0, 64, 64
-			);
-			break;
-				
-	}
+	drawingSurface.drawImage (
+		monsterImage,
+		64 * monster.state, 0, 64, 64,
+		0, 0, 64, 64
+	);
 }
 
 
