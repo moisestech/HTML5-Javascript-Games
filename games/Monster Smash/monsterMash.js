@@ -39,30 +39,64 @@ var monster = {
 	// A variable to control the direction of the loop
 	forward: true,
 
+	// States
+	hiding: 0,
+	jumping: 1,
+	state: this.hiding,
+
+	// A property to store the random time
+	waitTime: undefined,
+
+	// A method to find a random animation time
+	findWaitTime: function() {
+		this.waitTime = Math.ceil(Math.random() * 60);
+	},
+
 	// The monster's updateAnimation method
 	updateAnimation: function() {
+		// Figure out the monster's state
+		if (this.waitTime > 0 || this.waitTime === undefined) {
+			this.state = this.hiding;
+		} else {
+			this.state = this.jumping;
+		}
+
+		// Switch the monster's action based on its state
+		switch (this.state) {
+			case this.hiding:
+				this.currentFrame = 0;
+				this.waitTime--;
+				break;
+
+			case this.jumping:
+				// If the last frame has been reached, set forward to false
+				if (this.currentFrame === this.numberOfFrames) {
+					this.forward = false;
+				}
+
+				// If the first frame has been reached, set forward to true
+				if (this.currentFrame === 0 && this.forward === false) {
+					// Set forward to true, find a new waitTime,
+					// set the state of hiding and break the switch statement
+					this.forward = true;
+					this.findWaitTime();
+					this.state = this.hiding;
+					break;
+				}
+
+				// Add 1 to currentFrame if forward is true, subtract 1 it's false
+				if (this.forward) {
+					this.currentFrame++;
+				} else {
+					this.currentFrame--;
+				}
+		}
+
 		// Use the currentFrame to find the correct section
 		// of the tilesheet to display
 		this.sourceX = Math.floor(this.currentFrame % this.columns) * this.size;
 		this.sourceY = Math.floor(this.currentFrame / this.columns) * this.size;
 
-
-		// If the last frame has been reached, set forward to false
-		if (this.currentFrame === this.numberOfFrames) {
-			this.forward = false;
-		}
-
-		// If the first frame has been reached, set forward to true
-		if (this.currentFrame === 0) {
-			this.forward = true;
-		}
-
-		// Add 1 to currentFrame if forward is true, subtract 1 if it's false
-		if (this.forward) {
-			this.currentFrame++;
-		} else {
-			this.currentFrame--;
-		}
 	}
 };
 
@@ -76,6 +110,9 @@ image.addEventListener("load", loadHandler, false);
 image.src = monster.image;
 
 function loadHandler() {
+	// Find a random wait time
+	monster.findWaitTime();
+
 	// Start the animation
 	updateAnimation();
 }
