@@ -36,6 +36,9 @@ var monster = {
 	sourceX: 0,
 	sourceY: 0,
 
+	// A variable to control the direction of the loop
+	forward: true,
+
 	// The monster's updateAnimation method
 	updateAnimation: function() {
 		// Use the currentFrame to find the correct section
@@ -44,10 +47,21 @@ var monster = {
 		this.sourceY = Math.floor(this.currentFrame / this.columns) * this.size;
 
 
-		// Increase currentFrame by 1 if it's no greater
-		// than the total number of frames
-		if (this.currentFrame < this.numberOfFrames) {
+		// If the last frame has been reached, set forward to false
+		if (this.currentFrame === this.numberOfFrames) {
+			this.forward = false;
+		}
+
+		// If the first frame has been reached, set forward to true
+		if (this.currentFrame === 0) {
+			this.forward = true;
+		}
+
+		// Add 1 to currentFrame if forward is true, subtract 1 if it's false
+		if (this.forward) {
 			this.currentFrame++;
+		} else {
+			this.currentFrame--;
 		}
 	}
 };
