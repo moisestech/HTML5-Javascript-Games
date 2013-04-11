@@ -22,51 +22,67 @@
 
 var monster = {
 	// The monster's image
-	image: "imgs/monsterStates.png",
+	image: "imgs/frames.png",
+	size: 128,
 
-	//Define the monster's states
-	NORMAL: 0,
-	SCARED: 1,
+	// The numbers of the animation frames and the starting frame
+	numberOfFrames: 5,
+	currentFrame: 0,
 
-	//Set its initial state
-	state: 0
+	// Properties of the animation cell's x and
+	// y positions on the tile sheet.
+	// They're 0 when this object first loads
+	sourceX: 0,
+	sourceY: 0,
+
+	// The monster's updateAnimation method
+	updateAnimation: function() {
+		// Use the currentFrame to find the correct section
+		// of the tilesheet to display
+		this.sourceX = this.currentFrame * this.size;
+		this.sourceY = 0;
+
+		// Increase currentFrame by 1 if it's no greater
+		// than the total number of frames
+		if (this.currentFrame < this.numberOfFrames) {
+			this.currentFrame++;
+		}
+	}
 };
 
 // Set up the canvas and drawing surface
 var canvas = document.querySelector("canvas");
 var drawingSurface = canvas.getContext("2d");
 
-// Load the monster's image
-var monsterImage = new Image();
-monsterImage.addEventListener("load", render, false);
-monsterImage.src = monster.image;
+// Load the animation tile sheet
+var image = new Image();
+image.addEventListener("load", loadHandler, false);
+image.src = monster.image;
 
-// Change the monsters state by pressing and releasing a key
-window.addEventListener("keydown", keydownHandler, false);
-
-function keydownHandler(event) {
-	// When a key is released, change the
-	// monster's state to SCARED and render it
-	becomeScared();
+function loadHandler() {
+	// Start the animation
+	updateAnimation();
 }
 
-function becomeScared() {
-	monster.state = monster.SCARED;
-	setTimeout(becomeNormal, 1000);
-	render();
-}
+function updateAnimation() {
+	// Set a timer to call updateAnimation every 300 milliseconds
+	setTimeout(updateAnimation, 300);
 
-function becomeNormal() {
-	monster.state = monster.NORMAL;
+	// Update the monster's animation frames
+	monster.updateAnimation();
+
+	// Render the animation
 	render();
 }
 
 function render() {
-	drawingSurface.drawImage (
-		monsterImage,
-		64 * monster.state, 0, 64, 64,
-		0, 0, 64, 64
+	// Clear the canvas of any previous frames
+	drawingSurface.clearRect(0, 0, canvas.width, canvas.height);
+
+	// Draw the monster's current animation frame
+	drawingSurface.drawImage(
+		image,
+		monster.sourceX, monster.sourceY, monster.size, monster.size,
+		0, 0, monster.size, monster.size
 	);
 }
-
-
