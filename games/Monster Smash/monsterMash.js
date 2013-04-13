@@ -42,7 +42,12 @@ var monster = {
 	// States
 	hiding: 0,
 	jumping: 1,
+	hit: 2,
 	state: this.hiding,
+
+	// Properties needed to help reset the animation
+	timeToReset: 9,
+	resetCounter: 0,
 
 	// A property to store the random time
 	waitTime: undefined,
@@ -54,6 +59,18 @@ var monster = {
 
 	// The monster's updateAnimation method
 	updateAnimation: function() {
+		// Use the currentFrame to find the correct section
+		// of the tilesheet to display
+		this.sourceX = Math.floor(this.currentFrame % this.columns) * this.size;
+		this.sourceY = Math.floor(this.currentFrame / this.columns) * this.size;
+
+		// Figure out the monster's state
+		if (this.state !== this.hit) {
+			if (this.waitTime > 0 || this.waitTime === undefined) {
+				this.state = this.hiding;
+			}
+		}
+
 		// Figure out the monster's state
 		if (this.waitTime > 0 || this.waitTime === undefined) {
 			this.state = this.hiding;
@@ -91,11 +108,6 @@ var monster = {
 					this.currentFrame--;
 				}
 		}
-
-		// Use the currentFrame to find the correct section
-		// of the tilesheet to display
-		this.sourceX = Math.floor(this.currentFrame % this.columns) * this.size;
-		this.sourceY = Math.floor(this.currentFrame / this.columns) * this.size;
 
 	}
 };
