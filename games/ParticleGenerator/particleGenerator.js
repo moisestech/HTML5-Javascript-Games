@@ -5,6 +5,22 @@ var drawingSurface = canvas.getContext("2d");
 //create an array to store particles in
 var particleArray = [];
 
+// create a random positive or negative integer
+function randomPlusMinusX() {
+	var randomPosNegX = Math.round(Math.random()) * 2 -1;
+	return randomPosNegX;
+}
+
+function randomPlusMinusY() {
+	var randomPosNegY = Math.round(Math.random()) * 2 -1;
+	return randomPosNegY;
+}
+
+
+
+
+//console.log("Speed: " + particle.xSpeed);
+
 
 function draw() {
 	// Create a particle Object
@@ -13,25 +29,9 @@ function draw() {
 		xPosition: 150,
 		yPosition: 150,
 
-		// create a random positive or negative integer
-		randomPlusMinusX: Math.round(Math.random()) * 2 -1,
-		randomPlusMinusY: Math.round(Math.random()) * 2 -1,
-
-		// store the XSpeed and YSpeed of the square in a variable
-		xSpeed: undefined,
-		ySpeed: undefined,
-
-		// calculate xSpeed and ySpeed
-		findXSpeed: function() {
-			this.xSpeed = Math.round(Math.random()*10) * this.randomPlusMinusX;
-			return this.xSpeed;
-		},
-		
-
-		findYSpeed: function() {
-			this.ySpeed = Math.round(Math.random()*10) * this.randomPlusMinusY;
-			return this.ySpeed;
-		}
+		// store the speed of the square in a variable
+		xSpeed: Math.floor(Math.random()*10) * randomPlusMinusX(),
+		ySpeed: Math.floor(Math.random()*10) * randomPlusMinusY()
 	}
 
 	particleArray.push(particle);
@@ -46,8 +46,8 @@ function draw() {
 		drawingSurface.fillStyle = "cyan";
 		drawingSurface.fillRect ( particle.xPosition, particle.yPosition, 20, 20);
 		// create a sqaure on pixel over every time
-		particle.xPosition += particle.findXSpeed();
-		particle.yPosition += particle.findYSpeed();
+		particle.xPosition += particle.xSpeed;
+		particle.yPosition += particle.ySpeed;
 	}
 
 }
