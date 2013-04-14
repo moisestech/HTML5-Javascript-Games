@@ -28,10 +28,11 @@ function draw() {
 		// store the X and y position in a varible
 		xPosition: 150,
 		yPosition: 150,
+		size: 20,
 
 		// store the speed of the square in a variable
-		xSpeed: Math.floor(Math.random()*10) * randomPlusMinusX(),
-		ySpeed: Math.floor(Math.random()*10) * randomPlusMinusY()
+		xSpeed: Math.floor(Math.random()*10 + 5) * randomPlusMinusX(),
+		ySpeed: Math.floor(Math.random()*10 + 5) * randomPlusMinusY()
 	}
 
 	particleArray.push(particle);
@@ -43,11 +44,14 @@ function draw() {
 	for (var i = 0; i<particleArray.length; i++) {
 		particle = particleArray[i];
 
-		drawingSurface.fillStyle = "cyan";
-		drawingSurface.fillRect ( particle.xPosition, particle.yPosition, 20, 20);
-		// create a sqaure on pixel over every time
+		drawingSurface.fillStyle = "red";
+		drawingSurface.fillRect ( particle.xPosition, particle.yPosition, particle.size, particle.size);
+		// create a square on pixel over every time
 		particle.xPosition += particle.xSpeed;
 		particle.yPosition += particle.ySpeed;
+
+		// Shrink over time
+		particle.size = particle.size * 0.9;
 	}
 
 }
