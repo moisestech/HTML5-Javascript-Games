@@ -1,0 +1,9 @@
+body {
+	width: 100%;
+}
+
+#screen {
+	position: relative;
+	left: 50%;
+	margin-left: -300px;
+}

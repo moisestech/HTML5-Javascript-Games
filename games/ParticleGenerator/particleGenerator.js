@@ -28,9 +28,9 @@ function draw() {
 		// Create a particle Object
 	var particle = {
 		// store the X and y position in a varible
-		xPosition: 150,
-		yPosition: 150,
-		size: 10,
+		xPosition: 300,
+		yPosition: 300,
+		size: 20,
 
 		// store the speed of the square in a variable
 		xSpeed: Math.random()*5 * randomPlusMinusX(),
@@ -41,10 +41,10 @@ function draw() {
 	}
 
 	
-	console.log(particleArray.length);
+	//console.log(particleArray.length);
 
 	// to create an animation the screen is cleared beofre reDraw
-	drawingSurface.clearRect(0, 0, 300, 300);
+	drawingSurface.clearRect(0, 0, 600, 600);
 
 	//create a loop to draw each item in the particleArray
 	for (var i = 0; i<particleArray.length; i++) {
@@ -61,7 +61,7 @@ function draw() {
 		particle.yPosition += particle.ySpeed;
 
 		// Shrink over time
-		particle.size = particle.size * 0.96;
+		particle.size = particle.size * 0.98;
 
 	}
 
