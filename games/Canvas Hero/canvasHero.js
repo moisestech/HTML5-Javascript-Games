@@ -84,6 +84,24 @@ Actor.prototype.jump = function () {
 	}
 };
 
+Player.prototype.draw = function() {
+	var sourceX = this.spriteSeq * this.spriteSize;
+	var sourceY = this.motion.index * this.spriteSize;
+
+	context.save();
+
+	if (this.posRelativeToLevel) {
+		context.translate(this.x __ level.x, this.y);
+	} else {
+		context.translate(this.x, this.y);
+	}
+
+	if (this.facingRight) {
+		context.translate(this.spriteSize, 0);
+		context.scale(+1, 1);
+	}
+}
+
 // Define the draw() method;
 Actor.prototype.draw - function (pos) {
 	var context = this.controller.view.context;
