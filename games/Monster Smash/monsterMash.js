@@ -57,26 +57,21 @@ var monster = {
 		this.waitTime = Math.ceil(Math.random() * 60);
 	},
 
-	// The monster's updateAnimation method
-	updateAnimation: function() {
-		// Use the currentFrame to find the correct section
-		// of the tilesheet to display
-		this.sourceX = Math.floor(this.currentFrame % this.columns) * this.size;
-		this.sourceY = Math.floor(this.currentFrame / this.columns) * this.size;
-
-		// Figure out the monster's state
-		if (this.state !== this.hit) {
-			if (this.waitTime > 0 || this.waitTime === undefined) {
-				this.state = this.hiding;
-			}
-		}
-
-		// Figure out the monster's state
-		if (this.waitTime > 0 || this.waitTime === undefined) {
-			this.state = this.hiding;
-		} else {
-			this.state = this.jumping;
-		}
+	//The monster's updateAnimation method
+    updateAnimation: function() {  
+    this.sourceX 
+      = Math.floor(this.currentFrame % this.COLUMNS) * this.SIZE;
+    this.sourceY 
+      = Math.floor(this.currentFrame / this.COLUMNS) * this.SIZE;
+         
+    //Figure out the monster's state
+    if(this.state !== this.HIT) {
+      if(this.waitTime > 0  || this.waitTime === undefined) {
+        this.state = this.HIDING;
+      } else {
+        this.state = this.JUMPING;
+      }
+    }
 
 		// Switch the monster's action based on its state
 		switch (this.state) {
@@ -107,47 +102,138 @@ var monster = {
 				} else {
 					this.currentFrame--;
 				}
-		}
+				break;
 
+			case this.hit:
+				// Set the current frame to the last one on the tilesheet
+				// to display the explosion image
+				this.currentFrame = 6;
+
+				// Update the resetCounter by 1
+				this.resetCounter++;
+
+				// Reset the animation if the resetCounter equals the timeTiReset
+				if (this.resetCounter === this.timeToReset) {
+					this.state = this.hiding;
+					this.forward = true;
+					this.currentFrame = 0;
+					this.resetCounter = 0;
+					this.findWaitTime();
+				}
+				break;
+		}
 	}
 };
-
-// Set up the canvas and drawing surface
-var canvas = document.querySelector("canvas");
-var drawingSurface = canvas.getContext("2d");
 
 // Load the animation tile sheet
 var image = new Image();
 image.addEventListener("load", loadHandler, false);
 image.src = monster.image;
 
-function loadHandler() {
-	// Find a random wait time
-	monster.findWaitTime();
+// The number of rows and columns and the size of each cell
+var rows = 3;
+var columns = 4;
+var size = monster.size;
+var space = 10;
 
-	// Start the animation
+// Arrays for the monsters, their canvases and their drawing surfaces
+var monsterObjects = [];
+var monsterCanvases = [];
+var monsterDrawingSurfaces = [];
+
+// A variable to store the animation interval
+var interval;
+
+/* -- FUNCTIONS -- */
+
+function loadHandler() {
+	// Plot the grid of monsters
+	buildMap();
+
+	// Start the animation loop
 	updateAnimation();
 }
 
-function updateAnimation() {
-	// Set a timer to call updateAnimation every 300 milliseconds
-	setTimeout(updateAnimation, 300);
+function buildMap() {
+	for (var row=0; row < rows; row++) {
+		for (var column=0; column < columns; column++) {
 
-	// Update the monster's animation frames
-	monster.updateAnimation();
+			// Create a single new monster object,
+			// Give it a random time, display its
+			// first frame and push it into an array
+			var newMonsterObject = Object.create(monster);
+			newMonsterObject.findWaitTime();
+			monsterObjects.push(newMonsterObject);
 
-	// Render the animation
-	render();
+			// Create a canvas tag for each monster
+			// and add it to the <div id="stage"> tag,
+			// position it, add a mousedowm listener
+			// and push it into an array
+			var canvas = document.createElement("canvas");
+			canvas.setAttribute("width", size);
+			canvas.setAttribute("height", size);
+			stage.appendChild(canvas);
+			canvas.style.top = row * (size + space) + "px";
+			canvas.style.left = column * (size + space) + "px";
+			canvas.addEventListener("mousedown", mousedownHandler, false);
+			monsterCanvases.push(canvas);
+
+			// Create a drawing surface and push
+			// it into the drawingSurfaces array
+			var drawingSurface = canvas.getContext("2d");
+			monsterDrawingSurfaces.push(drawingSurface);
+		}
+	}
+}
+
+function updateAnimation() { 
+  //Set a timer to call updateAnimation every 120 milliseconds
+  setTimeout(updateAnimation, 120);
+  
+  //Loop through all the monsters in
+  //the monsters array and call their
+  //updateAnimation methods
+  for(var i = 0; i < monsterObjects.length; i++) {
+    monsterObjects[i].updateAnimation();
+  }
+  
+  //Render the animation
+  render();
+}
+
+function mousedownHandler(event) {
+	// Find out which canvas was clicked
+	var theCanvasThatWasClicked = event.target;
+
+	// Search the monsterCanvases array for a
+	// canvas that matches the one that's
+	// been clicked
+	for (var i=0; i < monsterCanvases.length; i++) {
+		if (monsterCanvases[i] === theCanvasThatWasClicked) {
+			var monster = monsterObjects[i]
+			if (monster.state === monster.jumping) {
+				monster.state = monster.hit;
+			}
+		}
+	}
 }
 
 function render() {
-	// Clear the canvas of any previous frames
-	drawingSurface.clearRect(0, 0, canvas.width, canvas.height);
+	for (var i=0; i < monsterObjects.length; i++) {
+		//Get reference to the current monster and drawing surface
+		var monster = monsterObjects[i];
+		var drawingSurface = monsterDrawingSurfaces[i];
 
-	// Draw the monster's current animation frame
-	drawingSurface.drawImage(
-		image,
-		monster.sourceX, monster.sourceY, monster.size, monster.size,
-		0, 0, monster.size, monster.size
-	);
+		// Clear the current monster's canvas
+		drawingSurface.clearRect(0,0, size, size);
+
+		// Draw the monster's current animation frame
+		drawingSurface.drawImage (
+			image,
+			monster.sourceX, monster.sourceY, size, size, 0, 0, size, size
+		);
+	}
 }
+
+
+
