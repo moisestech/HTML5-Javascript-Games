@@ -62,69 +62,65 @@ var monster = {
     	this.sourceX = Math.floor(this.currentFrame % this.COLUMNS) * this.SIZE;
     	this.sourceY = Math.floor(this.currentFrame / this.COLUMNS) * this.SIZE;
          
-    //Figure out the monster's state
-    if(this.state !== this.HIT) {
-    	if(this.waitTime > 0  || this.waitTime === undefined) {
-        	this.state = this.HIDING;
-      	} else {
-        	this.state = this.JUMPING;
-      	}
-    }
-    
-    //Change the behaviour of the animation based on the state
-    switch(this.state) {
-    	case this.HIDING:
-        	this.currentFrame = 0;
-        	this.waitTime--;
-        	break;
-        
-      	case this.JUMPING:
-        	//If the last frame has been reached, set forward to false
-    		if(this.currentFrame === this.numberOfFrames) {
-          		this.forward = false;
-        	}
+	    //Figure out the monster's state
+	    if(this.state !== this.HIT) {
+	    	if(this.waitTime > 0  || this.waitTime === undefined) {
+	        	this.state = this.HIDING;
+	      	} else {
+	        	this.state = this.JUMPING;
+	      	}
+	    }
+	    
+	    //Change the behaviour of the animation based on the state
+	    switch(this.state) {
+	    	case this.HIDING:
+	        	this.currentFrame = 0;
+	        	this.waitTime--;
+	        	break;
+	        
+	      	case this.JUMPING:
+	        	//If the last frame has been reached, set forward to false
+	    		if(this.currentFrame === this.numberOfFrames) {
+	          		this.forward = false;
+	        	}
 
-        	//If the first frame has been reached, set forward to true
-        	if(this.currentFrame === 0 && this.forward === false) {
-          //Set forward to true, find a new waitTime,
-          //set the state to HIDING and break the switch statement
-          this.forward = true;
-          this.findWaitTime();
-          this.state = this.HIDING;
-          break;
-        }
+	        	//If the first frame has been reached, set forward to true
+	        	if(this.currentFrame === 0 && this.forward === false) {
+	          		//Set forward to true, find a new waitTime,
+	          		//set the state to HIDING and break the switch statement
+	         		this.forward = true;
+	          		this.findWaitTime();
+	          		this.state = this.HIDING;
+	          		break;
+	        	}
 
-        //Add 1 to currentFrame if forward is true, subtract 1 if it's false
-    	  if(this.forward)
-      	{
-      	  this.currentFrame++;
-      	}
-      	else
-      	{
-      	  this.currentFrame--;
-      	}
-      	break;
-        
-      case this.HIT:
-		    //Set the current frame to the last one on the tilesheet
-		    //to display the explosion image
-        this.currentFrame = 6;
-        
-        //Update the resetCounter by 1
-		    this.resetCounter++;
-		    
-		    //Reset the animation if the resetCounter equals the timeToReset
-		    if(this.resetCounter === this.timeToReset)
-		    {
-		      this.state = this.HIDING;
-          this.forward = true;
-          this.currentFrame = 0;
-          this.resetCounter = 0;
-          this.findWaitTime();
-		    }
-        break;
-    }
-  }
+	        	//Add 1 to currentFrame if forward is true, subtract 1 if it's false
+	    	  	if(this.forward) {
+	      	  		this.currentFrame++;
+	      		} else {
+	      	  		this.currentFrame--;
+	      	  	}
+	      		break;
+	        
+	      	case this.HIT:
+			    //Set the current frame to the last one on the tilesheet
+			    //to display the explosion image
+	        	this.currentFrame = 6;
+	        
+	        	//Update the resetCounter by 1
+			    this.resetCounter++;
+			    
+			    //Reset the animation if the resetCounter equals the timeToReset
+			    if(this.resetCounter === this.timeToReset) {
+			      	this.state = this.HIDING;
+	          		this.forward = true;
+	          		this.currentFrame = 0;
+	          		this.resetCounter = 0;
+	          		this.findWaitTime();
+			    	}
+	        	break;
+    	}
+  	}
 };
 
 // Load the animation tile sheet
