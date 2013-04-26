@@ -59,11 +59,11 @@ var monster = {
 
     //The monster's updateAnimation method
     updateAnimation: function() {  
-    	this.sourceX = Math.floor(this.currentFrame % this.COLUMNS) * this.SIZE;
-    	this.sourceY = Math.floor(this.currentFrame / this.COLUMNS) * this.SIZE;
+    	this.sourceX = Math.floor(this.currentFrame % this.columns) * this.size;
+    	this.sourceY = Math.floor(this.currentFrame / this.columns) * this.size;
          
 	    //Figure out the monster's state
-	    if(this.state !== this.HIT) {
+	    if(this.state !== this.hit) {
 	    	if(this.waitTime > 0  || this.waitTime === undefined) {
 	        	this.state = this.hiding;
 	      	} else {
@@ -78,7 +78,7 @@ var monster = {
 	        	this.waitTime--;
 	        	break;
 	        
-	      	case this.JUMPING:
+	      	case this.jumping:
 	        	//If the last frame has been reached, set forward to false
 	    		if(this.currentFrame === this.numberOfFrames) {
 	          		this.forward = false;
@@ -153,7 +153,7 @@ function loadHandler() {
 
 function buildMap() {
   for(var row = 0; row < rows; row++) {	
-    for(var column = 0; column < COLUMNS; column++) { 
+    for(var column = 0; column < columns; column++) { 
       
       //Create a single new monster object,
       //Give it a random time, display its
@@ -171,7 +171,7 @@ function buildMap() {
       canvas.setAttribute("height", size);
       stage.appendChild(canvas);
       canvas.style.top = row * (size + space) + "px";
-      canvas.style.left = column * (size + SPACE) + "px";
+      canvas.style.left = column * (size + space) + "px";
       canvas.addEventListener("mousedown", mousedownHandler, false);
       monsterCanvases.push(canvas);
       
@@ -210,8 +210,8 @@ function mousedownHandler(event)
   for(var i = 0; i < monsterCanvases.length; i++) {
     if(monsterCanvases[i] === theCanvasThatWasClicked) {
       var monster = monsterObjects[i]
-      if(monster.state === monster.JUMPING) {
-        monster.state = monster.HIT;      
+      if(monster.state === monster.jumping) {
+        monster.state = monster.hit;      
       }
     }
   }
@@ -224,14 +224,14 @@ function render() {
     var drawingSurface = monsterDrawingSurfaces[i];
        
     //Clear the current monster's canvas
-    drawingSurface.clearRect(0, 0, SIZE, SIZE);
+    drawingSurface.clearRect(0, 0, size, size);
     
     //Draw the monster's current animation frame 
     drawingSurface.drawImage
     (
       image, 
-      monster.sourceX, monster.sourceY, SIZE, SIZE, 
-      0, 0, SIZE, SIZE
+      monster.sourceX, monster.sourceY, size, size, 
+      0, 0, size, size
     );
   }
 }
