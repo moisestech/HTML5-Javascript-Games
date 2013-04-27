@@ -19,7 +19,30 @@
 	drawingSurface.drawImage(monsterImage, 0, 0);
 }*/
 
+// The gameTimer object
+var gameTimer = {
+	time: 0,
+	interval: undefined,
+	
+	start:function() {
+		var self = this;
+		this.interval = setInterval(function(){self.tick();}, 1000);
+	},
 
+	tick: function() {
+		this.time--;
+	},
+
+	stop: function() {
+		clearInterval(this.interval);
+	},
+
+	reset: function() {
+		this.time = 0;
+	}
+};
+
+// The monster object
 var monster = {
 	// The monster's image
 	image: "imgs/monsterTileSheet.png",
@@ -138,6 +161,12 @@ var monsterObjects = [];
 var monsterCanvases = [];
 var monsterDrawingSurfaces = [];
 
+// Game variables
+var monstersHit = 0;
+
+// Get a reference to the output
+var output = document.querySelector("#output");
+
 // A variable to store the animation interval
 var interval;
 
@@ -146,6 +175,10 @@ var interval;
 function loadHandler() { 
   //Plot the grid of monsters
   buildMap();
+
+  // Start the game timer
+  gameTimer.time = 30;
+  gameTimer.start();
   
   //Start the animation loop
   updateAnimation();
@@ -184,37 +217,57 @@ function buildMap() {
 }
 
 function updateAnimation() { 
-  //Set a timer to call updateAnimation every 120 milliseconds
-  setTimeout(updateAnimation, 120);
+	// Call updateAnimation every 120 milliseconds
+	// while the timer is greater than zero.
+	if (gameTimer.time > 0) {
+		setTimeout(updateAnimation, 120);
+	}
   
-  //Loop through all the monsters in
-  //the monsters array and call their
-  //updateAnimation methods
+	//Loop through all the monsters in
+	//the monsters array and call their
+	//updateAnimation methods
   
-  for(var i = 0; i < monsterObjects.length; i++) {
-    monsterObjects[i].updateAnimation();
-  }
+	for(var i = 0; i < monsterObjects.length; i++) {
+	  monsterObjects[i].updateAnimation();
+	}
+
+	// Check for the end of the game
+	if (gameTimer.time === 0) {
+		endGame();
+	}
   
-  //Render the animation
-  render();
+	//Render the animation
+	render();
 }
 
-function mousedownHandler(event)
-{
-  //Find out which canvas was clicked
-  var theCanvasThatWasClicked = event.target;
+function endGame() {
+	// Stop the gameTimer
+	gameTimer.stop();
+
+	// Remove the mousedown event listerner from the
+	// canvas tagas so that they can't be clicked.
+	for (var i = 0; i < monsterCanvases.length; i ++) {
+		var canvas = monsterCanvases[i];
+		canvas.removeEventListener("mousedown", mousedownHandler, false);
+	}
+}
+
+function mousedownHandler(event) {
+	//Find out which canvas was clicked
+  	var theCanvasThatWasClicked = event.target;
   
-  //Search the monsterCanvases array for a
-  //canvas that matches the one that's 
-  //been clicked
-  for(var i = 0; i < monsterCanvases.length; i++) {
-    if(monsterCanvases[i] === theCanvasThatWasClicked) {
-      var monster = monsterObjects[i]
-      if(monster.state === monster.jumping) {
-        monster.state = monster.hit;      
-      }
-    }
-  }
+  	//Search the monsterCanvases array for a
+  	//canvas that matches the one that's 
+  	//been clicked
+  	for(var i = 0; i < monsterCanvases.length; i++) {
+    	if(monsterCanvases[i] === theCanvasThatWasClicked) {
+      		var monster = monsterObjects[i]
+      		if(monster.state === monster.jumping) {
+        		monster.state = monster.hit;
+        		monstersHit++;    
+      		}
+    	}
+  	}
 }
 
 function render() {
@@ -234,6 +287,9 @@ function render() {
       0, 0, size, size
     );
   }
+
+  // Display the output
+  output.innerHTML = "Monster smashed: " + monstersHit + ", Time left: " + gameTimer.time;
 }
 
 
