@@ -53,8 +53,8 @@ body {
 
 .square {
 	position: relative;
-	width: 20%;
-	height: 20%;
+	width: 60px;
+	height: 60px;
 	display: inline-block;
 	text-align: center;
 	border-top: none;
@@ -94,8 +94,8 @@ body {
 
 #reset {
 	padding: 4px;
-	width: 120px;
-	height: 15px;
+	width: 30px;
+	height: 30px;
 	border: 1px solid black
 }
 

@@ -246,7 +246,7 @@ function resetGame () {
 	//get board childNodes
 	var boardNodes = document.getElementById("board").childNodes;
 	var output = document.getElementById("output");
-	//output.innerHTML = "reset";
+	output.innerHTML = "reset";
 
 	if (output) {
 		output.parentNode.removeChild(output);
