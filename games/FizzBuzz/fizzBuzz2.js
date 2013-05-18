@@ -14,9 +14,7 @@ var fizzCount = 0;
 var buzzCount = 0;
 
 //DOM variables
-var currentNumber = document.createElement("div");
-document.body.appendChild(currentNumber);
-currentNumber.id = "currentNumber";
+var currentNumber = document.getElementById("currentNumber");
 currentNumber.innerHTML = currentFizzBuzzNumber;
 
 //add keyEvent listener
