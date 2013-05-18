@@ -5,13 +5,18 @@
 	var fizz = 37; //Left
 	var buzz = 39; //Right
 
-var currentFizzBuzzNumber = 15;
+var currentFizzBuzzNumber = 0;
 console.log(currentFizzBuzzNumber);
 
 // current FizzBuzz number
 var fizzBuzzCount = 0;
 var fizzCount = 0;
 var buzzCount = 0;
+
+//DOM variables
+var currentNumber = document.createElement("div");
+document.body.appendChild(currentNumber);
+currentNumber.innerHTML = currentFizzBuzzNumber;
 
 //add keyEvent listener
 window.addEventListener("keydown", keydownHandler, false);
@@ -25,6 +30,7 @@ function keydownHandler(event) {
 			}
 			
 			currentFizzBuzzNumber++;
+			currentNumber.innerHTML = currentFizzBuzzNumber;
 			console.log("The current number is " + currentFizzBuzzNumber);
 			break;
 
@@ -35,6 +41,7 @@ function keydownHandler(event) {
 			}
 			
 			currentFizzBuzzNumber++;
+			currentNumber.innerHTML = currentFizzBuzzNumber;
 			console.log("The current number is " + currentFizzBuzzNumber);
 			break;
 
@@ -45,6 +52,7 @@ function keydownHandler(event) {
 			}
 
 			currentFizzBuzzNumber++;
+			currentNumber.innerHTML = currentFizzBuzzNumber;
 			console.log("The current number is " + currentFizzBuzzNumber);
 			break;
 	} 
