@@ -21,16 +21,25 @@ function keydownHandler(event) {
 		case fizzBuzz:
 			fizzBuzzCount++;
 			console.log("currentFizzBuzzNumber " + fizzBuzzCount);
+			
+			currentFizzBuzzNumber++;
+			console.log("The current number is " + currentFizzBuzzNumber);
 			break;
 
 		case fizz:
 			fizzCount++;
 			console.log("currentFizzNumber " + fizzCount);
+			
+			currentFizzBuzzNumber++;
+			console.log("The current number is " + currentFizzBuzzNumber);
 			break;
 
 		case buzz:
 			buzzCount++;
 			console.log("BuzzNumber " + buzzCount);
+			
+			currentFizzBuzzNumber++;
+			console.log("The current number is " + currentFizzBuzzNumber);
 			break;
 	} 
 }
