@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'ChildPlayNormal';
+    src: url('fonts/child.eot');
+    src: url('fonts/child.eot') format('embedded-opentype'),
+         url('fonts/child.woff') format('woff'),
+         url('fonts/child.ttf') format('truetype'),
+         url('fonts/child.svg#ChildPlayNormal') format('svg');
+}
+
+#currentNumber { 
+	font-family: "ChildPlayNormal";
+	font-size: 90px;
+}
