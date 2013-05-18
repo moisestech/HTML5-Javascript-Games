@@ -5,7 +5,7 @@
 	var fizz = 37; //Left
 	var buzz = 39; //Right
 
-var currentFizzBuzzNumber = 3;
+var currentFizzBuzzNumber = 15;
 console.log(currentFizzBuzzNumber);
 
 // current FizzBuzz number
@@ -19,8 +19,10 @@ window.addEventListener("keydown", keydownHandler, false);
 function keydownHandler(event) {
 	switch (event.keyCode) {
 		case fizzBuzz:
+			if (currentFizzBuzzNumber % 3 === 0 && currentFizzBuzzNumber % 5 == 0) {
 			fizzBuzzCount++;
 			console.log("currentFizzBuzzNumber " + fizzBuzzCount);
+		}
 			
 			currentFizzBuzzNumber++;
 			console.log("The current number is " + currentFizzBuzzNumber);
