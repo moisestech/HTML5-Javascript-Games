@@ -1,10 +1,11 @@
-//global variable
+//global variables
 
 // Arrow key codes
 	var fizzBuzz = 38; //Up
 	var fizz = 37; //Left
 	var buzz = 39; //Right
 
+//Displayed number on the DOM
 var currentFizzBuzzNumber = 0;
 console.log(currentFizzBuzzNumber);
 
@@ -20,6 +21,9 @@ var totalCount = 0;
 var currentNumber = document.getElementById("currentNumber");
 currentNumber.innerHTML = currentFizzBuzzNumber;
 
+var score = document.getElementById("scoreNumber");
+score.innerHTML = totalCount;
+
 //add keyEvent listener
 window.addEventListener("keydown", keydownHandler, false);
 
@@ -31,7 +35,8 @@ function keydownHandler(event) {
 				//console.log("FizzBuzzNumber " + fizzBuzzCount);
 
 				totalCount+= 2;
-				console.log(totalCount);
+				score.innerHTML = totalCount;
+				//console.log(totalCount);
 			}
 			
 			currentFizzBuzzNumber++;
@@ -45,7 +50,8 @@ function keydownHandler(event) {
 				//console.log("FizzNumber " + fizzCount);
 				
 				totalCount++;
-				console.log(totalCount);
+				score.innerHTML = totalCount;
+				//console.log(totalCount);
 			}
 			
 			currentFizzBuzzNumber++;
@@ -59,7 +65,8 @@ function keydownHandler(event) {
 				//console.log("BuzzNumber " + buzzCount);
 
 				totalCount++;
-				console.log(totalCount);
+				score.innerHTML = totalCount;
+				//console.log(totalCount);
 			}
 
 			currentFizzBuzzNumber++;

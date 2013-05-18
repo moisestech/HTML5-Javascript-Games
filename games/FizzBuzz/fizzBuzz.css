@@ -10,6 +10,7 @@
 body {
 	height: 100%;
 	width: 100%;
+	overflow: hidden;
 
 	/* IE10 Consumer Preview */ 
 	background-image: -ms-radial-gradient(center, ellipse farthest-corner, #0DA6FF 0%, #1000EF 100%);
@@ -32,4 +33,26 @@ body {
 	font-family: "ChildPlayNormal";
 	font-size: 90px;
 	color: yellow;
+}
+
+#scoreTitle {
+	display: inline-block;
+	position: relative;
+	top: 5px;
+	left:10px;
+
+	font-family: "ChildPlayNormal";
+	font-size: 20px;
+	color: #30EF00;
+}
+
+#scoreNumber {
+	display: inline-block;
+	position: relative;
+	top: 5px;
+	left: 20px;
+
+	font-family: "ChildPlayNormal";
+	font-size: 20px;
+	color: #30EF00;
 }
