@@ -1,3 +1,17 @@
+//START SCREEN
+
+	//options
+	var gameStart = document.getElementById("buttonPosition1");
+	var gameRules = document.getElementById("buttonPosition1");
+	var gameSettings = document.getElementById("buttonPosition1");
+
+	//add clickEvent listener
+	window.addEventListener("click", keydownHandler, false);
+
+
+
+
+//GAME
 //global variables
 
 // Arrow key codes
