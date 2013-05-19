@@ -1,6 +1,9 @@
 //START SCREEN
+		// Entire Start Screen
+		var entireStartScreen = document.getElementById("startScreen");
 
 	//screen options
+		// buttons
 		var gameStart = document.getElementById("buttonPositioning1");
 		var gameRules = document.getElementById("buttonPositioning2");
 		var gameSettings = document.getElementById("buttonPositioning3");
@@ -14,6 +17,9 @@
 	/* -- START SCREEN functions -- */
 	function startHandler() {
 		console.log("Start screen button clicked!");
+		entireStartScreen.style.display = "none";
+
+
 	}
 
 	function rulesHandler() {
