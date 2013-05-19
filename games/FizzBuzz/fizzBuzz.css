@@ -7,6 +7,15 @@
          url('fonts/child.svg#ChildPlayNormal') format('svg');
 }
 
+@font-face {
+    font-family: 'BubbleBoy2Regular';
+    src: url('bubbleboy2.eot');
+    src: url('bubbleboy2.eot') format('embedded-opentype'),
+         url('bubbleboy2.woff') format('woff'),
+         url('bubbleboy2.ttf') format('truetype'),
+         url('bubbleboy2.svg#BubbleBoy2Regular') format('svg');
+}
+
 body {
 	height: 100%;
 	width: 100%;
@@ -28,7 +37,7 @@ body {
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		background-color: red;
+		background-color: #00abe9;
 
 		overflow: hidden;
 	}
@@ -46,11 +55,65 @@ body {
 	#startScreenBackground {
 		display: inline-block;
 		position: absolute;
+		left: 50%;
+		margin-left:-200px;
 
 		width: 500px;
 		height: 600px;
 		overflow: hidden;
 	}
+
+	/* -- buttons -- */
+		.button {
+			display: inline-block;
+			position: absolute;
+
+			width: 220px;
+			height: 50px;
+			background-color: blue;
+
+			left: 50%;
+			margin-left: -110px;
+		}
+
+		#start {
+			display: inline-block;
+			position: absolute;
+
+			left: 50%;
+			margin-left: -70px;
+
+			font-family: "ChildPlayNormal";
+			font-size: 25px;
+			color: yellow;
+
+		}
+
+		#rules {
+			display: inline-block;
+			position: absolute;
+
+			left: 50%;
+			margin-left: -70px;
+			margin-top: 10px;
+
+			font-family: "ChildPlayNormal";
+			font-size: 25px;
+			color: yellow;
+		}
+
+		#settings {
+			display: inline-block;
+			position: absolute;
+
+			left: 50%;
+			margin-left: -75px;
+			margin-top: 10px;
+
+			font-family: "ChildPlayNormal";
+			font-size: 25px;
+			color: yellow;
+		}
 
 #currentNumber { 
 	display: inline-block;
