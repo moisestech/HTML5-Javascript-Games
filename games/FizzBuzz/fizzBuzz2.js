@@ -1,12 +1,28 @@
 //START SCREEN
 
-	//options
-	var gameStart = document.getElementById("buttonPosition1");
-	var gameRules = document.getElementById("buttonPosition1");
-	var gameSettings = document.getElementById("buttonPosition1");
+	//screen options
+		var gameStart = document.getElementById("buttonPositioning1");
+		var gameRules = document.getElementById("buttonPositioning2");
+		var gameSettings = document.getElementById("buttonPositioning3");
 
-	//add clickEvent listener
-	window.addEventListener("click", keydownHandler, false);
+		//create clickEvent listener
+		gameStart.addEventListener("click", startHandler, false);
+		gameRules.addEventListener("click", rulesHandler, false);
+		gameSettings.addEventListener("click", settingsHandler, false);
+
+
+	/* -- START SCREEN functions -- */
+	function startHandler() {
+		console.log("Start screen button clicked!");
+	}
+
+	function rulesHandler() {
+		console.log("Rules button clicked!");
+	}
+
+	function settingsHandler() {
+		console.log("Settings screen button clicked!");
+	}
 
 
 
