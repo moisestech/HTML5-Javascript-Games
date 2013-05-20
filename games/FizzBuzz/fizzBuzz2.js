@@ -19,7 +19,6 @@
 		console.log("Start screen button clicked!");
 		entireStartScreen.style.display = "none";
 
-
 	}
 
 	function rulesHandler() {
