@@ -31,6 +31,10 @@ body {
 	/*background-image: -webkit-gradient(radial, center center, 0, center center, 499, color-stop(0, #0DA6FF), color-stop(1, #1000EF));*/
 }
 
+.bubble {
+	font-family: "BubbleBoy2Regular";
+}
+
 /* -- START SCREEN -- */
 	#startScreen {
 		display: inline-block;
@@ -150,6 +154,79 @@ body {
 			font-size: 25px;
 			color: yellow;
 		}
+
+/* -- MAIN GAME -- */
+
+	
+	/* -- buttons -- */
+		#fizzButton1 {
+			display: inline-block;
+			position: absolute;
+
+			width: 50px;
+			height: 50px;
+
+			bottom: 0;
+			right: 60px;
+		}
+
+		#fizzBuzzButton2 {
+			display: inline-block;
+			position: absolute;
+
+			width: 50px;
+			height: 50px;
+
+			bottom: 0;
+			right: 0;
+		}
+
+		#buzzButton3 {
+			display: inline-block;
+			position: absolute;
+
+			width: 50px;
+			height: 50px;
+
+			bottom: 60px;
+			right: 0;
+		}
+
+		#skipButton4 {
+			display: inline-block;
+			position: absolute;
+
+			width: 50px;
+			height: 50px;
+
+			bottom: 0;
+			left: 0px;
+		}
+
+		/* -- buttons icons -- */
+
+			.centerToButton {
+				margin-left: 15px;
+				margin-top: 25px;
+			}
+
+			#fizzIcon1 {
+
+			}
+
+			#fizzBuzzIcon2 {
+				
+			}
+
+			#buzzIcon3 {
+				
+			}
+
+			#skipIcon4 {
+				
+			}
+
+
 
 #currentNumber { 
 	display: inline-block;
