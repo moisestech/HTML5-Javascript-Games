@@ -1,10 +1,13 @@
 @font-face {
-    font-family: 'ChildPlayNormal';
-    src: url('fonts/child.eot');
-    src: url('fonts/child.eot') format('embedded-opentype'),
-         url('fonts/child.woff') format('woff'),
-         url('fonts/child.ttf') format('truetype'),
-         url('fonts/child.svg#ChildPlayNormal') format('svg');
+    font-family: 'zoinkfatregular';
+    src: url('fonts/zoinkfat-webfont.eot');
+    src: url('fonts/zoinkfat-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/zoinkfat-webfont.woff') format('woff'),
+         url('fonts/zoinkfat-webfont.ttf') format('truetype'),
+         url('fonts/zoinkfat-webfont.svg#zoinkfatregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 @font-face {
@@ -236,9 +239,9 @@ body {
 	margin-left: -30px;
 	margin-top:-50px;
 
-	font-family: "ChildPlayNormal";
+	font-family: 'zoinkfatregular';
 	font-size: 90px;
-	color: yellow;
+	color: black;
 }
 
 #scoreTitle {
@@ -247,7 +250,7 @@ body {
 	top: 5px;
 	left:10px;
 
-	font-family: "ChildPlayNormal";
+	font-family: 'BubbleBoy2Regular';
 	font-size: 20px;
 	color: #30EF00;
 }
@@ -259,7 +262,7 @@ body {
 	left: 20px;
 	margin-left: 60px;
 
-	font-family: "ChildPlayNormal";
+	font-family: 'BubbleBoy2Regular';
 	font-size: 20px;
 	color: #30EF00;
 }

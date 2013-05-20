@@ -32,32 +32,33 @@
 
 
 
-//GAME
-//global variables
+/* -- MAIN GAME -- */
 
-// Arrow key codes
-	var fizzBuzz = 38; //Up
-	var fizz = 37; //Left
-	var buzz = 39; //Right
+	//global variables
+		// Arrow key codes
+			var fizzBuzz = 38; //Up
+			var fizz = 37; //Left
+			var buzz = 39; //Right
 
-//Displayed number on the DOM
-var currentFizzBuzzNumber = 0;
-console.log(currentFizzBuzzNumber);
+		//Displayed number on the DOM
+		var currentFizzBuzzNumber = 0;
+		console.log(currentFizzBuzzNumber);
 
-//FizzBuzz individual count
-var fizzBuzzCount = 0;
-var fizzCount = 0;
-var buzzCount = 0;
+		//DOM variables
+		var currentNumber = document.getElementById("currentNumber");
+		currentNumber.innerHTML = currentFizzBuzzNumber;
 
-//FizzBuzz Total count
-var totalCount = 0;
+		//FizzBuzz individual count
+		var fizzBuzzCount = 0;
+		var fizzCount = 0;
+		var buzzCount = 0;
 
-//DOM variables
-var currentNumber = document.getElementById("currentNumber");
-currentNumber.innerHTML = currentFizzBuzzNumber;
+		//FizzBuzz Total count
+		var totalCount = 0;
+		var score = document.getElementById("scoreNumber");
+		score.innerHTML = totalCount;
 
-var score = document.getElementById("scoreNumber");
-score.innerHTML = totalCount;
+	
 
 //add keyEvent listener
 window.addEventListener("keydown", keydownHandler, false);
