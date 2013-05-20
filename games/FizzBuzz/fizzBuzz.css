@@ -23,6 +23,7 @@ body {
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
+	position: fixed;
 
 	/* IE10 Consumer Preview */ 
 	/*background-image: -ms-radial-gradient(center, ellipse farthest-corner, #0DA6FF 0%, #1000EF 100%);*/
@@ -213,21 +214,17 @@ body {
 				margin-top: 25px;
 			}
 
-			#fizzIcon1 {
+	/* -- MAIN GAME background -- */
 
-			}
+		.background-placement {
+			display: inline-block;
+			position: absolute;
 
-			#fizzBuzzIcon2 {
-				
-			}
-
-			#buzzIcon3 {
-				
-			}
-
-			#skipIcon4 {
-				
-			}
+			overflow: hidden;
+			height: 100%;
+			min-width: 700px;
+			z-index: -10;
+		}
 
 
 
