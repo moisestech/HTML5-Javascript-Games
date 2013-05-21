@@ -61,14 +61,9 @@ body {
 	}
 
 	#startScreenBackground {
-		display: inline-block;
-		position: absolute;
-		left: 50%;
-		margin-left:-200px;
-
-		width: 500px;
-		height: 600px;
-		overflow: hidden;
+		display: block;
+		height: 100%;
+		margin: 0 auto;
 	}
 
 	/* -- buttons -- */
