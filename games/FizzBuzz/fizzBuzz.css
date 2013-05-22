@@ -225,12 +225,12 @@ body {
 	/* -- MAIN GAME background -- */
 
 		.background-placement {
-			display: inline-block;
+			display: block;
 			position: absolute;
 
 			overflow: hidden;
+			margin: 0 auto;
 			height: 100%;
-			min-width: 700px;
 			z-index: -10;
 		}
 
