@@ -92,29 +92,31 @@ body {
 
 			width: 80%;
 			height: 50%;
-			border: 1px solid black;
+			/*border: 1px solid black;*/
 		}
 
 		#buttonWrapperCenter {
 			position: absolute;
 			display: block;
-			width: 80%;
+			width: 50%;
 			height: 80%;
 			margin: 0 auto;
 			left: 0;
 			right: 0;
 
-			border: 1px solid black;
+			/*border: 1px solid black;*/
 		}
 
 		.button {
 			position: relative;
-			float: left;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
 			padding: 10px;
 
 			width: 46.3%;
 			height: 20%;
-			border: 1px solid black;
+			/*border: 1px solid black;*/
 
 			min-width: 270px;
 		}
