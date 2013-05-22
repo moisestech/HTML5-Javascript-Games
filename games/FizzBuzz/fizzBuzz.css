@@ -95,10 +95,28 @@ body {
 			border: 1px solid black;
 		}
 
-		.button {
+		#buttonWrapperCenter {
 			position: absolute;
+			display: block;
+			width: 80%;
+			height: 80%;
+			margin: 0 auto;
+			left: 0;
+			right: 0;
+
+			border: 1px solid black;
+		}
+
+		.button {
+			position: relative;
 			float: left;
-			padding: 25px;
+			padding: 10px;
+
+			width: 46.3%;
+			height: 20%;
+			border: 1px solid black;
+
+			min-width: 270px;
 		}
 
 		/* -- button styling -- */
@@ -120,9 +138,13 @@ body {
 				font-family:arial;
 				font-size:46px;
 				font-weight:bold;
-				padding:6px 76px;
+				padding:0;
 				text-decoration:none;
 				text-shadow:1px 1px 0px #f0a638;
+
+				margin: 0 auto;
+				left: 0;
+				right: 0;
 			}
 
 			.menuButtonStyle:hover {
@@ -138,23 +160,7 @@ body {
 			}
 
 
-		#buttonPositioning1 {
-			display: inline-block;
-			position: absolute;
-
-			width: 220px;
-			height: 50px;
-		}
-
-		#buttonPositioning2 {
-			display: inline-block;
-			position: absolute;
-
-			width: 220px;
-			height: 50px;
-		}
-
-		#buttonPositioning3 {
+		.buttonSize {
 			display: inline-block;
 			position: absolute;
 
