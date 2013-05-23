@@ -49,7 +49,7 @@
 			currentNumber.innerHTML = currentFizzBuzzNumber;
 
 			var mainGameSettings = document.getElementById("mainGameSettings");
-
+			var mainGameSettingsMenu = document.getElementById("mainGameSettingsMenu");
 
 		//FizzBuzz individual count
 			var fizzBuzzCount = 0;
@@ -69,6 +69,12 @@ mainGameSettings.addEventListener("click", mainGameSettingsHandler, false);
 
 function mainGameSettingsHandler() {
 	console.log("settings clicked!");
+	if (mainGameSettingsMenu.style.display === "") {
+		mainGameSettingsMenu.style.display = "block"
+	} else if (mainGameSettingsMenu.style.display === "block") {
+		mainGameSettingsMenu.style.display = ""
+
+	}
 }
 
 function keydownHandler(event) {
