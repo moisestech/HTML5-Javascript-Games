@@ -50,6 +50,7 @@
 
 			var mainGameSettings = document.getElementById("mainGameSettings");
 			var mainGameSettingsMenu = document.getElementById("mainGameSettingsMenu");
+			var mainGameSettingsBackground = document.getElementById("mainGameSettingsBackground");
 
 		//FizzBuzz individual count
 			var fizzBuzzCount = 0;
@@ -70,9 +71,11 @@ mainGameSettings.addEventListener("click", mainGameSettingsHandler, false);
 function mainGameSettingsHandler() {
 	console.log("settings clicked!");
 	if (mainGameSettingsMenu.style.display === "") {
-		mainGameSettingsMenu.style.display = "block"
+		mainGameSettingsMenu.style.display = "block";
+		mainGameSettingsBackground.style.display = "block";
 	} else if (mainGameSettingsMenu.style.display === "block") {
-		mainGameSettingsMenu.style.display = ""
+		mainGameSettingsMenu.style.display = "";
+		mainGameSettingsBackground.style.display = "block";
 
 	}
 }
