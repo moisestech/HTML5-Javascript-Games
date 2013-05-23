@@ -52,6 +52,10 @@
 			var mainGameSettingsMenu = document.getElementById("mainGameSettingsMenu");
 			var mainGameSettingsBackground = document.getElementById("mainGameSettingsBackground");
 
+			var resume = document.getElementById("resume");
+			var mainMenu = document.getElementById("mainMenu");
+			var rules = document.getElementById("rules");
+
 		//FizzBuzz individual count
 			var fizzBuzzCount = 0;
 			var fizzCount = 0;
@@ -68,6 +72,10 @@
 window.addEventListener("keydown", keydownHandler, false);
 mainGameSettings.addEventListener("click", mainGameSettingsHandler, false);
 
+resume.addEventListener("click", resumeHandler, false);
+mainMenu.addEventListener("click", mainMenuHandler, false);
+rules.addEventListener("click", rulesHandler, false);
+
 function mainGameSettingsHandler() {
 	console.log("settings clicked!");
 	if (mainGameSettingsMenu.style.display === "") {
@@ -75,9 +83,21 @@ function mainGameSettingsHandler() {
 		mainGameSettingsBackground.style.display = "block";
 	} else if (mainGameSettingsMenu.style.display === "block") {
 		mainGameSettingsMenu.style.display = "";
-		mainGameSettingsBackground.style.display = "block";
+		mainGameSettingsBackground.style.display = "";
 
 	}
+}
+
+function resumeHandler() {
+	console.log("resume!");
+}
+
+function mainMenuHandler() {
+	console.log("main menu!");
+}
+
+function rulesHandler() {
+	console.log("rules");
 }
 
 function keydownHandler(event) {
