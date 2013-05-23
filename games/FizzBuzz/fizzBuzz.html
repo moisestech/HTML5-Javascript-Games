@@ -3,12 +3,23 @@
 		<head>
 			<title>FizzBuzz!</title>
 			<link rel="stylesheet" type="text/css" href="fizzBuzz.css"/>
+
+			<script src="jquery/jquery-1.9.1.js"></script>
+			<script src="jquery/jquery-ui-1.10.3.js"></script>
+			<script src="fizzBuzz2.js"></script>
 		</head>
 		<body>
 
 
 			<!-- GAME SCENE -->
 			<div id="gameScene">
+
+				<!-- Intro Animation -->
+				<div class="bubble" id="animation1">READY</div>
+				<<div class="bubble" id="animation2">SET</div>
+				<!--<div class="" id="">FizzBuzz!</div>-->
+
+
 				<!-- current number -->
 					<div id ="currentNumber"></div>
 
@@ -53,12 +64,12 @@
 						<div class="bubble centerToButton">s</div>
 					</div>
 
-				<img class="background-placement" src="imgs/fizzBuzz_mainGame_background.png"/>
+				<!--<img class="background-placement" src="imgs/fizzBuzz_mainGame_background.png"/>-->
 			</div>
 
 			<!-- START SCREEN -->
 			<div id="startScreen">
-				<img id="startScreenBackground" src="imgs/fizzBuzz_background.png"/>
+				<img id="startScreenBackground" src="imgs/fizzBuzz_background2.png"/>
 				<img id="startScreenTitle" src="imgs/fizzBuzz_title.png"/>
 
 				<!-- Menu Buttons -->
@@ -83,9 +94,5 @@
 					</div>
 				</div>
 			</div>
-		
-			<script src="fizzBuzz2.js"></script>
-
-
 		</body>
 	</html>

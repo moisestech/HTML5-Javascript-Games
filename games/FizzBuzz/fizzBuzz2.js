@@ -1,3 +1,5 @@
+$(document).ready(function(){
+
 //START SCREEN
 		// Entire Start Screen
 		var entireStartScreen = document.getElementById("startScreen");
@@ -8,17 +10,41 @@
 		var gameRules = document.getElementById("buttonPositioning2");
 		var gameSettings = document.getElementById("buttonPositioning3");
 
+			//main game animation
+			var animation1 = $("#animation1");
+			var animation2 = $("#animation2");
+
+
 		//create clickEvent listener
 		gameStart.addEventListener("click", startHandler, false);
 		gameRules.addEventListener("click", rulesHandler, false);
 		gameSettings.addEventListener("click", settingsHandler, false);
+		
 
+		/*$("#buttonPositioning1").click(function(){
+				$("#animation2").fadeIn();
+		});*/
 
 	/* -- START SCREEN functions -- */
 	function startHandler() {
 		console.log("Start screen button clicked!");
 		entireStartScreen.style.display = "none";
 
+		//Begin Animation
+
+		animation1.stop(true, true).animate({right:"toggle", opacity:"toggle"}, 1000).fadeOut(100);
+		//animation1.css("opacity", "0");
+
+		/*graph.click(function() {
+			wrap
+			.animate( { height: "hide" }, 2000, name )
+			.delay( 800 )
+			.animate( { height: "show" }, 2000, name );*/
+
+	}
+
+	function nextAnimation2 () {
+		console.log("next animation!");
 	}
 
 	function rulesHandler() {
@@ -89,10 +115,15 @@ function mainGameSettingsHandler() {
 }
 
 function resumeHandler() {
+	mainGameSettingsMenu.style.display = "";
+	mainGameSettingsBackground.style.display = "";
 	console.log("resume!");
 }
 
 function mainMenuHandler() {
+	mainGameSettingsMenu.style.display = "";
+	mainGameSettingsBackground.style.display = "";
+	entireStartScreen.style.display = "block";
 	console.log("main menu!");
 }
 
@@ -150,4 +181,4 @@ function keydownHandler(event) {
 }
 
 
-
+});
