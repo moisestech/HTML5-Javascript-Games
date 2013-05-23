@@ -254,6 +254,11 @@ body {
 			left: 0px;
 		}
 
+		#mainGameSettings {
+			position: absolute;
+			right: 0;
+		}
+
 		/* -- buttons icons -- */
 
 			.centerToButton {
