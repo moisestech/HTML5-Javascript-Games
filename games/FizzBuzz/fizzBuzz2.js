@@ -41,27 +41,35 @@
 			var buzz = 39; //Right
 
 		//Displayed number on the DOM
-		var currentFizzBuzzNumber = 0;
-		console.log(currentFizzBuzzNumber);
+			var currentFizzBuzzNumber = 0;
+			console.log(currentFizzBuzzNumber);
 
 		//DOM variables
-		var currentNumber = document.getElementById("currentNumber");
-		currentNumber.innerHTML = currentFizzBuzzNumber;
+			var currentNumber = document.getElementById("currentNumber");
+			currentNumber.innerHTML = currentFizzBuzzNumber;
+
+			var mainGameSettings = document.getElementById("mainGameSettings");
+
 
 		//FizzBuzz individual count
-		var fizzBuzzCount = 0;
-		var fizzCount = 0;
-		var buzzCount = 0;
+			var fizzBuzzCount = 0;
+			var fizzCount = 0;
+			var buzzCount = 0;
 
 		//FizzBuzz Total count
-		var totalCount = 0;
-		var score = document.getElementById("scoreNumber");
-		score.innerHTML = totalCount;
+			var totalCount = 0;
+			var score = document.getElementById("scoreNumber");
+			score.innerHTML = totalCount;
 
 	
 
 //add keyEvent listener
 window.addEventListener("keydown", keydownHandler, false);
+mainGameSettings.addEventListener("click", mainGameSettingsHandler, false);
+
+function mainGameSettingsHandler() {
+	console.log("settings clicked!");
+}
 
 function keydownHandler(event) {
 	switch (event.keyCode) {

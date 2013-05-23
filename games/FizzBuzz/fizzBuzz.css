@@ -254,10 +254,27 @@ body {
 			left: 0px;
 		}
 
-		#mainGameSettings {
-			position: absolute;
-			right: 0;
-		}
+		/* -- MAIN GAME settings -- */
+
+			#mainGameSettings {
+				position: absolute;
+				right: 0;
+			}
+
+			#settingsIcon {
+				width: 30px;
+				height: 30px;
+				padding: 10px;
+				opacity:0.4;
+				filter:alpha(opacity=40);
+			}
+
+				#settingsIcon:hover {
+					opacity:1.0;
+					filter:alpha(opacity=100);
+				}
+
+
 
 		/* -- buttons icons -- */
 
