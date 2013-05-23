@@ -170,12 +170,14 @@ body {
 			height: 50px;
 		}
 
-		#start {
+		.menuTextStyling {
 			display: inline-block;
 			position: absolute;
 
-			left: 50%;
-			margin-left: -50px;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			text-align: center;
 			margin-top: 20px;
 
 			font-family: "BubbleBoy2Regular";
@@ -184,36 +186,30 @@ body {
 
 		}
 
-		#rules {
-			display: inline-block;
-			position: absolute;
-
-			left: 50%;
-			margin-left: -40px;
-			margin-top: 20px;
-
-			font-family: "BubbleBoy2Regular";
-			font-size: 25px;
-			color: #fff900;
-		}
-
-		#settings {
-			display: inline-block;
-			position: absolute;
-
-			left: 50%;
-			margin-left: -75px;
-			margin-top: 20px;
-
-			font-family: "BubbleBoy2Regular";
-			font-size: 25px;
-			color: #fff900;
-		}
 
 /* -- MAIN GAME -- */
 
 	
 	/* -- buttons -- */
+		.nav {
+			display: block;
+			background-color: #f7f7f7;
+			background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#e7e7e7));
+			background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7); 
+			background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7); 
+			background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7); 
+			background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7); 
+			color: #a7a7a7;
+			margin: 20px;
+			width: 144px;
+			height: 144px;
+			position: relative;
+			text-align: center;
+			line-height: 144px;
+			border-radius: 50%;
+			box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+		}
+
 		#fizzButton1 {
 			display: inline-block;
 			position: absolute;
@@ -261,8 +257,7 @@ body {
 		/* -- buttons icons -- */
 
 			.centerToButton {
-				margin-left: 15px;
-				margin-top: 25px;
+				margin-top: -45px;
 			}
 
 	/* -- MAIN GAME background -- */
@@ -274,6 +269,8 @@ body {
 			overflow: hidden;
 			margin: 0 auto;
 			height: 100%;
+			left: 0;
+			right: 0;
 			z-index: -10;
 		}
 
@@ -282,10 +279,11 @@ body {
 #currentNumber { 
 	display: inline-block;
 	position: absolute;
-	left: 50%;
-	top: 50%;
-	margin-left: -30px;
-	margin-top:-50px;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	top: 40%;
 
 	font-family: 'zoinkfatregular';
 	font-size: 90px;
@@ -295,7 +293,7 @@ body {
 #scoreTitle {
 	display: inline-block;
 	position: absolute;
-	top: 5px;
+	top: 25px;
 	left:10px;
 
 	font-family: 'BubbleBoy2Regular';
@@ -306,7 +304,7 @@ body {
 #scoreNumber {
 	display: inline-block;
 	position: absolute;
-	top: 5px;
+	top: 25px;
 	left: 20px;
 	margin-left: 60px;
 
