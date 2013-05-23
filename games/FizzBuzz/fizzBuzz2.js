@@ -13,6 +13,7 @@ $(document).ready(function(){
 			//main game animation
 			var animation1 = $("#animation1");
 			var animation2 = $("#animation2");
+			var animation3 = $("#animation3");
 
 
 		//create clickEvent listener
@@ -30,22 +31,23 @@ $(document).ready(function(){
 		console.log("Start screen button clicked!");
 		entireStartScreen.style.display = "none";
 
-		//Begin Animation
-
-		animation1.stop(true, true).animate({right:"toggle", opacity:"toggle"}, 1000).fadeOut(100);
-		//animation1.css("opacity", "0");
-
-		/*graph.click(function() {
-			wrap
-			.animate( { height: "hide" }, 2000, name )
-			.delay( 800 )
-			.animate( { height: "show" }, 2000, name );*/
+			//Begin Animation
+			animation1.stop(true, true).animate({right:"toggle", opacity:"toggle"}, 1000).fadeOut(100, nextAnimation2);
 
 	}
+			//animation2 callback
+			function nextAnimation2 () {
+				console.log("next animation!");
+				animation2.stop(true, true).animate({right:"toggle", opacity:"toggle"}, 1000).fadeOut(100, nextAnimation3);
+			}
 
-	function nextAnimation2 () {
-		console.log("next animation!");
-	}
+			//animation3 callback
+			function nextAnimation3 () {
+				console.log("next animation!");
+				animation3.stop(true, true).animate({right:"toggle", opacity:"toggle"}, 1000).fadeOut(100);
+			}
+
+
 
 	function rulesHandler() {
 		console.log("Rules button clicked!");

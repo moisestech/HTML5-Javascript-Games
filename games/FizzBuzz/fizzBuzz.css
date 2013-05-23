@@ -201,13 +201,14 @@ body {
 		font-size: 40px;
 		color: #30EF00;
 		display: none;
+		z-index: 0;
 	}
 
 	#animation2 {
 		position: absolute;
 		display: block;
-		left: 0;
-		right: 0;
+		left: -50px;
+		right: -50px;
 		margin: 0 auto;
 		top: 50%;
 		margin-top: -10px;
@@ -215,6 +216,22 @@ body {
 		font-size: 40px;
 		color: red;
 		display: none;
+		z-index: 0;
+	}
+
+	#animation3 {
+		position: absolute;
+		display: block;
+		left: -50px;
+		right: -50px;
+		margin: 0 auto;
+		top: 50%;
+		margin-top: -10px;
+		text-align: center;
+		font-size: 40px;
+		color: red;
+		display: none;
+		z-index: 0;
 	}
 
 	
@@ -390,6 +407,7 @@ body {
 	font-family: 'zoinkfatregular';
 	font-size: 90px;
 	color: black;
+	z-index: -10;
 }
 
 #scoreTitle {
