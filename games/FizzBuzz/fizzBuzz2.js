@@ -24,6 +24,10 @@ $(document).ready(function(){
 				//onEvent Animation
 				var gameScene = $("#gameScene");
 
+			//end game variables
+			var endGameScoreDiv = document.getElementById("endGameScoreDiv");
+			var endGameDivWrapper = document.getElementById("endGameDivWrapper");
+
 
 		//create clickEvent listener
 		gameStart.addEventListener("click", startHandler, false);
@@ -172,6 +176,13 @@ rulesDivReturn.click(leaveRulesHandler);
 		rulesDivId.css("display",  "none");
 		rulesDivWrapper.css("display", "none");
 		startMenuSettingsBackground.css("display", "none");
+	}
+
+
+	function endGameScoreHandler () {
+		endGameScoreDiv.style.display = "block";
+		endGameDivWrapper.style.display = "block";
+		mainGameSettingsBackground.style.display = "block";
 	}
 		
 		/* -- MAIN GAME LOGIC touch-- */
@@ -389,18 +400,31 @@ rulesDivReturn.click(leaveRulesHandler);
 		function endGame(endGameLogic) {
 			console.log("Finished! Total Score " + totalCount);
 			clearInterval(endGameLogic);
+
+			//end game show score
+			endGameScoreHandler();
+
+			// remove keydown
+			window.removeEventListener("keydown", keydownHandler, false);
+
+
+			// remove touch ui
+			fizzButton1.removeEventListener("click", fizzHandler, false);
+			fizzBuzzButton2.removeEventListener("click", fizzBuzzHandler, false);
+			buzzButton3.removeEventListener("click", buzzHandler, false);
+			spacebarButton4.removeEventListener("click", spacebarHandler, false);
 		}
 
 
 		function startGameLogic() {
 			//start game logic
 			var endGameLogic = setInterval(function() {
-				if (currentFizzBuzzNumber !== 10) {
+				if (currentFizzBuzzNumber < 10) {
 				console.log("keepGoing");
 				} else {
 					endGame(endGameLogic);
 				}
-			},1000);
+			},500);
 		}
 
 
