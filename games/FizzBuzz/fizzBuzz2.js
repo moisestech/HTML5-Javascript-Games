@@ -146,44 +146,62 @@ function keydownHandler(event) {
 				$("#fizzBuzzAnimation").stop(true, true).animate({top:"-=10", opacity:"toggle"}, 400).fadeOut(100, 
 					function() { $(this).remove()});
 			} else {
+				//onEvent animation logic
 				gameScene.append("<div class='bubble onEventAnimation' id='wrongAnimation'>Wrong!</div>");
 				$("#wrongAnimation").stop(true, true).animate({top:"-=10", opacity:"toggle"}, 400).fadeOut(100,
 					function() {$(this).remove()});
 
+				totalCount -= 1;
 			}
 
-			//$("#fizzBuzzAnimation").remove();
-			//$("#wrongAnimation").remove();
-
-			
 			currentFizzBuzzNumber++;
 			currentNumber.innerHTML = currentFizzBuzzNumber;
-			//console.log("The current number is " + currentFizzBuzzNumber);
 			break;
 
 		case fizz:
 			if (currentFizzBuzzNumber % 3 === 0) {
-				fizzCount++;
-				//console.log("FizzNumber " + fizzCount);
 				
+				//keep score
+				fizzCount++;		
 				totalCount++;
 				score.innerHTML = totalCount;
-				//console.log(totalCount);
+
+				//onEvent Animation logic
+				gameScene.append("<div class='bubble onEventAnimation' id='fizzAnimation'>Fizz!</div>");
+				$("#fizzAnimation").stop(true, true).animate({top:"-=10", opacity:"toggle"}, 400).fadeOut(100, 
+					function() { $(this).remove()});
+			} else {
+				//onEvent animation logic
+				gameScene.append("<div class='bubble onEventAnimation' id='wrongAnimation'>Wrong!</div>");
+				$("#wrongAnimation").stop(true, true).animate({top:"-=10", opacity:"toggle"}, 400).fadeOut(100,
+					function() {$(this).remove()});
+
+				totalCount -= 1;
 			}
 			
 			currentFizzBuzzNumber++;
 			currentNumber.innerHTML = currentFizzBuzzNumber;
-			//console.log("The current number is " + currentFizzBuzzNumber);
 			break;
 
 		case buzz:
 			if (currentFizzBuzzNumber % 5 === 0) {
+				
+				// keep score
 				buzzCount++;
-				//console.log("BuzzNumber " + buzzCount);
-
 				totalCount++;
 				score.innerHTML = totalCount;
-				//console.log(totalCount);
+
+				//onEvent Animation logic
+				gameScene.append("<div class='bubble onEventAnimation' id='buzzAnimation'>Buzz!</div>");
+				$("#buzzAnimation").stop(true, true).animate({top:"-=10", opacity:"toggle"}, 400).fadeOut(100, 
+					function() { $(this).remove()});
+			} else {
+				//onEvent animation logic
+				gameScene.append("<div class='bubble onEventAnimation' id='wrongAnimation'>Wrong!</div>");
+				$("#wrongAnimation").stop(true, true).animate({top:"-=10", opacity:"toggle"}, 400).fadeOut(100,
+					function() {$(this).remove()});
+
+				totalCount -= 1;
 			}
 
 			currentFizzBuzzNumber++;

@@ -231,6 +231,18 @@ body {
 
 		/* -- MAIN GAME Animation onEvent -- */
 			#fizzBuzzAnimation {
+				color: #ffdd00;
+			}
+
+			#fizzAnimation {
+				color: #ffdd00;
+			}
+
+			#buzzAnimation {
+				color: #ffdd00;
+			}
+
+			#wrongAnimation {
 				color: red;
 			}
 
