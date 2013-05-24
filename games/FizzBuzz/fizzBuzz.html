@@ -21,7 +21,7 @@
 
 
 				<!-- current number -->
-					<div id ="currentNumber"></div>
+					<div id ="currentNumber" class="Three-Dee"></div>
 
 				<!-- top bar -->
 					<div id="timer"></div>
@@ -64,7 +64,7 @@
 						<div class="bubble centerToButton"  id="spacebarButton">s</div>
 					</div>
 
-				<!--<img class="background-placement" src="imgs/fizzBuzz_mainGame_background.png"/>-->
+				<div class="background-placement"/>
 			</div>
 
 			<!-- START SCREEN -->
@@ -87,12 +87,23 @@
 						</div>
 					</div>
 
-					<div class="button">
+					<!--<div class="button">
 						<div class="menuButtonStyle button buttonSize" id="buttonPositioning3">
 							<div class="menuTextStyling">SETTINGS</div>
 						</div>
+					</div>-->
+				</div>	
+			</div>
+
+			<div id="rulesDiv">
+				<div id="startMenuSettingsBackground"></div>
+				<div class="menuButtonStyle button buttonSize" id="rulesDivWrapper">
+					<div class="menuTextStyling rulesTextStyling">RULES
+						<p>These are the rules you need to know in order to play fizzbuzz. The game consist of finding the multiples of 3 and 5 and when it is 3 press fizz when it is 5 press buzz. When it is of both press fizzbuzz. The controllers are spacebar to skip. left fizz, right buzz, up fizzbuzz.</p>
 					</div>
+					<p class="bubble" id="rulesDivReturn">return</p>
 				</div>
 			</div>
+
 		</body>
 	</html>

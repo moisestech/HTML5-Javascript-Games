@@ -8,7 +8,7 @@ $(document).ready(function(){
 		// buttons
 		var gameStart = document.getElementById("buttonPositioning1");
 		var gameRules = document.getElementById("buttonPositioning2");
-		var gameSettings = document.getElementById("buttonPositioning3");
+		//var gameSettings = document.getElementById("buttonPositioning3");
 
 			//main game animation
 			var animation1 = $("#animation1");
@@ -28,7 +28,7 @@ $(document).ready(function(){
 		//create clickEvent listener
 		gameStart.addEventListener("click", startHandler, false);
 		gameRules.addEventListener("click", rulesHandler, false);
-		gameSettings.addEventListener("click", settingsHandler, false);
+		//gameSettings.addEventListener("click", settingsHandler, false);
 
 	/* -- START SCREEN functions -- */
 	function startHandler() {
@@ -85,6 +85,11 @@ $(document).ready(function(){
 			var mainGameSettingsMenu = document.getElementById("mainGameSettingsMenu");
 			var mainGameSettingsBackground = document.getElementById("mainGameSettingsBackground");
 
+			var rulesDivId = $("#rulesDiv");
+			var rulesDivWrapper = $("#rulesDivWrapper");
+			var startMenuSettingsBackground = $("#startMenuSettingsBackground");
+			var rulesDivReturn = $("#rulesDivReturn");
+
 			var resume = document.getElementById("resume");
 			var mainGameSettingsBackground = document.getElementById("mainGameSettingsBackground");
 			var mainMenu = document.getElementById("mainMenu");
@@ -110,6 +115,9 @@ resume.addEventListener("click", resumeHandler, false);
 mainGameSettingsBackground.addEventListener("click", resumeHandler, false);
 mainMenu.addEventListener("click", mainMenuHandler, false);
 rules.addEventListener("click", rulesHandler, false);
+startMenuSettingsBackground.click(leaveRulesHandler);
+rulesDivReturn.click(leaveRulesHandler);
+
 
 
 /* -- MAIN GAME FUNCTIONS -- */
@@ -153,7 +161,16 @@ rules.addEventListener("click", rulesHandler, false);
 	}
 
 	function rulesHandler() {
-		console.log("rules");
+		rulesDivId.css("display",  "block");
+		rulesDivWrapper.css("display", "block");
+		startMenuSettingsBackground.css("display", "block");
+
+	}
+
+	function leaveRulesHandler () {
+		rulesDivId.css("display",  "none");
+		rulesDivWrapper.css("display", "none");
+		startMenuSettingsBackground.css("display", "none");
 	}
 		
 		/* -- MAIN GAME LOGIC touch-- */
@@ -339,6 +356,26 @@ rules.addEventListener("click", rulesHandler, false);
 							break;
 				} 
 			}
+
+
+	// background animation
+
+	 var $elie = $(".background-placement"), degree = 0, timer;
+    rotate();
+    function rotate() {
+        
+        $elie.css({ WebkitTransform: 'rotate(' + degree + 'deg)'});  
+        $elie.css({ '-moz-transform': 'rotate(' + degree + 'deg)'});                      
+        timer = setTimeout(function() {
+            ++degree; rotate();
+        },70);
+    }
+    
+    $("input").toggle(function() {
+        clearTimeout(timer);
+    }, function() {
+        rotate();
+    });
 
 
 });
