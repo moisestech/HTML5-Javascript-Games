@@ -205,14 +205,15 @@ body {
 
 		.onEventAnimation {
 			position: absolute;
-			left: -50px;
-			right: -50px;
+			left: 0px;
+			right: -200px;
 			margin: 0 auto;
 			top: 50%;
-			margin-top: -10px;
+			margin-top: -70px;
+			margin-bottom: 0; 
 			text-align: center;
 			font-size: 40px;
-			display: block;
+			display: none;
 			z-index: 0;
 		}
 

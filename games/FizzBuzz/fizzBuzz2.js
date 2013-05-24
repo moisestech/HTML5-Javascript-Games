@@ -15,6 +15,9 @@ $(document).ready(function(){
 			var animation2 = $("#animation2");
 			var animation3 = $("#animation3");
 
+				//onEvent Animation
+				var gameScene = $("#gameScene");
+
 
 		//create clickEvent listener
 		gameStart.addEventListener("click", startHandler, false);
@@ -74,7 +77,6 @@ $(document).ready(function(){
 			var mainGameSettings = document.getElementById("mainGameSettings");
 			var mainGameSettingsMenu = document.getElementById("mainGameSettingsMenu");
 			var mainGameSettingsBackground = document.getElementById("mainGameSettingsBackground");
-			var gameScene = document.getElementById("gameScene");
 
 			var resume = document.getElementById("resume");
 			var mainMenu = document.getElementById("mainMenu");
@@ -140,7 +142,10 @@ function keydownHandler(event) {
 				score.innerHTML = totalCount;
 				//console.log(totalCount);
 
-				$("#gameScene").append("<div class='bubble onEventAnimation' id='fizzBuzzAnimation'>FizzBuzz!</div>");
+				gameScene.append("<div class='bubble onEventAnimation' id='fizzBuzzAnimation'>FizzBuzz!</div>");
+				$("#fizzBuzzAnimation").stop(true, true).animate({top:"-=10", opacity:"toggle"}, 400).fadeOut(100);
+
+
 			}
 			
 			currentFizzBuzzNumber++;
