@@ -193,6 +193,7 @@ rulesDivReturn.click(leaveRulesHandler);
 						function() {$(this).remove()});
 
 					totalCount -= 1;
+					score.innerHTML = totalCount;
 				}
 				
 				currentFizzBuzzNumber++;
@@ -218,6 +219,7 @@ rulesDivReturn.click(leaveRulesHandler);
 						function() {$(this).remove()});
 
 					totalCount -= 1;
+					score.innerHTML = totalCount;
 				}
 
 				currentFizzBuzzNumber++;
@@ -243,6 +245,7 @@ rulesDivReturn.click(leaveRulesHandler);
 						function() {$(this).remove()});
 
 					totalCount -= 1;
+					score.innerHTML = totalCount;
 				}
 
 				currentFizzBuzzNumber++;
@@ -286,6 +289,7 @@ rulesDivReturn.click(leaveRulesHandler);
 								function() {$(this).remove()});
 
 							totalCount -= 1;
+							score.innerHTML = totalCount;
 						}
 
 						currentFizzBuzzNumber++;
@@ -311,6 +315,7 @@ rulesDivReturn.click(leaveRulesHandler);
 								function() {$(this).remove()});
 
 							totalCount -= 1;
+							score.innerHTML = totalCount;
 						}
 						
 						currentFizzBuzzNumber++;
@@ -336,6 +341,7 @@ rulesDivReturn.click(leaveRulesHandler);
 								function() {$(this).remove()});
 
 							totalCount -= 1;
+							score.innerHTML = totalCount;
 						}
 
 						currentFizzBuzzNumber++;
@@ -360,7 +366,7 @@ rulesDivReturn.click(leaveRulesHandler);
 
 	// background animation
 
-	 var $elie = $(".background-placement"), degree = 0, timer;
+	/*var $elie = $(".background-placement"), degree = 0, timer;
     rotate();
     function rotate() {
         
@@ -368,14 +374,14 @@ rulesDivReturn.click(leaveRulesHandler);
         $elie.css({ '-moz-transform': 'rotate(' + degree + 'deg)'});                      
         timer = setTimeout(function() {
             ++degree; rotate();
-        },70);
+        },80);
     }
     
     $("input").toggle(function() {
         clearTimeout(timer);
     }, function() {
         rotate();
-    });
+    });*/
 
 
 });
