@@ -383,5 +383,23 @@ rulesDivReturn.click(leaveRulesHandler);
         rotate();
     });*/
 
+		/* -- ENDING GAME LOGIC -- */
+
+		function endGame() {
+			console.log("Finished! Total Score " + totalCount);
+			clearInterval(endGameLogic);
+		}
+
+		var endGameLogic = setInterval(function() {
+			if (currentFizzBuzzNumber !== 10) {
+			console.log("keepGoing");
+			} else {
+				endGame();
+			}
+		},1000);
+		
+
+		//console.log(currentFizzBuzzNumber);
+
 
 });
