@@ -297,7 +297,7 @@ body {
 				right: 0;
 			}
 
-			#skipButton4 {
+			#spacebarButton4 {
 				bottom: 0;
 				left: 0px;
 			}
@@ -442,6 +442,7 @@ body {
 #scoreNumber {
 	display: inline-block;
 	position: absolute;
+	width: 45px;
 	top: 12px;
 	left: 40px;
 	margin-left: 60px;

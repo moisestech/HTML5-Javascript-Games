@@ -15,6 +15,12 @@ $(document).ready(function(){
 			var animation2 = $("#animation2");
 			var animation3 = $("#animation3");
 
+			// main game buttons
+			var fizzButton1 = $("#fizzButton1");
+			var fizzBuzzButton2 = $("#fizzBuzzButton2");
+			var buzzButton3 = $("#buzzButton3");
+			var spacebarButton4 = $("#spacebarButton4");
+
 				//onEvent Animation
 				var gameScene = $("#gameScene");
 
@@ -23,6 +29,12 @@ $(document).ready(function(){
 		gameStart.addEventListener("click", startHandler, false);
 		gameRules.addEventListener("click", rulesHandler, false);
 		gameSettings.addEventListener("click", settingsHandler, false);
+
+			//main game buttons clickEvent listeners
+			//fizzButton1.addEventListener("click", keydownHandler, false);
+			//fizzBuzzButton2.addEventListener("click", keydownHandler, false);
+			//buzzButton3.addEventListener("click", keydownHandler, false);
+			//spacebarButton4.addEventListener("click", keydownHandler, false);
 
 	/* -- START SCREEN functions -- */
 	function startHandler() {
