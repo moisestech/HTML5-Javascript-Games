@@ -397,8 +397,10 @@ rulesDivReturn.click(leaveRulesHandler);
 
 		/* -- ENDING GAME LOGIC -- */
 
+		var finalScore = document.getElementById("finalScore");
+
 		function endGame(endGameLogic) {
-			console.log("Finished! Total Score " + totalCount);
+			finalScore.innerHTML = "Finished! Total Score " + totalCount;
 			clearInterval(endGameLogic);
 
 			//end game show score
