@@ -386,10 +386,11 @@ rulesDivReturn.click(leaveRulesHandler);
 
 		/* -- ENDING GAME LOGIC -- */
 
-		function endGame() {
+		function endGame(endGameLogic) {
 			console.log("Finished! Total Score " + totalCount);
 			clearInterval(endGameLogic);
 		}
+
 
 		function startGameLogic() {
 			//start game logic
@@ -397,13 +398,17 @@ rulesDivReturn.click(leaveRulesHandler);
 				if (currentFizzBuzzNumber !== 10) {
 				console.log("keepGoing");
 				} else {
-					endGame();
+					endGame(endGameLogic);
 				}
 			},1000);
 		}
+
+
+				
 		
 
 		//console.log(currentFizzBuzzNumber);
+
 
 
 });
