@@ -20,11 +20,6 @@ $(document).ready(function(){
 		gameStart.addEventListener("click", startHandler, false);
 		gameRules.addEventListener("click", rulesHandler, false);
 		gameSettings.addEventListener("click", settingsHandler, false);
-		
-
-		/*$("#buttonPositioning1").click(function(){
-				$("#animation2").fadeIn();
-		});*/
 
 	/* -- START SCREEN functions -- */
 	function startHandler() {
@@ -79,6 +74,7 @@ $(document).ready(function(){
 			var mainGameSettings = document.getElementById("mainGameSettings");
 			var mainGameSettingsMenu = document.getElementById("mainGameSettingsMenu");
 			var mainGameSettingsBackground = document.getElementById("mainGameSettingsBackground");
+			var gameScene = document.getElementById("gameScene");
 
 			var resume = document.getElementById("resume");
 			var mainMenu = document.getElementById("mainMenu");
@@ -143,6 +139,8 @@ function keydownHandler(event) {
 				totalCount+= 2;
 				score.innerHTML = totalCount;
 				//console.log(totalCount);
+
+				$("#gameScene").append("<div class='bubble onEventAnimation' id='fizzBuzzAnimation'>FizzBuzz!</div>");
 			}
 			
 			currentFizzBuzzNumber++;

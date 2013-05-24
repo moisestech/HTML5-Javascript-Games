@@ -11,12 +11,12 @@
 }
 
 @font-face {
-    font-family: 'BubbleBoy2Regular';
-    src: url('fonts/bubbleboy2.eot');
-    src: url('fonts/bubbleboy2.eot') format('embedded-opentype'),
-         url('fonts/bubbleboy2.woff') format('woff'),
-         url('fonts/bubbleboy2.ttf') format('truetype'),
-         url('fonts/bubbleboy2.svg#BubbleBoy2Regular') format('svg');
+    font-family: 'HelveticaRoundedLTStdBoldCondensedOblique';
+    src: url('fonts/helveticaroundedltstd-bdcno.eot');
+    src: url('fonts/helveticaroundedltstd-bdcno.eot') format('embedded-opentype'),
+         url('fonts/helveticaroundedltstd-bdcno.woff') format('woff'),
+         url('fonts/helveticaroundedltstd-bdcno.ttf') format('truetype'),
+         url('fonts/helveticaroundedltstd-bdcno.svg#HelveticaRoundedLTStdBoldCondensedOblique') format('svg');
 }
 
 html, body {
@@ -41,7 +41,7 @@ body {
 }
 
 .bubble {
-	font-family: "BubbleBoy2Regular";
+	font-family: "HelveticaRoundedLTStdBoldCondensedOblique";
 }
 
 /* -- START SCREEN -- */
@@ -178,10 +178,10 @@ body {
 			right: 0;
 			margin: 0 auto;
 			text-align: center;
-			margin-top: 20px;
+			margin-top: 10px;
 
-			font-family: "BubbleBoy2Regular";
-			font-size: 25px;
+			font-family: "HelveticaRoundedLTStdBoldCondensedOblique";
+			font-size: 35px;
 			color: #fff900;
 
 		}
@@ -190,52 +190,53 @@ body {
 /* -- MAIN GAME -- */
 
 	/* -- MAIN GAME Animations -- */
-	#animation1 {
-		position: absolute;
-		left: -50px;
-		right: -50px;
-		margin: 0 auto;
-		top: 50%;
-		margin-top: -10px;
-		text-align: center;
-		font-size: 40px;
-		color: #30EF00;
-		display: none;
-		z-index: 0;
-	}
+		.startAnimation {
+			position: absolute;
+			left: -50px;
+			right: -50px;
+			margin: 0 auto;
+			top: 50%;
+			margin-top: -10px;
+			text-align: center;
+			font-size: 40px;
+			display: none;
+			z-index: 0;
+		}
 
-	#animation2 {
-		position: absolute;
-		display: block;
-		left: -50px;
-		right: -50px;
-		margin: 0 auto;
-		top: 50%;
-		margin-top: -10px;
-		text-align: center;
-		font-size: 40px;
-		color: red;
-		display: none;
-		z-index: 0;
-	}
+		.onEventAnimation {
+			position: absolute;
+			left: -50px;
+			right: -50px;
+			margin: 0 auto;
+			top: 50%;
+			margin-top: -10px;
+			text-align: center;
+			font-size: 40px;
+			display: block;
+			z-index: 0;
+		}
 
-	#animation3 {
-		position: absolute;
-		display: block;
-		left: -50px;
-		right: -50px;
-		margin: 0 auto;
-		top: 50%;
-		margin-top: -10px;
-		text-align: center;
-		font-size: 40px;
-		color: red;
-		display: none;
-		z-index: 0;
-	}
+		#animation1 {
+			color: #30EF00;
+		}
+
+		#animation2 {
+			color: red;
+		}
+
+		#animation3 {
+			color: red;
+		}
+
+		/* -- MAIN GAME Animation onEvent -- */
+			#fizzBuzzAnimation {
+				color: red;
+			}
+
+
 
 	
-	/* -- buttons -- */
+	/* -- MAIN GAME buttons -- */
 		.nav {
 			display: block;
 			background-color: #f7f7f7;
@@ -352,7 +353,7 @@ body {
 					padding: 6%;
 					color: #30EF00;
 					left: 0;
-					font-size: 20px;
+					font-size: 30px;
 				}
 
 					.settingMenuButtonStyling:hover {
@@ -413,23 +414,23 @@ body {
 #scoreTitle {
 	display: inline-block;
 	position: absolute;
-	top: 25px;
-	left:20px;
+	top: 12px;
+	left:15px;
 
-	font-family: 'BubbleBoy2Regular';
-	font-size: 20px;
+	font-family: 'HelveticaRoundedLTStdBoldCondensedOblique';
+	font-size: 30px;
 	color: #30EF00;
 }
 
 #scoreNumber {
 	display: inline-block;
 	position: absolute;
-	top: 25px;
+	top: 12px;
 	left: 40px;
 	margin-left: 60px;
 
-	font-family: 'BubbleBoy2Regular';
-	font-size: 20px;
+	font-family: 'HelveticaRoundedLTStdBoldCondensedOblique';
+	font-size: 30px;
 	color: #30EF00;
 }
 
