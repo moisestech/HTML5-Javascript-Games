@@ -135,18 +135,26 @@ function keydownHandler(event) {
 	switch (event.keyCode) {
 		case fizzBuzz:
 			if (currentFizzBuzzNumber % 3 === 0 && currentFizzBuzzNumber % 5 == 0) {
+				
+				//keep score
 				fizzBuzzCount++;
-				//console.log("FizzBuzzNumber " + fizzBuzzCount);
-
 				totalCount+= 2;
 				score.innerHTML = totalCount;
-				//console.log(totalCount);
 
+				//onEvent animation logic
 				gameScene.append("<div class='bubble onEventAnimation' id='fizzBuzzAnimation'>FizzBuzz!</div>");
-				$("#fizzBuzzAnimation").stop(true, true).animate({top:"-=10", opacity:"toggle"}, 400).fadeOut(100);
-
+				$("#fizzBuzzAnimation").stop(true, true).animate({top:"-=10", opacity:"toggle"}, 400).fadeOut(100, 
+					function() { $(this).remove()});
+			} else {
+				gameScene.append("<div class='bubble onEventAnimation' id='wrongAnimation'>Wrong!</div>");
+				$("#wrongAnimation").stop(true, true).animate({top:"-=10", opacity:"toggle"}, 400).fadeOut(100,
+					function() {$(this).remove()});
 
 			}
+
+			//$("#fizzBuzzAnimation").remove();
+			//$("#wrongAnimation").remove();
+
 			
 			currentFizzBuzzNumber++;
 			currentNumber.innerHTML = currentFizzBuzzNumber;
