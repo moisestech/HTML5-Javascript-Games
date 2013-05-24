@@ -92,6 +92,7 @@ $(document).ready(function(){
 			var mainGameSettingsBackground = document.getElementById("mainGameSettingsBackground");
 
 			var resume = document.getElementById("resume");
+			var mainGameSettingsBackground = document.getElementById("mainGameSettingsBackground");
 			var mainMenu = document.getElementById("mainMenu");
 			var rules = document.getElementById("rules");
 
@@ -113,6 +114,7 @@ window.addEventListener("keydown", keydownHandler, false);
 mainGameSettings.addEventListener("click", mainGameSettingsHandler, false);
 
 resume.addEventListener("click", resumeHandler, false);
+mainGameSettingsBackground.addEventListener("click", resumeHandler, false);
 mainMenu.addEventListener("click", mainMenuHandler, false);
 rules.addEventListener("click", rulesHandler, false);
 
