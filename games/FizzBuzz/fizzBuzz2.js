@@ -150,20 +150,91 @@ function rulesHandler() {
 		
 		/* -- MAIN GAME LOGIC touch-- */
 			function fizzHandler() {
-				console.log("fizzHandler!");
-				return 0;
+				if (currentFizzBuzzNumber % 3 === 0) {
+							
+					//keep score
+					fizzCount++;		
+					totalCount++;
+					score.innerHTML = totalCount;
+
+					//onEvent Animation logic
+					gameScene.append("<div class='bubble onEventAnimation' id='fizzAnimation'>Fizz!</div>");
+					$("#fizzAnimation").stop(true, true).animate({top:"-=10", opacity:"toggle"}, 400).fadeOut(100, 
+						function() { $(this).remove()});
+				} else {
+					//onEvent animation logic
+					gameScene.append("<div class='bubble onEventAnimation' id='wrongAnimation'>Wrong!</div>");
+					$("#wrongAnimation").stop(true, true).animate({top:"-=10", opacity:"toggle"}, 400).fadeOut(100,
+						function() {$(this).remove()});
+
+					totalCount -= 1;
+				}
+				
+				currentFizzBuzzNumber++;
+				currentNumber.innerHTML = currentFizzBuzzNumber;
 			}
 
 			function fizzBuzzHandler() {
-				console.log("fizzBuzzHandler!");
+				if (currentFizzBuzzNumber % 3 === 0 && currentFizzBuzzNumber % 5 == 0) {
+							
+					//keep score
+					fizzBuzzCount++;
+					totalCount+= 2;
+					score.innerHTML = totalCount;
+
+					//onEvent animation logic
+					gameScene.append("<div class='bubble onEventAnimation' id='fizzBuzzAnimation'>FizzBuzz!</div>");
+					$("#fizzBuzzAnimation").stop(true, true).animate({top:"-=10", opacity:"toggle"}, 400).fadeOut(100, 
+						function() { $(this).remove()});
+				} else {
+					//onEvent animation logic
+					gameScene.append("<div class='bubble onEventAnimation' id='wrongAnimation'>Wrong!</div>");
+					$("#wrongAnimation").stop(true, true).animate({top:"-=10", opacity:"toggle"}, 400).fadeOut(100,
+						function() {$(this).remove()});
+
+					totalCount -= 1;
+				}
+
+				currentFizzBuzzNumber++;
+				currentNumber.innerHTML = currentFizzBuzzNumber;
 			}
 
 			function buzzHandler() {
-				console.log("buzzHandler!");
+				if (currentFizzBuzzNumber % 5 === 0) {
+							
+					// keep score
+					buzzCount++;
+					totalCount++;
+					score.innerHTML = totalCount;
+
+					//onEvent Animation logic
+					gameScene.append("<div class='bubble onEventAnimation' id='buzzAnimation'>Buzz!</div>");
+					$("#buzzAnimation").stop(true, true).animate({top:"-=10", opacity:"toggle"}, 400).fadeOut(100, 
+						function() { $(this).remove()});
+				} else {
+					//onEvent animation logic
+					gameScene.append("<div class='bubble onEventAnimation' id='wrongAnimation'>Wrong!</div>");
+					$("#wrongAnimation").stop(true, true).animate({top:"-=10", opacity:"toggle"}, 400).fadeOut(100,
+						function() {$(this).remove()});
+
+					totalCount -= 1;
+				}
+
+				currentFizzBuzzNumber++;
+				currentNumber.innerHTML = currentFizzBuzzNumber;
 			}
 
 			function spacebarHandler() {
-				console.log("spacebarHandler!");
+				//keep score
+				spacebarCount++;
+
+				//onEvent Animation logic
+				gameScene.append("<div class='bubble onEventAnimation' id='spacebarAnimation'>Skip!</div>");
+				$("#spacebarAnimation").stop(true, true).animate({top:"-=10", opacity:"toggle"}, 400).fadeOut(100, 
+					function() { $(this).remove()});
+
+				currentFizzBuzzNumber++;
+				currentNumber.innerHTML = currentFizzBuzzNumber;
 			}
 
 
