@@ -65,6 +65,7 @@ $(document).ready(function(){
 			var fizzBuzz = 38; //Up
 			var fizz = 37; //Left
 			var buzz = 39; //Right
+			var spacebar = 32;
 
 		//Displayed number on the DOM
 			var currentFizzBuzzNumber = 0;
@@ -86,6 +87,7 @@ $(document).ready(function(){
 			var fizzBuzzCount = 0;
 			var fizzCount = 0;
 			var buzzCount = 0;
+			var spacebarCount = 0;
 
 		//FizzBuzz Total count
 			var totalCount = 0;
@@ -206,8 +208,20 @@ function keydownHandler(event) {
 
 			currentFizzBuzzNumber++;
 			currentNumber.innerHTML = currentFizzBuzzNumber;
-			//console.log("The current number is " + currentFizzBuzzNumber);
 			break;
+
+		case spacebar:
+				//keep score
+				spacebarCount++;
+
+				//onEvent Animation logic
+				gameScene.append("<div class='bubble onEventAnimation' id='spacebarAnimation'>Skip!</div>");
+				$("#spacebarAnimation").stop(true, true).animate({top:"-=10", opacity:"toggle"}, 400).fadeOut(100, 
+					function() { $(this).remove()});
+
+				currentFizzBuzzNumber++;
+				currentNumber.innerHTML = currentFizzBuzzNumber;
+				break;
 	} 
 }
 
