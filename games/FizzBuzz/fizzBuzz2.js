@@ -30,12 +30,6 @@ $(document).ready(function(){
 		gameRules.addEventListener("click", rulesHandler, false);
 		gameSettings.addEventListener("click", settingsHandler, false);
 
-			//main game buttons clickEvent listeners
-			fizzButton1.addEventListener("click", fizzHandler, false);
-			fizzBuzzButton2.addEventListener("click", fizzBuzzHandler, false);
-			buzzButton3.addEventListener("click", buzzHandler, false);
-			spacebarButton4.addEventListener("click", spacebarHandler, false);
-
 	/* -- START SCREEN functions -- */
 	function startHandler() {
 		console.log("Start screen button clicked!");
@@ -54,7 +48,7 @@ $(document).ready(function(){
 			//animation3 callback
 			function nextAnimation3 () {
 				console.log("next animation!");
-				animation3.stop(true, true).animate({right:"toggle", opacity:"toggle"}, 1000).fadeOut(100);
+				animation3.stop(true, true).animate({right:"toggle", opacity:"toggle"}, 1000).fadeOut(100, loadAddEventHandlers);
 			}
 
 
@@ -110,7 +104,6 @@ $(document).ready(function(){
 	
 
 //add keyEvent listener
-window.addEventListener("keydown", keydownHandler, false);
 mainGameSettings.addEventListener("click", mainGameSettingsHandler, false);
 
 resume.addEventListener("click", resumeHandler, false);
@@ -121,34 +114,47 @@ rules.addEventListener("click", rulesHandler, false);
 
 /* -- MAIN GAME FUNCTIONS -- */
 
-function mainGameSettingsHandler() {
-	console.log("settings clicked!");
-	if (mainGameSettingsMenu.style.display === "") {
-		mainGameSettingsMenu.style.display = "block";
-		mainGameSettingsBackground.style.display = "block";
-	} else if (mainGameSettingsMenu.style.display === "block") {
+	function loadAddEventHandlers() {
+		console.log("event handlers loaded!");
+
+		//main game  keydownHandler created
+		window.addEventListener("keydown", keydownHandler, false);
+
+		//main game buttons clickEvent listeners
+		fizzButton1.addEventListener("click", fizzHandler, false);
+		fizzBuzzButton2.addEventListener("click", fizzBuzzHandler, false);
+		buzzButton3.addEventListener("click", buzzHandler, false);
+		spacebarButton4.addEventListener("click", spacebarHandler, false);
+	}
+
+	function mainGameSettingsHandler() {
+		console.log("settings clicked!");
+		if (mainGameSettingsMenu.style.display === "") {
+			mainGameSettingsMenu.style.display = "block";
+			mainGameSettingsBackground.style.display = "block";
+		} else if (mainGameSettingsMenu.style.display === "block") {
+			mainGameSettingsMenu.style.display = "";
+			mainGameSettingsBackground.style.display = "";
+
+		}
+	}
+
+	function resumeHandler() {
 		mainGameSettingsMenu.style.display = "";
 		mainGameSettingsBackground.style.display = "";
-
+		console.log("resume!");
 	}
-}
 
-function resumeHandler() {
-	mainGameSettingsMenu.style.display = "";
-	mainGameSettingsBackground.style.display = "";
-	console.log("resume!");
-}
+	function mainMenuHandler() {
+		mainGameSettingsMenu.style.display = "";
+		mainGameSettingsBackground.style.display = "";
+		entireStartScreen.style.display = "block";
+		console.log("main menu!");
+	}
 
-function mainMenuHandler() {
-	mainGameSettingsMenu.style.display = "";
-	mainGameSettingsBackground.style.display = "";
-	entireStartScreen.style.display = "block";
-	console.log("main menu!");
-}
-
-function rulesHandler() {
-	console.log("rules");
-}
+	function rulesHandler() {
+		console.log("rules");
+	}
 		
 		/* -- MAIN GAME LOGIC touch-- */
 			function fizzHandler() {
