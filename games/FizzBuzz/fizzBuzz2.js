@@ -34,6 +34,7 @@ $(document).ready(function(){
 	function startHandler() {
 		console.log("Start screen button clicked!");
 		entireStartScreen.style.display = "none";
+		startGameLogic();
 
 			//Begin Animation
 			animation1.stop(true, true).animate({right:"toggle", opacity:"toggle"}, 1000).fadeOut(100, nextAnimation2);
@@ -390,13 +391,16 @@ rulesDivReturn.click(leaveRulesHandler);
 			clearInterval(endGameLogic);
 		}
 
-		var endGameLogic = setInterval(function() {
-			if (currentFizzBuzzNumber !== 10) {
-			console.log("keepGoing");
-			} else {
-				endGame();
-			}
-		},1000);
+		function startGameLogic() {
+			//start game logic
+			var endGameLogic = setInterval(function() {
+				if (currentFizzBuzzNumber !== 10) {
+				console.log("keepGoing");
+				} else {
+					endGame();
+				}
+			},1000);
+		}
 		
 
 		//console.log(currentFizzBuzzNumber);

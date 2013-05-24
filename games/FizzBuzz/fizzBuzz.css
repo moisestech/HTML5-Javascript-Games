@@ -554,6 +554,62 @@ text-shadow:0px 0px 0 rgb(242,242,242),1px 1px 0 rgb(230,230,230),2px 2px 0 rgb(
 			z-index: -5;
 		}
 
+/* -- END GAME -- */
+
+
+	#endGameScoreDiv {
+					display: none;
+					width: 100%;
+					height: 100%;
+	} 
+
+		#endGameDivWrapper {
+			-moz-box-shadow: 0px 6px 18px 1px #0d90bf;
+			-webkit-box-shadow: 0px 6px 18px 1px #0d90bf;
+			box-shadow: 0px 6px 18px 1px #0d90bf;
+			background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #cddae6), color-stop(1, #05c1fa) );
+			background:-moz-linear-gradient( center top, #cddae6 5%, #05c1fa 100% );
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#cddae6', endColorstr='#05c1fa');
+			background-color:#cddae6;
+			-moz-border-radius:15px;
+			-webkit-border-radius:15px;
+			border-radius:15px;
+			border:4px solid #2d99f7;
+			display:inline-block;
+			color:#ffdd00;
+			font-family:arial;
+			font-size:33px;
+			font-weight:bold;
+			padding:0;
+			text-decoration:none;
+			text-shadow:1px 1px 0px #f0a638;
+			display: none;
+			position: relative;
+			top: 5%;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			padding: 10px;
+
+			width: 80%;
+			height: 80%;
+			/*border: 1px solid black;*/
+
+			min-width: 270px;
+
+		}
+
+				#endGameMainMenu {
+					position: absolute;
+					padding-right: 20px;
+					bottom: -15px;
+					right: 0;
+					font-size: 30px;
+				}
+
+					#endGameMainMenu:hover {
+						color: #30EF00;
+					}
 
 
 		/* iPads (landscape) ----------- */
