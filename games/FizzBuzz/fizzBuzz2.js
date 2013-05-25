@@ -99,6 +99,7 @@ $(document).ready(function(){
 			var mainGameSettingsBackground = document.getElementById("mainGameSettingsBackground");
 			var mainMenu = document.getElementById("mainMenu");
 			var rules = document.getElementById("rules");
+			var endGameMainMenu = $("#endGameMainMenu");
 
 		//FizzBuzz individual count
 			var fizzBuzzCount = 0;
@@ -122,6 +123,7 @@ mainMenu.addEventListener("click", mainMenuHandler, false);
 rules.addEventListener("click", rulesHandler, false);
 startMenuSettingsBackground.click(leaveRulesHandler);
 rulesDivReturn.click(leaveRulesHandler);
+endGameMainMenu.click(mainMenuFromEndGameHandler);
 
 
 
@@ -163,6 +165,23 @@ rulesDivReturn.click(leaveRulesHandler);
 		mainGameSettingsBackground.style.display = "";
 		entireStartScreen.style.display = "block";
 		console.log("main menu!");
+	}
+
+	function mainMenuFromEndGameHandler() {
+		endGameScoreDiv.style.display = "";
+		endGameDivWrapper.style.display = "";
+		entireStartScreen.style.display = "block";
+		mainGameSettingsBackground.style.display = "";
+
+		fizzBuzzCount = 0;
+		fizzCount = 0;
+		buzzCount = 0;
+		spacebarCount = 0;
+		totalCount = 0;
+		currentFizzBuzzNumber = 0;
+		score.innerHTML = totalCount;
+		currentNumber.innerHTML = 0;
+		console.log(score.innerHTML);
 	}
 
 	function rulesHandler() {
@@ -421,7 +440,7 @@ rulesDivReturn.click(leaveRulesHandler);
 		function startGameLogic() {
 			//start game logic
 			var endGameLogic = setInterval(function() {
-				if (currentFizzBuzzNumber < 10) {
+				if (currentFizzBuzzNumber < 20) {
 				console.log("keepGoing");
 				} else {
 					endGame(endGameLogic);
