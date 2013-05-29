@@ -12,15 +12,17 @@ $(document).ready(function() {
 	});
 
 	var htmlBody = $("body");
-	htmlBody.append("<div id='gameSquare'>Here you go</div>");
+	htmlBody.append("<div id='gameSquare'></div>");
 
 	var gameSquare = $("#gameSquare");
 
-	setInterval(createRandomMeasurements, 3000);
+	setInterval(createRandomMeasurements, 2000);
 
 		function createRandomMeasurements() {
 			var widthPixel = Math.floor(Math.random()*200);
 			var heightPixel = Math.floor(Math.random()*200);
+
+			gameSquare.animate({width: widthPixel, height: heightPixel}, 300);
 
 			console.log("Width: " + widthPixel +  ", Height: " + heightPixel);
 		}
