@@ -16,19 +16,24 @@ $(document).ready(function() {
 
 	var gameSquare = $("#gameSquare");
 	var timer = $("#timer");
+	var countDownWidth = timer.css("width");
+	
 
-	setInterval(createRandomMeasurements, 5000);
-	//setInterval(timerCountDown, 1000);
+	//setInterval(createRandomMeasurements, 5000);
+	setInterval(timerCountDown, 100);
+	function timerCountDown() {
+		var countDownWidth = timer.css("width");
+		countDownWidth = countDownWidth.substring(0, countDownWidth.length - 2);
+		countDownWidth -= 2;
+		timer.animate({width: countDownWidth}, 100);
+	}
 
-	countDownWidth = timer.css("width");
-
-	countDownWidth = countDownWidth.substring(0, countDownWidth.length - 2);
-
-	console.log(countDownWidth);
-		//function timerCountDown() {
-			//var countDownWidth = timer.css("width") - 10;
-			//timer.animate({width: countDownWidth}, 300);
-		//}
+	setInterval(checkTimer, 1000);
+	function checkTimer () {
+		if (countDownWidth < 0) {
+			createRandomMeasurements();
+		}		
+	}
 
 		function createRandomMeasurements() {
 			var widthPixel = Math.floor(Math.random()*200);
