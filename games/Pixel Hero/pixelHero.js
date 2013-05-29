@@ -15,16 +15,26 @@ $(document).ready(function() {
 	htmlBody.append("<div id='gameSquare'></div>");
 
 	var gameSquare = $("#gameSquare");
+	var timer = $("#timer");
 
-	setInterval(createRandomMeasurements, 2000);
+	setInterval(createRandomMeasurements, 5000);
+	//setInterval(timerCountDown, 1000);
+
+	countDownWidth = timer.css("width");
+
+	countDownWidth = countDownWidth.substring(0, countDownWidth.length - 2);
+
+	console.log(countDownWidth);
+		//function timerCountDown() {
+			//var countDownWidth = timer.css("width") - 10;
+			//timer.animate({width: countDownWidth}, 300);
+		//}
 
 		function createRandomMeasurements() {
 			var widthPixel = Math.floor(Math.random()*200);
 			var heightPixel = Math.floor(Math.random()*200);
 
 			gameSquare.animate({width: widthPixel, height: heightPixel}, 300);
-
-			console.log("Width: " + widthPixel +  ", Height: " + heightPixel);
 		}
 		
 
