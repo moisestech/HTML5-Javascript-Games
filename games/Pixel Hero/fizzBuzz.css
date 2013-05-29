@@ -1,0 +1,622 @@
+@font-face {
+    font-family: 'zoinkfatregular';
+    src: url('fonts/zoinkfat-webfont.eot');
+    src: url('fonts/zoinkfat-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/zoinkfat-webfont.woff') format('woff'),
+         url('fonts/zoinkfat-webfont.ttf') format('truetype'),
+         url('fonts/zoinkfat-webfont.svg#zoinkfatregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'HelveticaRoundedLTStdBoldCondensedOblique';
+    src: url('fonts/helveticaroundedltstd-bdcno.eot');
+    src: url('fonts/helveticaroundedltstd-bdcno.eot') format('embedded-opentype'),
+         url('fonts/helveticaroundedltstd-bdcno.woff') format('woff'),
+         url('fonts/helveticaroundedltstd-bdcno.ttf') format('truetype'),
+         url('fonts/helveticaroundedltstd-bdcno.svg#HelveticaRoundedLTStdBoldCondensedOblique') format('svg');
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	position: fixed;
+
+	/* IE10 Consumer Preview */ 
+	/*background-image: -ms-radial-gradient(center, ellipse farthest-corner, #0DA6FF 0%, #1000EF 100%);*/
+	/* Mozilla Firefox */ 
+	/*background-image: -moz-radial-gradient(center, ellipse farthest-corner, #0DA6FF 0%, #1000EF 100%);*/
+	/* Opera */ 
+	/*background-image: -o-radial-gradient(center, ellipse farthest-corner, #0DA6FF 0%, #1000EF 100%);*/
+	/* Webkit (Safari/Chrome 10) */ 
+	/*background-image: -webkit-gradient(radial, center center, 0, center center, 499, color-stop(0, #0DA6FF), color-stop(1, #1000EF));*/
+}
+
+.bubble {
+	font-family: "HelveticaRoundedLTStdBoldCondensedOblique";
+}
+
+.Three-Dee{
+font-family: "HelveticaRoundedLTStdBoldCondensedOblique", 'Helvetica Neue',Helvetica, sans-serif;
+color: #fff9d6;
+font-size: 114px;
+text-shadow:0px 0px 0 rgb(242,242,242),1px 1px 0 rgb(230,230,230),2px 2px 0 rgb(217,217,217),3px 3px 0 rgb(204,204,204),4px 4px 0 rgb(191,191,191),5px 5px 0 rgb(179,179,179),6px 6px 0 rgb(166,166,166),7px 7px 0 rgb(153,153,153),8px 8px 0 rgb(140,140,140),9px 9px 0 rgb(128,128,128),10px 10px 0 rgb(115,115,115),11px 11px 0 rgb(102,102,102),12px 12px 0 rgb(89,89,89),13px 13px 0 rgb(76,76,76),14px 14px 0 rgb(64,64,64),15px 15px 0 rgb(51,51,51),16px 16px 0 rgb(38,38,38),17px 17px 0 rgb(25,25,25),18px 18px 0 rgb(13,13,13),19px 19px 0 rgb(0,0,0), 20px 20px 0 rgb(-13,-13,-13),21px 21px 20px rgba(0,0,0,1),21px 21px 1px rgba(0,0,0,0.5),0px 0px 20px rgba(0,0,0,.2);}
+
+/* -- START SCREEN -- */
+	#startScreen {
+		display: inline-block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: #00abe9;
+
+		overflow: hidden;
+	}
+
+	#startScreenTitle {
+		position: absolute;
+		display: block;
+
+		top: 10%;
+		left: 0;
+		right: 0;
+		width: 80%;
+		max-width: 700px;
+		margin: 0 auto;
+	}
+
+	#startScreenBackground {
+		position: absolute;
+		display: block;
+
+		left: 0;
+		right: 0;
+		height: 100%;
+		margin: 0 auto;
+
+		min-height: 500px;
+	}
+
+	/* -- buttons -- */
+
+		#buttonWrapper {
+			position: absolute;
+			display: block;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			top: 30%;
+			margin-top: 10%;
+
+			width: 80%;
+			height: 50%;
+			/*border: 1px solid black;*/
+		}
+
+		#buttonWrapperCenter {
+			position: absolute;
+			display: block;
+			width: 50%;
+			height: 80%;
+			margin: 0 auto;
+			left: 0;
+			right: 0;
+
+			/*border: 1px solid black;*/
+		}
+
+		.button {
+			position: relative;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			padding: 10px;
+
+			width: 46.3%;
+			height: 20%;
+			/*border: 1px solid black;*/
+
+			min-width: 270px;
+		}
+
+		/* -- button styling -- */
+
+			.menuButtonStyle {
+				-moz-box-shadow: 0px 6px 18px 1px #0d90bf;
+				-webkit-box-shadow: 0px 6px 18px 1px #0d90bf;
+				box-shadow: 0px 6px 18px 1px #0d90bf;
+				background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #cddae6), color-stop(1, #05c1fa) );
+				background:-moz-linear-gradient( center top, #cddae6 5%, #05c1fa 100% );
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#cddae6', endColorstr='#05c1fa');
+				background-color:#cddae6;
+				-moz-border-radius:15px;
+				-webkit-border-radius:15px;
+				border-radius:15px;
+				border:4px solid #2d99f7;
+				display:inline-block;
+				color:#ffdd00;
+				font-family:arial;
+				font-size:33px;
+				font-weight:bold;
+				padding:0;
+				text-decoration:none;
+				text-shadow:1px 1px 0px #f0a638;
+
+				margin: 0 auto;
+				left: 0;
+				right: 0;
+			}
+
+			.menuButtonStyle:hover {
+				background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #05c1fa), color-stop(1, #cddae6) );
+				background:-moz-linear-gradient( center top, #05c1fa 5%, #cddae6 100% );
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#05c1fa', endColorstr='#cddae6');
+				background-color:#05c1fa;
+			}
+
+			.menuButtonStyle:active {
+				position:relative;
+				top:1px;
+			}
+
+
+		.buttonSize {
+			display: inline-block;
+			position: absolute;
+
+			width: 220px;
+			height: 50px;
+		}
+
+		.menuTextStyling {
+			display: inline-block;
+			position: absolute;
+
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			text-align: center;
+			margin-top: 10px;
+
+			font-family: "HelveticaRoundedLTStdBoldCondensedOblique";
+			font-size: 2rems;
+			color: #fff900;
+
+		}
+
+		.rulesTextStyling {
+			width: 70%;
+			height: 70%;
+			top: 25%;
+			margin-top: -50px;
+			font-size: 25px;
+		}
+
+
+/* -- MAIN GAME -- */
+
+	/* -- MAIN GAME Animations -- */
+		.startAnimation {
+			position: absolute;
+			left: -50px;
+			right: -50px;
+			margin: 0 auto;
+			top: 50%;
+			margin-top: -10px;
+			text-align: center;
+			font-size: 40px;
+			display: none;
+			z-index: 0;
+		}
+
+		.onEventAnimation {
+			position: absolute;
+			left: 0px;
+			right: -200px;
+			margin: 0 auto;
+			top: 50%;
+			margin-top: -70px;
+			margin-bottom: 0; 
+			text-align: center;
+			font-size: 40px;
+			display: none;
+			z-index: 0;
+		}
+
+		#animation1 {
+			color: #30EF00;
+		}
+
+		#animation2 {
+			color: red;
+		}
+
+		#animation3 {
+			color: red;
+		}
+
+		/* -- MAIN GAME Animation onEvent -- */
+			#fizzBuzzAnimation {
+				color: #ffdd00;
+			}
+
+			#fizzAnimation {
+				color: #ffdd00;
+			}
+
+			#buzzAnimation {
+				color: #ffdd00;
+			}
+
+			#wrongAnimation {
+				color: red;
+			}
+
+			#spacebarAnimation {
+				color: #03e7ff
+			}
+
+
+
+	
+	/* -- MAIN GAME buttons -- */
+		.nav {
+			display: block;
+			background-color: #f7f7f7;
+			background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#e7e7e7));
+			background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7); 
+			background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7); 
+			background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7); 
+			background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7); 
+			color: #a7a7a7;
+			margin: 20px;
+			width: 144px;
+			height: 144px;
+			position: relative;
+			text-align: center;
+			line-height: 55px;
+			border-radius: 50%;
+			box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+		}
+
+		.mainGameButtonStyling {
+			display: inline-block;
+			position: absolute;
+
+			width: 50px;
+			height: 50px;
+			z-index: 0;
+		}
+
+			#fizzButton1 {
+				bottom: 0;
+				right: 60px;
+			}
+
+			#fizzBuzzButton2 {
+				bottom: 0;
+				right: 0;
+			}
+
+			#buzzButton3 {
+				bottom: 60px;
+				right: 0;
+			}
+
+			#spacebarButton4 {
+				bottom: 0;
+				left: 0px;
+			}
+
+			/* -- START MENU styling -- */
+
+				#rulesDiv {
+					position: absolute;
+					display: none;
+					width: 100%;
+					height: 100%;
+					z-index: 20;
+				} 
+
+				#rulesDivWrapper {
+					-moz-box-shadow: 0px 6px 18px 1px #0d90bf;
+					-webkit-box-shadow: 0px 6px 18px 1px #0d90bf;
+					box-shadow: 0px 6px 18px 1px #0d90bf;
+					background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #cddae6), color-stop(1, #05c1fa) );
+					background:-moz-linear-gradient( center top, #cddae6 5%, #05c1fa 100% );
+					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#cddae6', endColorstr='#05c1fa');
+					background-color:#cddae6;
+					-moz-border-radius:15px;
+					-webkit-border-radius:15px;
+					border-radius:15px;
+					border:4px solid #2d99f7;
+					display:inline-block;
+					color:#ffdd00;
+					font-family:arial;
+					font-size:33px;
+					font-weight:bold;
+					padding:0;
+					text-decoration:none;
+					text-shadow:1px 1px 0px #f0a638;
+					display: none;
+					position: relative;
+					top: 5%;
+					left: 0;
+					right: 0;
+					margin: 0 auto;
+					padding: 10px;
+
+					width: 80%;
+					height: 80%;
+					/*border: 1px solid black;*/
+
+					min-width: 270px;
+
+				}
+
+				#rulesDivReturn {
+					position: absolute;
+					padding-right: 20px;
+					bottom: -15px;
+					right: 0;
+					font-size: 30px;
+				}
+
+					#rulesDivReturn:hover {
+						color: #30EF00;
+					}
+
+				#startMenuSettingsBackground {
+					display: none;
+					position: absolute;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					background-color: black;
+					z-index: 0;
+					opacity: 0.4;
+					filter:alpha(opacity=40);
+
+				}
+
+
+		/* -- MAIN GAME settings -- */
+			#gameScene {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+			}
+
+			#mainGameSettings {
+				position: absolute;
+				right: 0;
+				z-index: 0;
+			}
+
+			#settingsIcon {
+				width: 30px;
+				height: 30px;
+				padding: 10px;
+				opacity:0.4;
+				filter:alpha(opacity=40);
+			}
+
+				#settingsIcon:hover {
+					opacity:1.0;
+					filter:alpha(opacity=100);
+				}
+
+			/* -- MAIN GAME settings options -- */
+				#mainGameSettingsBackground {
+					display: none;
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					background-color: black;
+					z-index: 1;
+					opacity: 0.4;
+					filter:alpha(opacity=40);
+
+				}
+
+				#mainGameSettingsMenu {
+					position: absolute;
+					display: none;
+					left: 0;
+					right: 0;
+					margin: 0 auto;
+					width:40%;
+					max-height: 250px;
+					top: 50%;
+					margin-top: -15%;
+					border: 5px solid white;
+					border-radius: 15px;
+					background-color: black;
+					z-index: 3;
+				}
+
+				#mainGameSettingsWrapper {
+					padding: 5%;
+				}
+
+				.settingMenuButtonStyling {
+					position: relative;
+					left: 0;
+					right: 0;
+					margin: 0 auto;
+					text-align: center;
+					padding: 4%;
+					color: #30EF00;
+					left: 0;
+					font-size: 30px;
+				}
+
+					.settingMenuButtonStyling:hover {
+						color: #ffdd00;
+					}
+
+				#resume {
+
+				}
+
+				#mainMenu {
+
+				}
+
+				#rules {
+
+				}
+
+
+
+		/* -- buttons icons -- */
+
+			.centerToButton {
+			}
+
+	/* -- MAIN GAME background -- */
+
+		.background-placement {
+			background-image: url(imgs/fizzBuzz_mainGame_background3.svg);
+			background-position: center, 100%;
+			background-color: #00abe9;
+			background-size: 100%;
+			overflow: visible;
+			display: block;
+			position: absolute;
+
+			overflow: visible;
+			margin: 0 auto;
+			height: 100%;
+			width: 100%;
+			left: 0;
+			right: 0;
+			z-index: -15;
+		}
+
+
+
+#currentNumber { 
+	display: inline-block;
+	position: absolute;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	top: 50%;
+	margin-top: -90px;
+	margin-left: -40px;
+
+	font-family: 'HelveticaRoundedLTStdBoldCondensedOblique';
+	color: black;
+	z-index: -10;
+}
+
+#scoreTitle {
+	display: inline-block;
+	position: absolute;
+	top: 12px;
+	left:15px;
+
+	font-family: 'HelveticaRoundedLTStdBoldCondensedOblique';
+	font-size: 30px;
+	color: #30EF00;
+}
+
+#scoreNumber {
+	display: inline-block;
+	position: absolute;
+	width: 45px;
+	top: 12px;
+	left: 40px;
+	margin-left: 60px;
+
+	font-family: 'HelveticaRoundedLTStdBoldCondensedOblique';
+	font-size: 30px;
+	color: #30EF00;
+}
+
+#scorePlacement {
+			position: absolute;
+			background-color: black;
+			margin-left: -15px;
+			margin-top: -10px;
+			border: 5px solid white;
+			width: 200px;
+			height: 50px;
+			border-radius: 15px;
+			z-index: -5;
+		}
+
+/* -- END GAME -- */
+
+
+	#endGameScoreDiv {
+		position: absolute;
+		display: none;
+		width: 100%;
+		height: 100%;
+		z-index: 30;
+	} 
+
+		#endGameDivWrapper {
+			-moz-box-shadow: 0px 6px 18px 1px #0d90bf;
+			-webkit-box-shadow: 0px 6px 18px 1px #0d90bf;
+			box-shadow: 0px 6px 18px 1px #0d90bf;
+			background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #cddae6), color-stop(1, #05c1fa) );
+			background:-moz-linear-gradient( center top, #cddae6 5%, #05c1fa 100% );
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#cddae6', endColorstr='#05c1fa');
+			background-color:#cddae6;
+			-moz-border-radius:15px;
+			-webkit-border-radius:15px;
+			border-radius:15px;
+			border:4px solid #2d99f7;
+			display:inline-block;
+			color:#ffdd00;
+			font-family:arial;
+			font-size:33px;
+			font-weight:bold;
+			padding:0;
+			text-decoration:none;
+			text-shadow:1px 1px 0px #f0a638;
+			display: none;
+			position: relative;
+			top: 5%;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			padding: 10px;
+
+			width: 80%;
+			height: 80%;
+			/*border: 1px solid black;*/
+
+			min-width: 270px;
+
+		}
+
+				#endGameMainMenu {
+					position: absolute;
+					padding-right: 20px;
+					bottom: -15px;
+					right: 0;
+					font-size: 30px;
+				}
+
+					#endGameMainMenu:hover {
+						color: #30EF00;
+					}
+
+
+		/* iPads (landscape) ----------- */
+@media only screen and (max-width : 1024px) {
+	.rulesTextStyling{font-size:22px; margin-top: -80px;}
+}

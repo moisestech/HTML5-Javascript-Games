@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'BubbleBoy2Regular';
+    src: url('bubbleboy2.eot');
+    src: url('bubbleboy2.eot') format('embedded-opentype'),
+         url('bubbleboy2.woff') format('woff'),
+         url('bubbleboy2.ttf') format('truetype'),
+         url('bubbleboy2.svg#BubbleBoy2Regular') format('svg');
+}

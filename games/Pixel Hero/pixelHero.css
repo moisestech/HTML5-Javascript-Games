@@ -1,0 +1,16 @@
+body {
+	position: fixed;
+	width: 100%;
+	background-color: green;
+}
+
+#gameSquare {
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	top: 50%;
+	margin-top: 25%;
+	width: 100px;
+	height: 500px;
+	background-color: white;
+}

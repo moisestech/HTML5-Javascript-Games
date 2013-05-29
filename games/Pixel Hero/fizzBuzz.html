@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>FizzBuzz!</title>
+			<link rel="stylesheet" type="text/css" href="fizzBuzz.css"/>
+
+			<script src="jquery/jquery-1.9.1.js"></script>
+			<script src="jquery/jquery-ui-1.10.3.js"></script>
+			<script src="fizzBuzz2.js"></script>
+		</head>
+		<body>
+
+
+			<!-- GAME SCENE -->
+			<div id="gameScene">
+
+				<!-- Intro Animation -->
+				<div class="bubble startAnimation" id="animation1">READY</div>
+				<div class="bubble startAnimation" id="animation2">SET</div>
+				<div class="bubble startAnimation" id="animation3">FizzBuzz!</div>
+
+
+				<!-- current number -->
+					<div id ="currentNumber" class="Three-Dee"></div>
+
+				<!-- top bar -->
+					<div id="timer"></div>
+
+					<!-- score -->
+						<div class="" id="scorePlacement">
+							<div id ="scoreTitle">score</div>
+							<div id ="scoreNumber"></div>
+						</div>
+					<!-- settings -->
+						<div id="mainGameSettings">
+							<img id="settingsIcon" src="imgs/settings.png"/>
+						</div>
+
+						<!-- settings menu -->
+							<div id="mainGameSettingsBackground"></div>
+							<div id="mainGameSettingsMenu">
+								<div id="mainGameSettingsWrapper">
+									<div class="settingMenuButtonStyling bubble" id="resume">resume</div>
+									<div class="settingMenuButtonStyling bubble" id="mainMenu">main menu</div>
+									<div class="settingMenuButtonStyling bubble" id="rules">rules</div>
+								</div>
+							</div>
+
+
+
+				<!-- bottom bar -->
+					<div class="nav mainGameButtonStyling" id="fizzButton1">
+						<div class="bubble centerToButton"  id="fizzButton">3</div>
+					</div>
+					<div class="nav mainGameButtonStyling" id="fizzBuzzButton2">
+						<div class="bubble centerToButton" id="fizzBuzzButton">fb</div>
+					</div>
+
+					<div class="nav mainGameButtonStyling" id="buzzButton3">
+						<div class="bubble centerToButton" id="buzzButton">5</div>
+					</div>
+
+					<div class="nav mainGameButtonStyling" id="spacebarButton4">
+						<div class="bubble centerToButton"  id="spacebarButton">s</div>
+					</div>
+
+				<div class="background-placement"/>
+			</div>
+
+			<!-- START SCREEN -->
+			<div id="startScreen">
+				<img id="startScreenBackground" src="imgs/fizzBuzz_background2.png"/>
+				<img id="startScreenTitle" src="imgs/fizzBuzz_title.png"/>
+
+				<!-- Menu Buttons -->
+				
+				<div id="buttonWrapper">
+					<div class="button">
+						<div class="menuButtonStyle button buttonSize" id="buttonPositioning1">
+							<div class="menuTextStyling">START</div>
+						</div>
+					</div>
+
+					<div class="button">
+						<div class="menuButtonStyle button buttonSize" id="buttonPositioning2">
+							<div class="menuTextStyling">RULES</div>
+						</div>
+					</div>
+
+					<!--<div class="button">
+						<div class="menuButtonStyle button buttonSize" id="buttonPositioning3">
+							<div class="menuTextStyling">SETTINGS</div>
+						</div>
+					</div>-->
+				</div>	
+			</div>
+
+			<div id="rulesDiv">
+				<div id="startMenuSettingsBackground"></div>
+				<div class="menuButtonStyle button buttonSize" id="rulesDivWrapper">
+					<div class="menuTextStyling rulesTextStyling">RULES
+						<p>These are the rules you need to know in order to play fizzbuzz. The game consist of finding the multiples of 3 and 5 and when it is 3 press fizz when it is 5 press buzz. When it is of both press fizzbuzz. The controllers are spacebar to skip. left fizz, right buzz, up fizzbuzz.</p>
+					</div>
+					<p class="bubble" id="rulesDivReturn">return</p>
+				</div>
+			</div>
+
+			<div id="endGameScoreDiv">
+				<div id="startMenuSettingsBackground"></div>
+				<div class="menuButtonStyle button buttonSize" id="endGameDivWrapper">
+					<div class="menuTextStyling rulesTextStyling" id="finalScore">YOUR SCORE IS </p>
+					</div>
+					<p class="bubble" id="endGameMainMenu">main menu</p>
+				</div>
+			</div>
+
+
+
+		</body>
+	</html>
