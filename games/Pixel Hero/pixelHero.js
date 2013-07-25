@@ -24,15 +24,19 @@ $(document).ready(function() {
 	function timerCountDown() {
 		var countDownWidth = timer.css("width");
 		countDownWidth = countDownWidth.substring(0, countDownWidth.length - 2);
-		countDownWidth -= 2;
-		timer.animate({width: countDownWidth}, 100);
+		countDownWidth -= 150;
+		timer.animate({width: countDownWidth}, 15000);
+		//console.log(countDownWidth);
 	}
 
 	setInterval(checkTimer, 1000);
 	function checkTimer () {
 		if (countDownWidth < 0) {
+			console.log(countDownWidth);
 			createRandomMeasurements();
-		}		
+		} else {
+			console.log(countDownWidth);
+		}	
 	}
 
 		function createRandomMeasurements() {

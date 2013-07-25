@@ -1,0 +1,163 @@
+html, body {
+				height: 100%;
+			}
+
+			body {
+				background-color: white;
+				/*
+				background-image: url('imgs/MaybeLegal_Logos/MaybeLegal_UrbanOutfitters.png');
+				/*
+				background-size: 1400px, 1400px;
+				*/
+				background-repeat: no-repeat;
+				margin: 0;
+				font-family: Arial;
+				overflow: hidden;
+				width: 100%;
+				height: 100%;
+			}
+
+			#container {
+				z-index: 0;
+			}
+
+			.title {
+				margin-top: 15px;
+				margin-left: 15px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 250px;
+				text-align: center;
+				display: block;
+				z-index: -10;
+			}
+
+			/*.large-background {
+				width: 100%;
+				height: 100%;
+				background-image: url('imgs/backgrounds/circlespotsbigCOMPRESSED.jpg');
+				background-color: red;
+				margin: 0;
+				opacity: 1;
+			}*/
+
+			#search {
+				/*position: absolute;
+				background-image: url('imgs/MaybeLegal_Logos/MaybeLegal_UrbanOutfitters.png');
+				background-repeat: no-repeat;
+				top: 0;
+				left: 0;
+				bottom: 30px;
+				width: 100%;
+				text-align: center;
+				display: block;
+				z-index: -10;*/
+				display: none;
+			}
+
+			#search input {
+				color: #ffffff;
+				background-color: transparent;
+				border: 1px solid #0080ff;
+				padding: 10px;
+				font-size: 20px;
+				text-transform: uppercase;
+				-webkit-border-radius: 0px; /* workaround for ios safari */
+				display: none;
+			}
+
+			#search button {
+				color: #0080ff;
+				background-color: transparent;
+				border: 1px solid #0080ff;
+				padding: 10px;
+				font-size: 20px;
+				text-transform: uppercase;
+				cursor: pointer;
+				display: none;
+			}
+
+			.shirt-index-wrapper {
+				display: none;
+			}
+
+			.shirt {
+				display: none;
+			}
+
+			.buy-link {
+				width: 480px;
+				height: 480px;
+				background-color: green;
+			}
+
+			.buyLink-button {
+				display: inline-block;
+				position: absolute;
+				width: 100px;
+				height: 50px;
+				background-color: black;
+				opacity: 1;
+			}
+
+			.shirtInfo {
+				display: inline-block;
+				position: absolute;
+				width: 250px;
+				height: 0px;
+				background-color: black;
+				opacity: 0;
+				left: 500px;
+			}
+
+			.shirtInfo-bgOffset {
+				width: 250px;
+				height: 400px;
+				background-color: white;
+				opacity: 1;
+				margin-left: -10px;
+				margin-top: -10px;
+
+				border: 1px solid black;
+			}
+
+			.mainMenu {
+				margin-left: 20px;
+				display: block;
+				padding: 0;
+				position: absolute;
+				z-index: 10;
+			}
+
+			.menu_button {
+				padding: 2px 8px 2px 8px;
+				margin-left: 5px;
+				float: left;
+				border: 1px solid black;
+
+				background-color: black;
+				color: white;
+				border-radius: 25px;
+				z-index: 10;
+			}
+			.menu_button:hover {
+				border: 1px solid white;
+				background-color: white;
+				color: black;
+
+			}
+
+			.logo-temp-Image {
+				display: block;
+			}
+			.mb-gif-wrapper {
+				position: fixed;
+				display: block;
+				z-index: 30;
+				opacity: 1;
+			}
+
+			.mb-gif {
+				opacity: 1;
+			}
