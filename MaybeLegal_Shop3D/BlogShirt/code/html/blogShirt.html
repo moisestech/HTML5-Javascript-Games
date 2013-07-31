@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<title>Maybe Legal Design Generator</title>
+
+			<!-- javascript -->
+			<script src="../libs/jquery-1.9.1.js"></script>
+			<script src="../libs/jquery-ui-1.10.3.js"></script>
+			<script src="../js/blogShirt.js"></script>
+
+			<!-- css -->
+			<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+			<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+			<link rel="stylesheet" type="text/css" href="../css/jquery-ui.min.css">
+			<link rel="stylesheet" type="text/css" href="../css/blogShirt.css"/>			
+
+			
+		</head>
+		
+		<body>
+			<div id="scene">		
+				<!-- standard shirt --> 
+				<section id="shirt">
+					<img class="layer1" src="../../assets/templates/shirt_1/white-essential_1.png"></img>
+					<div class="layer2" ></div>
+					<img class="layer3" src="../../assets/templates/shirt_1/white-essential_1_overlay.png"></img>
+					<img class="layer4" src="../../assets/templates/shirt_1/white-essential_1_collar.png"></img>
+				</section>
+			</div>
+
+			<section id="toolbar">
+				<ul class="toolbar-division">
+					<li class="toolbar-attribute-wrapper">
+						<div class="toolbar-button-title toolbar-background-repeat">REPEAT</div>
+						<!--<span class="toolbar-button-state">OFF</span>-->
+
+						<form name="form1" class="toolbar-attribute-state">
+							<div id="radioset1">
+								<input type="radio" id="radio1" name="radio" checked="checked"/><label for="radio1">ON</label>
+								<input type="radio" id="radio2" name="radio"  /><label for="radio2">OFF</label>
+							</div>
+						</form>
+					</li>
+
+					<li class="toolbar-attribute-wrapper">
+						<span class="toolbar-button-title">SIZE</span>
+						<!--<p>
+							<label for="amount">Maximum price:</label>
+							<input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" />
+						</p>-->
+						<div id="slider-range-min" class="toolbar-attribute-state toolbar-background-size-slider"></div>
+					</li>
+				</ul>
+
+				<ul class="toolbar-division">
+					<!--<span class="toolbar-button-title">CURRENT DESIGN</span>-->
+					<img class="current-image-src design-image" src="../../assets/shirt_designs/CartPuff.png"></img>
+					
+					<li class="">
+						<form name="form2" class="toolbar-attribute-state center-radio-buttons"> 
+							<div id="radioset2"> 
+								<input type="radio" id="radio3" name="radio2" /><label for="radio3">&#8592;</label>
+								<input type="radio" id="radio4" name="radio2" checked="checked" /><label for="radio4">&#8594;</label> 
+							</div> 
+				        </form> 
+					</li>
+				</ul>
+
+				<ul class="toolbar-division">
+					<img class="current-image-src image-surface" src="../../assets/templates/shirt_1/white-essential_1.png"></img>
+					
+					<li class="">
+						<form name="form3" class="toolbar-attribute-state center-radio-buttons"> 
+							<div id="radioset3"> 
+								<input type="radio" id="radio5" name="radio3" /><label for="radio5">&#8592;</label>
+								<input type="radio" id="radio6" name="radio3" checked="checked" /><label for="radio6">&#8594;</label> 
+							</div> 
+				        </form> 
+					</li>
+				</ul>
+
+
+
+			</section>
+		</body>
+	</html>
+
+
+
+
+
