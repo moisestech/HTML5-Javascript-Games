@@ -1,0 +1,214 @@
+/* - HTML 5 Reset -- */
+html {
+	margin: 0;
+	padding: 0;
+}
+div {
+	margin: 0;
+	padding: 0;
+}
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: white;
+	font-family: Arial;
+}
+
+/* -- Top Bar -- */
+	.topBar {
+		width: 100%;
+		height:40px;
+		background-color: black;
+	}
+	.charCreator-title {
+		color: white;
+		text-align: center;
+		font-size: 25px;
+		padding: 5px;
+	}
+
+/* -- Character Stage -- */
+	.charStage {
+		position: fixed;
+		display: inline-block;
+		top: 50%;
+		left: 50%;
+		margin-left: -190px;
+		margin-top: -245px;
+		width: 380px;
+		height: 510px;
+		background-color: #fffcfc;
+
+		border-bottom: outset 2px white;
+		border-right: outset 2vpx white;
+
+		-webkit-box-shadow: 1px 13px 26px rgba(50, 50, 50, 0.85);
+		-moz-box-shadow:    1px 13px 26px rgba(50, 50, 50, 0.85);
+		box-shadow:         1px 13px 26px rgba(50, 50, 50, 0.85);
+
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+	}
+	.borderStage {
+		position: fixed;
+		display: inline-block;
+		top: 50%;
+		left: 50%;
+		margin-left: -180px;
+		margin-top: -235px;
+		width: 360px;
+		height: 430px;
+		background-color: rgb(93, 230, 166);
+
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+	}
+	.centerStage {
+		position: relative;
+		top: 45px;
+		margin: 0 auto;
+		width: 285px;
+		height: 340px;
+		background-color: yellow;
+	}
+
+	/* -- CSS3 Card Flips -- */
+		.centerStage-division {
+			float: left;
+			width: 285px;
+			height: 85px;
+		}
+		.centerStage-Division1 {
+			background-color: white;
+		}
+		.centerStage-Division2 {
+			background-color: white;
+		}
+		.centerStage-Division3 {
+			background-color: white;
+		}
+		.centerStage-Division4 {
+			background-color: white;
+		}
+
+	/* -- Bottom Parts UI -- */
+		.partsUI {
+			position: fixed;
+			left: 50%;
+			top: 50%;
+			width: 360px;
+			height: 50px;
+			margin-left: -180px;
+			margin-top: 205px;
+			background-color: rgb(218, 216, 216);
+
+			-webkit-border-radius: 9px;
+			-moz-border-radius: 9px;
+			border-radius: 9px;
+		}
+		.partsUI-button {
+			position: relative;
+			float: left;
+			margin-top: 8px;
+			margin-left: 4px;
+			margin-right: 0;
+			width: 30px;
+			height: 30px;
+			background-color: rgb(70, 203, 221);
+
+			border: 3px solid #fffcfc;;
+
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			border-radius: 10px;
+		}
+		.button1 {
+			margin-left: 23px;
+		}
+		.button2 {
+			
+		}
+		.button3 {
+			
+		}
+		.button4 {
+			
+		}
+		.button5 {
+			
+		}
+
+	/* --  Background Main Body Parts -- */
+
+		.mainBodyParts {
+			display: inline-block;
+			position: absolute;
+			background-color: #fffcfc;
+			width: 2565px;
+			height: 2565px;
+			top: 0;
+			z-index: -10;
+		}
+		.bodyPart-section {
+			display: inline-block;
+			position: absolute;
+			width: 489px;
+			height: 489px;
+			background-color: rgb(253, 252, 248);
+			margin: 20px;
+			margin-right: 0;
+			margin-bottom: 0;
+
+			-webkit-border-radius: 8px;
+			-moz-border-radius: 8px;
+			border-radius: 8px;
+
+			border: inset 3px #e8e8e8;
+		}
+		.bodyPart-subSection-wrapper {
+			display: inline-block;
+			position: absolute;
+			width: 51px;
+			height: 51px;
+			background-color: white;
+			margin: 3px;
+			margin-right: 0;
+			margin-bottom: 0;
+
+			border-bottom: outset 1px white;
+			border-right: outset 1px white;
+
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border-radius: 4px;
+
+			-webkit-box-shadow: 2px 2px 12px rgba(50, 50, 50, 0.5);
+			-moz-box-shadow:    2px 2px 12px rgba(50, 50, 50, 0.5);
+			box-shadow:         2px 2px 12px rgba(50, 50, 50, 0.5);
+		}
+		.subSection-shadow {
+			-webkit-box-shadow: 17px 17px 30px rgba(50, 50, 50, 0.7);
+			-moz-box-shadow:    17px 17px 30px rgba(50, 50, 50, 0.7);
+			box-shadow:         17px 17px 30px rgba(50, 50, 50, 0.7);
+		}
+		.bodyPart-subSection {
+			display: inline-block;
+			position: absolute;
+			width: 45px;
+			height: 45px;
+			background-color: orange;
+			margin: 3px;
+
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+		}
+		.subSection-hover-border-radius {
+			-webkit-border-radius: 8px;
+			-moz-border-radius: 8px;
+			border-radius: 8px;
+		}
